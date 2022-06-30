@@ -5,14 +5,41 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>posse-website</title>
+  <!-- google fontの読み込み -->
+  <link rel="stylesheet" href="reset.css">
   <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&amp;family=Plus+Jakarta+Sans:wght@400;700&amp;display=swap" rel="stylesheet">
 </head>
 <body>
-  <header class="l-header p-header"></header>
-  <div class="l-header_logo">
-    <img src="" alt="">
-  </div>
-  <nav class="p-header_nav"></nav>
+  <header class="l-header p-header">
+    <div class="l-header_logo">
+      <img src="./assets-ph1-website-main/img/logo.svg" alt="posse">
+    </div>
+    <nav class="p-header_nav">
+      <ul class="p-header_nav-list">
+        <li class="p-header_nav-list-item">
+          <a href="./" class="p-header_nav-list-item-link">トップページ</a>
+        </li>
+        <li class="p-header_nav-list-item">
+          <a href="" class="p-header_nav-list-item-link">クイズ</a>
+        </li>
+      </ul>
+    </nav>
+    <ul class="p-sns">
+      <li class="p-sns-item">
+        <a href="https://twitter.com/posse_program" target="_blank" rel="noopener noreferrer" class="p-sns-item-link" aria-label="Twitter">
+          <i class="u-icon__twitter"></i>
+        </a>
+      </li>
+      <li class="p-sns-item">
+        <a href="https://www.instagram.com/posse_programming/" target="_blank" rel="noopener noreferrer" class="p-sns-item-link" aria-label="instagram">
+          <i class="u-icon__instagram"></i>
+        </a>
+      </li>
+    </ul>
+  </header>
   <ul class="p-header_sns"></ul>
 </body>
 </html>
