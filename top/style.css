@@ -1,43 +1,86 @@
-/* body headerのcss */
-.p-header_nav-list-item {
-  display: list-item; 
-  list-style: none;
-  /* border: none; */
+/* headerのcss */
+.l-header{
+
 }
-.l-header {
-  display: flex; 
-  padding: 15px 24px;
-  align-items: center;
+
+.l-header_img{
+
 }
-.p-header_nav-list{
-  display: flex;
-  gap: 32px;
+
+.l-header_nav{
+
 }
-.p-header_nav-list-item-link{
-  color: #666;
-  font-size: 14px;
-  font-weight: bold;
-  text-decoration: none;
+
+.l-header_nav_list{
+
 }
-nav {
-  display: block;
-  margin-left: auto;
+
+.l-header_nav_list_item{
+
 }
-.p-sns{
-gap: 16px;
-display: flex;
+
+.l-header_sns{
+
 }
-.p-sns-item{
-  list-style: none;
+
+.l-header_sns_list{
+
 }
-.p-sns-item-link{
-  align-items: center;
-  border: solid 1px #eee;
-  border-radius: 50%;
-  color: #adadad;
-  display: inline-flex;
-  font-size: 24px;
-  height: 50px;
-  justify-content: center;
-  width: 50px;
+
+.l-header_sns_list_img{
+
+}
+
+/* topのcss */
+.l-top{
+
+}
+
+.l-top_inner{
+
+}
+
+.l-top_inner_info{
+
+}
+
+.l-top_inner_info_title{
+
+}
+
+.l-top_inner_info_content{
+
+}
+
+.l-top_footer{
+
+}
+
+.l-top_footer_scroll{
+
+}
+
+/* infoのcss */
+.l-info{
+
+}
+
+.l-info_title{
+
+}
+
+.l-line{
+
+}
+
+.l-line_main{
+
+}
+
+.l-line_main{
+
+}
+
+.l-line_main_info{
+  
 }
