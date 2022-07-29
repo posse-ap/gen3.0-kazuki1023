@@ -66,7 +66,7 @@
   display: flex;
   margin: 0 auto;
   max-width: 1280px;
-
+  position: relative;
 }
 
 .l-top_inner_info {
@@ -98,14 +98,76 @@
 
 .l-top_footer_img {
   max-height: 1000px;
-  max-width: 800px;
-  margin-left: -50px;
+  width: 1000px;
+  margin-left: -20px;
   border-radius: 80px 0 0 80px;
   width: 100%;
 }
 
-.l-top_footer_scroll {}
-
+.l-top_footer_scroll {
+  position: absolute;
+  line-height: 1.5;
+  left: 70px;
+  font-size: 14px;
+  display: inline-box;
+  bottom: 10px;
+  align-items: center;
+}
+.l-top_footer_scroll::before{
+  background-color: #ccc;
+  border-radius: 8px;
+  content: "";
+  display: inline-block;
+  height: 8px;
+  width: 8px;
+}
+/* infoのCSS */
+.l-info{
+  margin-top: 80px;
+}
+.l-info_top{
+  margin: 0 auto;
+  padding: 0 24px;
+  width: 100%;
+  max-width: 1032px;
+}
+.l-info_top_title{
+  font-size: 36px;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  line-height: 1.5;
+  text-align: center;
+}
+.l-info_top_title_about{
+  display: block;
+  font-size: 14px;
+  color: blue;
+  letter-spacing: initial;
+  /* font-familyのダウンロードどうやってやるんだっけ？ */
+  margin-top: 10px;
+}
+.l-info_main{
+  display: grid;
+  gap: 40px;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 42px;
+  
+}
+.l-info_main_picture{
+  border-radius: 24px;
+  overflow: hidden;
+}
+.l-info_main_img{
+  max-width: 100%;
+}
+.l-info_main_container{
+  align-self: center;
+  font-size: 14px;
+  line-height: 1.8;
+}
+.l-info_main_container_info{
+  margin: 0;
+}
 /* lineのCSS */
 .l-line_main{
   width: 800px;
@@ -115,6 +177,8 @@
   background-image: url(bg-line.jpg);
   background-size: cover;
   border-radius: 45px;
+  margin-top: 140px;
+  margin-bottom: 60px;
 }
 .l-line_main::before{
   position: absolute;
@@ -127,18 +191,17 @@
   background-color: rgba(0, 113, 188, 0.9)
 }
 .l-line_main_info{
-  opacity: 0.1;
+  opacity: 0.8;
   border-radius: 45px;
   height: 260px;
   padding: 20px;
-  
 }
 .l-line_main_info_top{
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
- 
+  
 }
 .l-line_main_info_top_img{
   width: 40px;
@@ -155,7 +218,30 @@
 .l-line_main_info_main{
   text-align: center;
 }
-
+.l-line_main_info_footer{
+  text-align: center;
+  margin-top: 15px;
+}
+.l-line_main_info_footer_link{
+  background-color: white;
+  border-radius: 50px;
+  width: 100%;
+  display: inline-block;
+  color: #333;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  line-height: 1.8;
+  padding: 12px;
+  position: relative;
+  max-width: 320px;
+}
+.l-line_main_info_footer_img{
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translate(0, -50%);
+}
 /* infoのcss */
 .l-footer_line{
   position: fixed;
