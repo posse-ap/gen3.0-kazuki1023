@@ -181,6 +181,7 @@
   line-height: 1.8;
   padding: 20px;
   width: 100%;
+  cursor: pointer;
 }
 .quetion1_answer_list_item_button_icon{
   margin-left: auto;
@@ -281,6 +282,7 @@
   line-height: 1.8;
   padding: 20px;
   width: 100%;
+  cursor: pointer;
 }
 .quetion2_answer_list_item_button_icon{
   margin-left: auto;
@@ -381,6 +383,7 @@
   line-height: 1.8;
   padding: 20px;
   width: 100%;
+  cursor: pointer;
 }
 .quetion3_answer_list_item_button_icon{
   margin-left: auto;
@@ -481,6 +484,7 @@
   line-height: 1.8;
   padding: 20px;
   width: 100%;
+  cursor: pointer;
 }
 .quetion4_answer_list_item_button_icon{
   margin-left: auto;
@@ -581,6 +585,7 @@
   line-height: 1.8;
   padding: 20px;
   width: 100%;
+  cursor: pointer;
 }
 .quetion5_answer_list_item_button_icon{
   margin-left: auto;
@@ -668,7 +673,6 @@
 }
 .quetion6_answer_list_item{
   display: list-item;
-  cursor: pointer;
 }
 .quetion6_answer_list_item_button{
   align-items: center;
@@ -681,6 +685,7 @@
   line-height: 1.8;
   padding: 20px;
   width: 100%;
+  cursor: pointer;
 }
 .quetion6_answer_list_item_button_icon{
   margin-left: auto;
@@ -705,6 +710,11 @@
 }
 
 /* l-lineのcss */
+.l-line{
+  max-width: 999px;
+  width: 100%;
+  margin: 0 auto;
+}
 .l-line_main{
   width: 100%;
   height: 300px;
@@ -781,8 +791,8 @@
 /* footerのcss */
 .l-footer_line{
   position: fixed;
-  bottom: 16px;
-  right: 16px;
+  bottom: 30px;
+  right: 20px;
   height: 80px;
   width: 280px;
 }
@@ -797,7 +807,7 @@
 }
 .l-footer_line_link_icon{
   font-size: 36px;
-  
+  padding-top: 8px;
 }
 .l-footer_line_link_icon_img{
   width: 36px;
@@ -813,7 +823,7 @@
 }
 .l-footer_line_link_info{
   color: #fff;
-  margin-left: 5px;
+  margin-left: 12px;
 }
 .l-footer_main{
   border: solid 1px #eee;
