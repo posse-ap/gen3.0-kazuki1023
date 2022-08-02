@@ -217,7 +217,31 @@ main{
   margin-top: 16px;
   padding: 24px;
 }
-
+.quetion1_answer_correct{
+  background-color: #fff2f5;
+  border-radius: 8px;
+  display: none;
+  margin-top: 16px;
+  padding: 24px 40px;
+}
+.quetion1_answer_correct_title{
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  line-height: 1.5;
+}
+.quetion1_answer_correct_content{
+  align-items: baseline;
+  display: flex;
+  font-size: 18px;
+  font-weight: bold;
+  gap: 18px;
+  line-height: 1.8;
+  margin-top: 16px;
+}
+.quetion1_answer_correct_content_label{
+  font-size: 24px;
+}
 /* quetion2のcss */
 .quetion2{
   box-sizing: solid;
@@ -318,7 +342,31 @@ main{
   margin-top: 16px;
   padding: 24px;
 }
-
+.quetion2_answer_correct{
+  background-color: #fff2f5;
+  border-radius: 8px;
+  display: none;
+  margin-top: 16px;
+  padding: 24px 40px;
+}
+.quetion2_answer_correct_title{
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  line-height: 1.5;
+}
+.quetion2_answer_correct_content{
+  align-items: baseline;
+  display: flex;
+  font-size: 18px;
+  font-weight: bold;
+  gap: 18px;
+  line-height: 1.8;
+  margin-top: 16px;
+}
+.quetion2_answer_correct_content_label{
+  font-size: 24px;
+}
 /* quetion3のcss */
 .quetion3{
   box-sizing: solid;
@@ -419,7 +467,31 @@ main{
   margin-top: 16px;
   padding: 24px;
 }
-
+.quetion3_answer_correct{
+  background-color: #fff2f5;
+  border-radius: 8px;
+  display: none;
+  margin-top: 16px;
+  padding: 24px 40px;
+}
+.quetion3_answer_correct_title{
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  line-height: 1.5;
+}
+.quetion3_answer_correct_content{
+  align-items: baseline;
+  display: flex;
+  font-size: 18px;
+  font-weight: bold;
+  gap: 18px;
+  line-height: 1.8;
+  margin-top: 16px;
+}
+.quetion3_answer_correct_content_label{
+  font-size: 24px;
+}
 /* queetion4のcss */
 .quetion4{
   box-sizing: solid;
@@ -520,7 +592,31 @@ main{
   margin-top: 16px;
   padding: 24px;
 }
-
+.quetion4_answer_correct{
+  background-color: #fff2f5;
+  border-radius: 8px;
+  display: none;
+  margin-top: 16px;
+  padding: 24px 40px;
+}
+.quetion4_answer_correct_title{
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  line-height: 1.5;
+}
+.quetion4_answer_correct_content{
+  align-items: baseline;
+  display: flex;
+  font-size: 18px;
+  font-weight: bold;
+  gap: 18px;
+  line-height: 1.8;
+  margin-top: 16px;
+}
+.quetion4_answer_correct_content_label{
+  font-size: 24px;
+}
 /* quetion5のcss */
 .quetion5{
   box-sizing: solid;
@@ -621,7 +717,31 @@ main{
   margin-top: 16px;
   padding: 24px;
 }
-
+.quetion5_answer_correct{
+  background-color: #fff2f5;
+  border-radius: 8px;
+  display: none;
+  margin-top: 16px;
+  padding: 24px 40px;
+}
+.quetion5_answer_correct_title{
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  line-height: 1.5;
+}
+.quetion5_answer_correct_content{
+  align-items: baseline;
+  display: flex;
+  font-size: 18px;
+  font-weight: bold;
+  gap: 18px;
+  line-height: 1.8;
+  margin-top: 16px;
+}
+.quetion5_answer_correct_content_label{
+  font-size: 24px;
+}
 /* quetion6のcss */
 .quetion6{
   box-sizing: solid;
@@ -721,7 +841,31 @@ main{
   margin-top: 16px;
   padding: 24px;
 }
-
+.quetion6_answer_correct{
+  background-color: #fff2f5;
+  border-radius: 8px;
+  display: none;
+  margin-top: 16px;
+  padding: 24px 40px;
+}
+.quetion6_answer_correct_title{
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  line-height: 1.5;
+}
+.quetion6_answer_correct_content{
+  align-items: baseline;
+  display: flex;
+  font-size: 18px;
+  font-weight: bold;
+  gap: 18px;
+  line-height: 1.8;
+  margin-top: 16px;
+}
+.quetion6_answer_correct_content_label{
+  font-size: 24px;
+}
 /* l-lineのcss */
 .l-line{
   max-width: 999px;

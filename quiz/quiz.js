@@ -37,15 +37,17 @@ const setDisabled = answers => {
 }
 
 // 正解の表示
-{
-  document.getElementById('js_answer_11').addEventListener('click', () => {
-    const incollectanswer = document.createElement("div");
-    incollectanswer.textcontent = "不正解";
-    let js_answer1;
-    const ul =document.getElementById(js_answer1);
-    js_answer1.appendChild();
-  });
-}
+// {
+//   document.getElementById('js_answer_11').addEventListener('click', () => {
+//     const incollectanswer = document.createElement("div");
+//     incollectanswer.textcontent = "不正解";
+//     let js_answer1;
+//     const ul =document.getElementById(js_answer1);
+//     js_answer1.appendChild();
+//   });
+// }
+
+
 //ボタン変化まとめ
 // 1-1のボタン変化
 document.getElementById('js_answer_11').addEventListener('click', () => {
