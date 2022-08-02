@@ -29,6 +29,23 @@ const correctanswer = [
 ];
 // これでクラス名を集めた
 const allquiz = document.querySelectorAll('.js-quiz');
+// ボタンの不活性化
+const setDisabled = answers => {
+  answers.forEach(answer => {
+    answer.disabled = true;
+  })
+}
+
+// 正解の表示
+{
+  document.getElementById('js_answer_11').addEventListener('click', () => {
+    const incollectanswer = document.createElement("div");
+    incollectanswer.textcontent = "不正解";
+    let js_answer1;
+    const ul =document.getElementById(js_answer1);
+    js_answer1.appendChild();
+  });
+}
 //ボタン変化まとめ
 // 1-1のボタン変化
 document.getElementById('js_answer_11').addEventListener('click', () => {
