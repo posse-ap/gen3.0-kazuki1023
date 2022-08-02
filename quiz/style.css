@@ -1,8 +1,16 @@
 /* headerのcss */
+.header {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  right: 0;
+}
 .l-header {
   display: flex;
   padding: 18px 20px;
-
+  background-color: white;
+  height: 60px;
 }
 
 .l-header_img {
@@ -60,6 +68,9 @@
 }
 
 /* l-topのcss */
+main{
+  margin-top: 60px;
+}
 .l-top{
   margin-top: -10px;
   margin-left: 0px;
@@ -183,6 +194,8 @@
   width: 100%;
   cursor: pointer;
 }
+
+
 .quetion1_answer_list_item_button_icon{
   margin-left: auto;
 }
