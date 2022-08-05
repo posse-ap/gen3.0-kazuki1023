@@ -36,18 +36,45 @@ const setDisabled = answers => {
   })
 }
 
-// 正解の表示
-// {
-//   document.getElementById('js_answer_11').addEventListener('click', () => {
-//     const incollectanswer = document.createElement("div");
-//     incollectanswer.textcontent = "不正解";
-//     let js_answer1;
-//     const ul =document.getElementById(js_answer1);
-//     js_answer1.appendChild();
-//   });
-// }
+// 正解の表示、ここでボタンをクリックするとクラスを追加して正解、不正解が出るようにしたい！！
+  // 1-1押された時の不正解表示
+  // https://techmemo.biz/javascript/click-toggle-class/
 
+  let btn11 = document.querySelector('#js_answer_11');
+  // クリックする要素を取得
 
+  let box11 = document.querySelector('#js-answer1_box');
+  // クラスを追加する要素を取得
+
+  let title11 =document.querySelector('#js-answer1_incorrect_title');
+  // クラスを追加する要素を取得
+
+  let box11class = function (el) {
+    el.classList.toggle('quetion1_answer_incorrect')
+  }
+  // クラスを追加・削除する動きを定義
+
+  btn11.addEventListener('click', function(){
+    box11class(box11);
+  }, false);
+   // ”btn”がクリックされたら”box”に対してbox11classを実行
+
+  title11.addEventListener('click', function(){
+    title11class(title11);
+  }, false);
+  
+  // 1-2押された時の正解表示
+
+  let btn12 = document.querySelector('#js_answer_12');
+  let box12 = document.querySelector('#js_answer1_box');
+  let title12 = document.querySelector('#js-answer1_correct_title');
+  let box12class = function (el) {
+    el.classList.toggle('quetion1_answer_correct')
+  }
+
+  btn12.addEventListener('click', function(){
+    box12class(box12);
+  }, false);
 //ボタン変化まとめ
 // 1-1のボタン変化
 document.getElementById('js_answer_11').addEventListener('click', () => {

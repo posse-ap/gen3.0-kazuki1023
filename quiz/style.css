@@ -201,7 +201,15 @@ main{
 }
 .quetion1_answer_correct{}
 .quetion1_answer_correct_titla{}
-.quetion1_answer_correct_content{}
+.quetion1_answer_correct_content{
+  gap: 18px;
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  align-items: baseline;
+  line-height: 1.8;
+  margin-top: 16px;
+}
 .quetion1_answer_corrrect_content_label{}
 .quetion1_note{
   align-items: center;
@@ -218,28 +226,44 @@ main{
   padding: 24px;
 }
 .quetion1_answer_correct{
-  background-color: #fff2f5;
+  background-color: #c8647c;
   border-radius: 8px;
-  display: none;
   margin-top: 16px;
-  padding: 24px 40px;
+  padding: 24px 30px;
+  border: 2px solid #a1c7ed;
+  display: block;
+}
+.quetion1_answer_incorrect{
+  background-color: #eff2f5;
+  border: 2px solid #eff2f5;
+  border-radius: 8px;
+  margin-top: 16px;
+  padding: 12px 40px;
+  display: block;
 }
 .quetion1_answer_correct_title{
   font-size: 24px;
   font-weight: bold;
   letter-spacing: 0.05em;
   line-height: 1.5;
+  display: none;
+}
+.quetion1_answer_incorrect_title{
+  color: #0071bc;
+  font-size: 24px;
+  font-weight: bold;
+  display: none;
 }
 .quetion1_answer_correct_content{
-  align-items: baseline;
-  display: flex;
-  font-size: 18px;
-  font-weight: bold;
-  gap: 18px;
-  line-height: 1.8;
-  margin-top: 16px;
+  
 }
 .quetion1_answer_correct_content_label{
+  font-size: 24px;
+}
+
+js-answer1_correct_title{
+  display: block;
+  color: red;
   font-size: 24px;
 }
 /* quetion2のcss */
