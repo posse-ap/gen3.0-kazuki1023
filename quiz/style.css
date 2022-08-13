@@ -199,7 +199,6 @@ main{
 .quetion1_answer_list_item_button_icon{
   margin-left: auto;
 }
-.quetion1_answer_correct{}
 .quetion1_answer_correct_titla{}
 .quetion1_answer_correct_content{
   gap: 18px;
@@ -225,20 +224,28 @@ main{
   margin-top: 16px;
   padding: 24px;
 }
+
+.js-answer1_box{
+  background-color: #FFF2F5;
+  border-radius: 8px;
+  padding: 10px 40px 0px 40px;
+  margin-top: 16px;
+  display: none;
+}
 .quetion1_answer_correct{
   background-color: #c8647c;
   border-radius: 8px;
   margin-top: 16px;
   padding: 24px 30px;
   border: 2px solid #a1c7ed;
-  display: block;
+  display: none;
 }
 .quetion1_answer_incorrect{
-  background-color: #eff2f5;
+  background-color: #FFF2F5;
   border: 2px solid #eff2f5;
   border-radius: 8px;
   margin-top: 16px;
-  padding: 12px 40px;
+  padding: 10px 40px 0px 40px;
   display: block;
 }
 .quetion1_answer_correct_title{
@@ -246,12 +253,15 @@ main{
   font-weight: bold;
   letter-spacing: 0.05em;
   line-height: 1.5;
-  display: none;
+  color: #c8647c;
+  
 }
 .quetion1_answer_incorrect_title{
   color: #0071bc;
   font-size: 24px;
   font-weight: bold;
+  letter-spacing: 0.05em;
+  line-height: 1.5;
   display: none;
 }
 .quetion1_answer_correct_content{
@@ -261,11 +271,13 @@ main{
   font-size: 24px;
 }
 
-js-answer1_correct_title{
+/* js-answer1_correct_title{
   display: block;
   color: red;
   font-size: 24px;
-}
+} */
+
+
 /* quetion2のcss */
 .quetion2{
   box-sizing: solid;
