@@ -28,6 +28,7 @@ const correctanswer = [
   }
 ];
 // これでクラス名を集めた
+
 const allquiz = document.querySelectorAll('.js-quiz');
 // ボタンの不活性化
 const setDisabled = answers => {
@@ -50,7 +51,7 @@ const setDisabled = answers => {
   // クラスを追加する要素を取得
 
   let box11class = function (el) {
-    el.classList.toggle('quetion1_answer_incorrect');
+    el[0].classList.toggle('quetion1_answer_incorrect');
   }
   // クラスを追加・削除する動きを定義
 
@@ -66,7 +67,7 @@ const setDisabled = answers => {
   // 1-2押された時の正解表示
 
   let btn12 = document.querySelector('#js_answer_12');
-  let box12 = document.getElementsByClassName('js_answer1_box');
+  let box12 = document.getElementsByClassName("js_answer1_box");
   let title12 = document.querySelector('#js-answer1_correct_title');
   let box12class = function (el) {
     el.classList.toggle('quetion1_answer_correct');

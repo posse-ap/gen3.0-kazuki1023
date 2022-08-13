@@ -254,7 +254,7 @@ main{
   letter-spacing: 0.05em;
   line-height: 1.5;
   color: #c8647c;
-  
+  display: none;
 }
 .quetion1_answer_incorrect_title{
   color: #0071bc;
@@ -262,7 +262,7 @@ main{
   font-weight: bold;
   letter-spacing: 0.05em;
   line-height: 1.5;
-  display: none;
+  display: block;
 }
 .quetion1_answer_correct_content{
   
