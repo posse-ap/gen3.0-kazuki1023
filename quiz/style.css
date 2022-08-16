@@ -251,7 +251,7 @@ main{
   background-color: #FFF2F5;
   border-radius: 8px;
   margin-top: 16px;
-  padding: 24px 30px;
+  padding: 10px 40px 5px 40px;
   border: 2px solid #FFF2F5;
   display: block;
 }
@@ -266,7 +266,7 @@ main{
   border: 2px solid #eff2f5;
   border-radius: 8px;
   margin-top: 16px;
-  padding: 10px 40px 0px 40px;
+  padding: 10px 40px 5px 40px;
   display: block;
 }
 .quetion1_answer_correct_title,

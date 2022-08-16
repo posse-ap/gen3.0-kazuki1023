@@ -205,76 +205,181 @@ document.getElementById('js_answer_31').addEventListener('click', () => {
     targetnode.style.display = "block";
   });
 // 3-3のボタン変化
-let btn33 = document.querySelector('#js_answer_33');
-let title33 =document.querySelector('#js-answer3_incorrect_title');
-let box33class = function (el) {
-  el[0].classList.toggle('quetion3_answer_incorrect');
-}
-btn33.addEventListener('click', function(){
-  box33class(box3);
-}, false);
-document.getElementById('js_answer_33').addEventListener('click', () => {
-const targetnode = document.getElementById("js_answer_33");
-targetnode.style.border = "solid 5px #0071BC";
-});
-document.getElementById('js_answer_33').addEventListener('click', () => {
-  const targetnode = document.getElementById('js-answer3_incorrect_title');
-  targetnode.style.display = "block";
-});
+  let btn33 = document.querySelector('#js_answer_33');
+  let title33 =document.querySelector('#js-answer3_incorrect_title');
+  let box33class = function (el) {
+    el[0].classList.toggle('quetion3_answer_incorrect');
+  }
+  btn33.addEventListener('click', function(){
+    box33class(box3);
+  }, false);
+  document.getElementById('js_answer_33').addEventListener('click', () => {
+  const targetnode = document.getElementById("js_answer_33");
+  targetnode.style.border = "solid 5px #0071BC";
+  });
+  document.getElementById('js_answer_33').addEventListener('click', () => {
+    const targetnode = document.getElementById('js-answer3_incorrect_title');
+    targetnode.style.display = "block";
+  });
 
 // 4-1のボタン変化
-document.getElementById('js_answer_41').addEventListener('click', () => {
-  const targetnode = document.getElementById("js_answer_41");
+  let btn41 = document.querySelector('#js_answer_41');
+  let box4 = document.getElementsByClassName("js-answer4_box");
+  let title41 = document.querySelector('#js-answer4_correct_title');
+  let box41class = function (el) {
+    el[0].classList.toggle('quetion4_answer_correct');
+  };
+  btn41.addEventListener('click', function(){
+    box41class(box4);
+  }, false);
+  document.getElementById('js_answer_41').addEventListener('click', () => {
+    const targetnode = document.getElementById("js_answer_41");
+    targetnode.style.border = "solid 5px #0071BC";
+  });
+  document.getElementById('js_answer_41').addEventListener('click', () => {
+    const targetnode = document.getElementById('js-answer4_correct_title');
+    targetnode.style.display = "block";
+  });
 
-  targetnode.style.border = "solid 5px #0071BC";
-});
 // 4-2のボタン変化
-document.getElementById('js_answer_42').addEventListener('click', () => {
+  let btn42 = document.querySelector('#js_answer_42');
+  let title42 =document.querySelector('#js-answer4_incorrect_title');
+  let box42class = function (el) {
+    el[0].classList.toggle('quetion4_answer_incorrect');
+  }
+  btn42.addEventListener('click', function(){
+    box42class(box4);
+  }, false);
+  document.getElementById('js_answer_42').addEventListener('click', () => {
   const targetnode = document.getElementById("js_answer_42");
-
   targetnode.style.border = "solid 5px #0071BC";
-});
+  });
+  document.getElementById('js_answer_42').addEventListener('click', () => {
+    const targetnode = document.getElementById('js-answer4_incorrect_title');
+    targetnode.style.display = "block";
+  });
 // 4-3のボタン変化
-document.getElementById('js_answer_43').addEventListener('click', () => {
+  let btn43 = document.querySelector('#js_answer_43');
+  let title43 =document.querySelector('#js-answer4_incorrect_title');
+  let box43class = function (el) {
+    el[0].classList.toggle('quetion4_answer_incorrect');
+  }
+  btn43.addEventListener('click', function(){
+    box32class(box4);
+  }, false);
+  document.getElementById('js_answer_43').addEventListener('click', () => {
   const targetnode = document.getElementById("js_answer_43");
-
   targetnode.style.border = "solid 5px #0071BC";
-});
+  });
+  document.getElementById('js_answer_43').addEventListener('click', () => {
+    const targetnode = document.getElementById('js-answer4_incorrect_title');
+    targetnode.style.display = "block";
+  });
+
 // 5-1のボタン変化
-document.getElementById('js_answer_51').addEventListener('click', () => {
-  const targetnode = document.getElementById("js_answer_51");
-
-  targetnode.style.border = "solid 5px #0071BC";
-});
+  let btn51 = document.querySelector('#js_answer_51');
+  let box5 = document.getElementsByClassName("js-answer5_box");
+  let title51 = document.querySelector('#js-answer5_correct_title');
+  let box51class = function (el) {
+    el[0].classList.toggle('quetion5_answer_correct');
+  };
+  btn51.addEventListener('click', function(){
+    box51class(box5);
+  }, false);
+  document.getElementById('js_answer_51').addEventListener('click', () => {
+    const targetnode = document.getElementById("js_answer_51");
+    targetnode.style.border = "solid 5px #0071BC";
+  });
+  document.getElementById('js_answer_51').addEventListener('click', () => {
+    const targetnode = document.getElementById('js-answer5_correct_title');
+    targetnode.style.display = "block";
+  });
 // 5-2のボタン変化
-document.getElementById('js_answer_52').addEventListener('click', () => {
+  let btn52 = document.querySelector('#js_answer_52');
+  let title52 =document.querySelector('#js-answer5_incorrect_title');
+  let box52class = function (el) {
+    el[0].classList.toggle('quetion5_answer_incorrect');
+  }
+  btn52.addEventListener('click', function(){
+    box52class(box5);
+  }, false);
+  document.getElementById('js_answer_52').addEventListener('click', () => {
   const targetnode = document.getElementById("js_answer_52");
-
   targetnode.style.border = "solid 5px #0071BC";
-});
+  });
+  document.getElementById('js_answer_52').addEventListener('click', () => {
+    const targetnode = document.getElementById('js-answer5_incorrect_title');
+    targetnode.style.display = "block";
+  });
 // 5-3のボタン変化
-document.getElementById('js_answer_53').addEventListener('click', () => {
+  let btn53 = document.querySelector('#js_answer_53');
+  let title53 =document.querySelector('#js-answer5_incorrect_title');
+  let box53class = function (el) {
+    el[0].classList.toggle('quetion5_answer_incorrect');
+  }
+  btn53.addEventListener('click', function(){
+    box53class(box5);
+  }, false);
+  document.getElementById('js_answer_53').addEventListener('click', () => {
   const targetnode = document.getElementById("js_answer_53");
-
   targetnode.style.border = "solid 5px #0071BC";
-});
+  });
+  document.getElementById('js_answer_53').addEventListener('click', () => {
+    const targetnode = document.getElementById('js-answer5_incorrect_title');
+    targetnode.style.display = "block";
+  });
 // 6-1のボタン変化
-document.getElementById('js_answer_61').addEventListener('click', () => {
+  let btn61 = document.querySelector('#js_answer_61');
+  let box6 = document.getElementsByClassName("js-answer6_box");
+  let title61 =document.querySelector('#js-answer6_incorrect_title');
+  let box61class = function (el) {
+    el[0].classList.toggle('quetion6_answer_incorrect');
+  }
+  btn61.addEventListener('click', function(){
+    box61class(box6);
+  }, false);
+  document.getElementById('js_answer_61').addEventListener('click', () => {
   const targetnode = document.getElementById("js_answer_61");
-
   targetnode.style.border = "solid 5px #0071BC";
-});
+  });
+  document.getElementById('js_answer_61').addEventListener('click', () => {
+    const targetnode = document.getElementById('js-answer6_incorrect_title');
+    targetnode.style.display = "block";
+  });
 // 6-2のボタン変化
-document.getElementById('js_answer_62').addEventListener('click', () => {
-  const targetnode = document.getElementById("js_answer_62");
-
-  targetnode.style.border = "solid 5px #0071BC";
-});
+  let btn62 = document.querySelector('#js_answer_62');
+  let title62 = document.querySelector('#js-answer6_correct_title');
+  let box62class = function (el) {
+    el[0].classList.toggle('quetion6_answer_correct');
+  };
+  btn62.addEventListener('click', function(){
+    box62class(box6);
+  }, false);
+  document.getElementById('js_answer_62').addEventListener('click', () => {
+    const targetnode = document.getElementById("js_answer_62");
+    targetnode.style.border = "solid 5px #0071BC";
+  });
+  document.getElementById('js_answer_62').addEventListener('click', () => {
+    const targetnode = document.getElementById('js-answer6_correct_title');
+    targetnode.style.display = "block";
+  });
 // 6-3のボタン変化
-document.getElementById('js_answer_63').addEventListener('click', () => {
+  let btn63 = document.querySelector('#js_answer_63');
+  let title63 =document.querySelector('#js-answer6_incorrect_title');
+  let box63class = function (el) {
+    el[0].classList.toggle('quetion6_answer_incorrect');
+  }
+  btn63.addEventListener('click', function(){
+    box63class(box6);
+  }, false);
+  document.getElementById('js_answer_63').addEventListener('click', () => {
   const targetnode = document.getElementById("js_answer_63");
-
   targetnode.style.border = "solid 5px #0071BC";
-});
+  });
+  document.getElementById('js_answer_63').addEventListener('click', () => {
+    const targetnode = document.getElementById('js-answer6_incorrect_title');
+    targetnode.style.display = "block";
+  });
+
 
 
