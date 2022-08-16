@@ -45,10 +45,10 @@ const setDisabled = answers => {
   
 //ボタン変化まとめ
 // 1-1のボタン変化
-let btn11 = document.querySelector('#js_answer_11');
+  let btn11 = document.querySelector('#js_answer_11');
   // クリックする要素を取得
 
-  let box11 = document.getElementsByClassName("js-answer1_box");
+  let box1 = document.getElementsByClassName("js-answer1_box");
   // クラスを追加する要素を取得
 
   let title11 =document.querySelector('#js-answer1_incorrect_title');
@@ -60,63 +60,49 @@ let btn11 = document.querySelector('#js_answer_11');
   // クラスを追加・削除する動きを定義
 
   btn11.addEventListener('click', function(){
-    box11class(box11);
+    box11class(box1);
   }, false);
    // ”btn”がクリックされたら”box”に対してbox11classを実行
 
-  title11.addEventListener('click', function(){
-    title11class(title11);
-  }, false);
-document.getElementById('js_answer_11').addEventListener('click', () => {
-  const targetnode = document.getElementById("js_answer_11");
 
-  targetnode.style.border = "solid 5px #0071BC";
-});
+  document.getElementById('js_answer_11').addEventListener('click', () => {
+    const targetnode = document.getElementById("js_answer_11");
+    targetnode.style.border = "solid 5px #0071BC";
+  });
 
-document.getElementById('js_answer_11').addEventListener('click', () => {
-  const targetnode = document.getElementById('js-answer1_incorrect_title');
-
-  targetnode.style.display = "block";
-});
+  document.getElementById('js_answer_11').addEventListener('click', () => {
+    const targetnode = document.getElementById('js-answer1_incorrect_title');
+    targetnode.style.display = "block";
+  });
 // 1-2のボタン変化
   // 1-2押された時の正解表示
   let btn12 = document.querySelector('#js_answer_12');
-  let box12 = document.getElementsByClassName("js-answer1_box");
   let title12 = document.querySelector('#js-answer1_correct_title');
   let box12class = function (el) {
-  el[0].classList.toggle('quetion1_answer_correct');
-  }  
+    el[0].classList.toggle('quetion1_answer_correct');
+  };
   btn12.addEventListener('click', function(){
-    box12class(box12);
-  }, false);
-  title12.addEventListener('click', function(){
-    title12class(title12);
+    box12class(box1);
   }, false);
   
   document.getElementById('js_answer_12').addEventListener('click', () => {
     const targetnode = document.getElementById("js_answer_12");
-  
     targetnode.style.border = "solid 5px #0071BC";
   });
   
   document.getElementById('js_answer_12').addEventListener('click', () => {
     const targetnode = document.getElementById('js-answer1_correct_title');
-  
     targetnode.style.display = "block";
   });
   
 // 1-3のボタン変化
   let btn13 = document.querySelector('#js_answer_13');
-  let box13 = document.getElementsByClassName("js-answer1_box");
   let title13 = document.querySelector('#js-answer1_incorrect_title');
   let box13class = function (el) {
   el[0].classList.toggle('quetion1_answer_incorrect');
-  }  
-  btn12.addEventListener('click', function(){
-    box12class(box12);
-  }, false);
-  title12.addEventListener('click', function(){
-    title12class(title12);
+   }
+  btn13.addEventListener('click', function(){
+    box13class(box1);
   }, false);
   document.getElementById('js_answer_13').addEventListener('click', () => {
     const targetnode = document.getElementById("js_answer_13");
@@ -130,13 +116,13 @@ document.getElementById('js_answer_11').addEventListener('click', () => {
     targetnode.style.display = "block";
   });
 // 2-1のボタン変化
-document.getElementById('js_answer_21').addEventListener('click', () => {
+  document.getElementById('js_answer_21').addEventListener('click', () => {
   const targetnode = document.getElementById("js_answer_21");
 
   targetnode.style.border = "solid 5px #0071BC";
 });
 // 2-2のボタン変化
-document.getElementById('js_answer_22').addEventListener('click', () => {
+  document.getElementById('js_answer_22').addEventListener('click', () => {
   const targetnode = document.getElementById("js_answer_22");
 
   targetnode.style.border = "solid 5px #0071BC";
