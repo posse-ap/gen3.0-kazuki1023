@@ -30,16 +30,12 @@
   document.getElementById('js_answer_11').addEventListener('click', () => {
     const targetnode = document.getElementById("js_answer_11");
     targetnode.style.border = "solid 5px #0071BC";
+    targetnode.style.backgroundColor = "#f6f6f6";
   });
   document.getElementById('js_answer_11').addEventListener('click', () => {
     const targetnode = document.getElementById('js-answer1_incorrect_title');
     targetnode.style.display = "block";
   });
-  document.getElementById('js_answer_11').addEventListener('click', () => {
-    const targetnode = document.getElementById('js_answer_11');
-    targetnode.style.backgroundColor = "#f6f6f6";
-  });
-  // 
   document.getElementById('js_answer_11').addEventListener('click', () => {
     document.getElementById('js_answer_11').setAttribute("disabled","true");
     document.getElementById('js_answer_12').setAttribute("disabled","true");
@@ -58,14 +54,11 @@
   document.getElementById('js_answer_12').addEventListener('click', () => {
     const targetnode = document.getElementById("js_answer_12");
     targetnode.style.border = "solid 5px #0071BC";
+    targetnode.style.backgroundColor = "#f6f6f6";
   });
   document.getElementById('js_answer_12').addEventListener('click', () => {
     const targetnode = document.getElementById('js-answer1_correct_title');
     targetnode.style.display = "block";
-  });
-  document.getElementById('js_answer_12').addEventListener('click', () => {
-    const targetnode = document.getElementById('js_answer_12');
-    targetnode.style.backgroundColor = "#f6f6f6";
   });
   document.getElementById('js_answer_12').addEventListener('click', () => {
     document.getElementById('js_answer_11').setAttribute("disabled","true");
@@ -84,15 +77,12 @@
   document.getElementById('js_answer_13').addEventListener('click', () => {
     const targetnode = document.getElementById("js_answer_13");
     targetnode.style.border = "solid 5px #0071BC";
+    targetnode.style.backgroundColor = "#f6f6f6";
   });
   
   document.getElementById('js_answer_13').addEventListener('click', () => {
     const targetnode = document.getElementById('js-answer1_incorrect_title');
     targetnode.style.display = "block";
-  });
-  document.getElementById('js_answer_13').addEventListener('click', () => {
-    const targetnode = document.getElementById('js_answer_13');
-    targetnode.style.backgroundColor = "#f6f6f6";
   });
   document.getElementById('js_answer_13').addEventListener('click', () => {
     document.getElementById('js_answer_11').setAttribute("disabled","true");
@@ -111,16 +101,12 @@
   }, false);
   document.getElementById('js_answer_21').addEventListener('click', () => {
   const targetnode = document.getElementById("js_answer_21");
-
   targetnode.style.border = "solid 5px #0071BC";
+  targetnode.style.backgroundColor = "#f6f6f6";
   });
   document.getElementById('js_answer_21').addEventListener('click', () => {
     const targetnode = document.getElementById('js-answer2_incorrect_title');
     targetnode.style.display = "block";
-  });
-  document.getElementById('js_answer_21').addEventListener('click', () => {
-    const targetnode = document.getElementById('js_answer_21');
-    targetnode.style.backgroundColor = "#f6f6f6";
   });
   document.getElementById('js_answer_21').addEventListener('click', () => {
     document.getElementById('js_answer_21').setAttribute("disabled","true");
@@ -140,14 +126,11 @@
   document.getElementById('js_answer_22').addEventListener('click', () => {
   const targetnode = document.getElementById("js_answer_22");
   targetnode.style.border = "solid 5px #0071BC";
+  targetnode.style.backgroundColor = "#f6f6f6";
   });
   document.getElementById('js_answer_22').addEventListener('click', () => {
     const targetnode = document.getElementById('js-answer2_incorrect_title');
     targetnode.style.display = "block";
-  });
-  document.getElementById('js_answer_22').addEventListener('click', () => {
-    const targetnode = document.getElementById('js_answer_22');
-    targetnode.style.backgroundColor = "#f6f6f6";
   });
   document.getElementById('js_answer_22').addEventListener('click', () => {
     document.getElementById('js_answer_21').setAttribute("disabled","true");
@@ -167,14 +150,11 @@
   document.getElementById('js_answer_23').addEventListener('click', () => {
     const targetnode = document.getElementById("js_answer_23");
     targetnode.style.border = "solid 5px #0071BC";
+    targetnode.style.backgroundColor = "#f6f6f6";
   });
   document.getElementById('js_answer_23').addEventListener('click', () => {
     const targetnode = document.getElementById('js-answer2_correct_title');
     targetnode.style.display = "block";
-  });
-  document.getElementById('js_answer_23').addEventListener('click', () => {
-    const targetnode = document.getElementById('js_answer_23');
-    targetnode.style.backgroundColor = "#f6f6f6";
   });
   document.getElementById('js_answer_23').addEventListener('click', () => {
     document.getElementById('js_answer_21').setAttribute("disabled","true");
@@ -195,14 +175,11 @@
   document.getElementById('js_answer_31').addEventListener('click', () => {
     const targetnode = document.getElementById("js_answer_31");
     targetnode.style.border = "solid 5px #0071BC";
+    targetnode.style.backgroundColor = "#f6f6f6";
   });
   document.getElementById('js_answer_31').addEventListener('click', () => {
     const targetnode = document.getElementById('js-answer3_correct_title');
     targetnode.style.display = "block";
-  });
-  document.getElementById('js_answer_31').addEventListener('click', () => {
-    const targetnode = document.getElementById('js_answer_31');
-    targetnode.style.backgroundColor = "#f6f6f6";
   });
   document.getElementById('js_answer_31').addEventListener('click', () => {
     document.getElementById('js_answer_31').setAttribute("disabled","true");
@@ -222,14 +199,11 @@
   document.getElementById('js_answer_32').addEventListener('click', () => {
   const targetnode = document.getElementById("js_answer_32");
   targetnode.style.border = "solid 5px #0071BC";
+  targetnode.style.backgroundColor = "#f6f6f6";
   });
   document.getElementById('js_answer_32').addEventListener('click', () => {
     const targetnode = document.getElementById('js-answer3_incorrect_title');
     targetnode.style.display = "block";
-  });
-  document.getElementById('js_answer_32').addEventListener('click', () => {
-    const targetnode = document.getElementById('js_answer_32');
-    targetnode.style.backgroundColor = "#f6f6f6";
   });
   document.getElementById('js_answer_32').addEventListener('click', () => {
     document.getElementById('js_answer_31').setAttribute("disabled","true");
@@ -249,14 +223,11 @@
   document.getElementById('js_answer_33').addEventListener('click', () => {
   const targetnode = document.getElementById("js_answer_33");
   targetnode.style.border = "solid 5px #0071BC";
+  targetnode.style.backgroundColor = "#f6f6f6";
   });
   document.getElementById('js_answer_33').addEventListener('click', () => {
     const targetnode = document.getElementById('js-answer3_incorrect_title');
     targetnode.style.display = "block";
-  });
-  document.getElementById('js_answer_33').addEventListener('click', () => {
-    const targetnode = document.getElementById('js_answer_33');
-    targetnode.style.backgroundColor = "#f6f6f6";
   });
   document.getElementById('js_answer_33').addEventListener('click', () => {
     document.getElementById('js_answer_31').setAttribute("disabled","true");
@@ -277,14 +248,11 @@
   document.getElementById('js_answer_41').addEventListener('click', () => {
     const targetnode = document.getElementById("js_answer_41");
     targetnode.style.border = "solid 5px #0071BC";
+    targetnode.style.backgroundColor = "#f6f6f6";
   });
   document.getElementById('js_answer_41').addEventListener('click', () => {
     const targetnode = document.getElementById('js-answer4_correct_title');
     targetnode.style.display = "block";
-  });
-  document.getElementById('js_answer_41').addEventListener('click', () => {
-    const targetnode = document.getElementById('js_answer_41');
-    targetnode.style.backgroundColor = "#f6f6f6";
   });
   document.getElementById('js_answer_41').addEventListener('click', () => {
     document.getElementById('js_answer_41').setAttribute("disabled","true");
@@ -304,14 +272,11 @@
   document.getElementById('js_answer_42').addEventListener('click', () => {
   const targetnode = document.getElementById("js_answer_42");
   targetnode.style.border = "solid 5px #0071BC";
+  targetnode.style.backgroundColor = "#f6f6f6";
   });
   document.getElementById('js_answer_42').addEventListener('click', () => {
     const targetnode = document.getElementById('js-answer4_incorrect_title');
     targetnode.style.display = "block";
-  });
-  document.getElementById('js_answer_42').addEventListener('click', () => {
-    const targetnode = document.getElementById('js_answer_42');
-    targetnode.style.backgroundColor = "#f6f6f6";
   });
   document.getElementById('js_answer_42').addEventListener('click', () => {
     document.getElementById('js_answer_41').setAttribute("disabled","true");
@@ -331,14 +296,11 @@
   document.getElementById('js_answer_43').addEventListener('click', () => {
   const targetnode = document.getElementById("js_answer_43");
   targetnode.style.border = "solid 5px #0071BC";
+  targetnode.style.backgroundColor = "#f6f6f6";
   });
   document.getElementById('js_answer_43').addEventListener('click', () => {
     const targetnode = document.getElementById('js-answer4_incorrect_title');
     targetnode.style.display = "block";
-  });
-  document.getElementById('js_answer_43').addEventListener('click', () => {
-    const targetnode = document.getElementById('js_answer_43');
-    targetnode.style.backgroundColor = "#f6f6f6";
   });
   document.getElementById('js_answer_43').addEventListener('click', () => {
     document.getElementById('js_answer_41').setAttribute("disabled","true");
@@ -359,14 +321,11 @@
   document.getElementById('js_answer_51').addEventListener('click', () => {
     const targetnode = document.getElementById("js_answer_51");
     targetnode.style.border = "solid 5px #0071BC";
+    targetnode.style.backgroundColor = "#f6f6f6";
   });
   document.getElementById('js_answer_51').addEventListener('click', () => {
     const targetnode = document.getElementById('js-answer5_correct_title');
     targetnode.style.display = "block";
-  });
-  document.getElementById('js_answer_51').addEventListener('click', () => {
-    const targetnode = document.getElementById('js_answer_51');
-    targetnode.style.backgroundColor = "#f6f6f6";
   });
   document.getElementById('js_answer_51').addEventListener('click', () => {
     document.getElementById('js_answer_51').setAttribute("disabled","true");
@@ -386,15 +345,13 @@
   document.getElementById('js_answer_52').addEventListener('click', () => {
   const targetnode = document.getElementById("js_answer_52");
   targetnode.style.border = "solid 5px #0071BC";
+  targetnode.style.backgroundColor = "#f6f6f6";
   });
   document.getElementById('js_answer_52').addEventListener('click', () => {
     const targetnode = document.getElementById('js-answer5_incorrect_title');
     targetnode.style.display = "block";
   });
   document.getElementById('js_answer_52').addEventListener('click', () => {
-    const targetnode = document.getElementById('js_answer_52');
-    targetnode.style.backgroundColor = "#f6f6f6";
-  });document.getElementById('js_answer_52').addEventListener('click', () => {
     document.getElementById('js_answer_51').setAttribute("disabled","true");
     document.getElementById('js_answer_52').setAttribute("disabled","true");
     document.getElementById('js_answer_53').setAttribute("disabled","true");
@@ -412,14 +369,11 @@
   document.getElementById('js_answer_53').addEventListener('click', () => {
   const targetnode = document.getElementById("js_answer_53");
   targetnode.style.border = "solid 5px #0071BC";
+  targetnode.style.backgroundColor = "#f6f6f6";
   });
   document.getElementById('js_answer_53').addEventListener('click', () => {
     const targetnode = document.getElementById('js-answer5_incorrect_title');
     targetnode.style.display = "block";
-  });
-  document.getElementById('js_answer_53').addEventListener('click', () => {
-    const targetnode = document.getElementById('js_answer_53');
-    targetnode.style.backgroundColor = "#f6f6f6";
   });
   document.getElementById('js_answer_53').addEventListener('click', () => {
     document.getElementById('js_answer_51').setAttribute("disabled","true");
@@ -440,14 +394,11 @@
   document.getElementById('js_answer_61').addEventListener('click', () => {
   const targetnode = document.getElementById("js_answer_61");
   targetnode.style.border = "solid 5px #0071BC";
+  targetnode.style.backgroundColor = "#f6f6f6";
   });
   document.getElementById('js_answer_61').addEventListener('click', () => {
     const targetnode = document.getElementById('js-answer6_incorrect_title');
     targetnode.style.display = "block";
-  });
-  document.getElementById('js_answer_61').addEventListener('click', () => {
-    const targetnode = document.getElementById('js_answer_61');
-    targetnode.style.backgroundColor = "#f6f6f6";
   });
   document.getElementById('js_answer_61').addEventListener('click', () => {
     document.getElementById('js_answer_61').setAttribute("disabled","true");
@@ -467,14 +418,11 @@
   document.getElementById('js_answer_62').addEventListener('click', () => {
     const targetnode = document.getElementById("js_answer_62");
     targetnode.style.border = "solid 5px #0071BC";
+    targetnode.style.backgroundColor = "#f6f6f6";
   });
   document.getElementById('js_answer_62').addEventListener('click', () => {
     const targetnode = document.getElementById('js-answer6_correct_title');
     targetnode.style.display = "block";
-  });
-  document.getElementById('js_answer_62').addEventListener('click', () => {
-    const targetnode = document.getElementById('js_answer_62');
-    targetnode.style.backgroundColor = "#f6f6f6";
   });
   document.getElementById('js_answer_62').addEventListener('click', () => {
     document.getElementById('js_answer_61').setAttribute("disabled","true");
@@ -494,14 +442,11 @@
   document.getElementById('js_answer_63').addEventListener('click', () => {
   const targetnode = document.getElementById("js_answer_63");
   targetnode.style.border = "solid 5px #0071BC";
+  targetnode.style.backgroundColor = "#f6f6f6";
   });
   document.getElementById('js_answer_63').addEventListener('click', () => {
     const targetnode = document.getElementById('js-answer6_incorrect_title');
     targetnode.style.display = "block";
-  });
-  document.getElementById('js_answer_63').addEventListener('click', () => {
-    const targetnode = document.getElementById('js_answer_63');
-    targetnode.style.backgroundColor = "#f6f6f6";
   });
   document.getElementById('js_answer_63').addEventListener('click', () => {
     document.getElementById('js_answer_61').setAttribute("disabled","true");
