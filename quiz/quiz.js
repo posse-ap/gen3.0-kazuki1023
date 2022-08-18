@@ -44,7 +44,7 @@
     document.getElementById('js_answer_11').setAttribute("disabled","true");
     document.getElementById('js_answer_12').setAttribute("disabled","true");
     document.getElementById('js_answer_13').setAttribute("disabled","true");
-  })
+  });
 // 1-2のボタン変化
   // 1-2押された時の正解表示
   let btn12 = document.querySelector('#js_answer_12');
@@ -71,7 +71,7 @@
     document.getElementById('js_answer_11').setAttribute("disabled","true");
     document.getElementById('js_answer_12').setAttribute("disabled","true");
     document.getElementById('js_answer_13').setAttribute("disabled","true");
-  })
+  });
 // 1-3のボタン変化
   let btn13 = document.querySelector('#js_answer_13');
   let title13 = document.querySelector('#js-answer1_incorrect_title');
@@ -121,7 +121,12 @@
   document.getElementById('js_answer_21').addEventListener('click', () => {
     const targetnode = document.getElementById('js_answer_21');
     targetnode.style.backgroundColor = "#f6f6f6";
-  })
+  });
+  document.getElementById('js_answer_21').addEventListener('click', () => {
+    document.getElementById('js_answer_21').setAttribute("disabled","true");
+    document.getElementById('js_answer_22').setAttribute("disabled","true");
+    document.getElementById('js_answer_23').setAttribute("disabled","true");
+  });
 
 // 2-2のボタン変化
   let btn22 = document.querySelector('#js_answer_22');
@@ -143,7 +148,12 @@
   document.getElementById('js_answer_22').addEventListener('click', () => {
     const targetnode = document.getElementById('js_answer_22');
     targetnode.style.backgroundColor = "#f6f6f6";
-  })
+  });
+  document.getElementById('js_answer_22').addEventListener('click', () => {
+    document.getElementById('js_answer_21').setAttribute("disabled","true");
+    document.getElementById('js_answer_22').setAttribute("disabled","true");
+    document.getElementById('js_answer_23').setAttribute("disabled","true");
+  });
 
 // 2-3のボタン変化
   let btn23 = document.querySelector('#js_answer_23');
@@ -165,7 +175,12 @@
   document.getElementById('js_answer_23').addEventListener('click', () => {
     const targetnode = document.getElementById('js_answer_23');
     targetnode.style.backgroundColor = "#f6f6f6";
-  })
+  });
+  document.getElementById('js_answer_23').addEventListener('click', () => {
+    document.getElementById('js_answer_21').setAttribute("disabled","true");
+    document.getElementById('js_answer_22').setAttribute("disabled","true");
+    document.getElementById('js_answer_23').setAttribute("disabled","true");
+  });
 
 // 3-1のボタン変化
   let btn31 = document.querySelector('#js_answer_31');
@@ -188,7 +203,12 @@
   document.getElementById('js_answer_31').addEventListener('click', () => {
     const targetnode = document.getElementById('js_answer_31');
     targetnode.style.backgroundColor = "#f6f6f6";
-  })
+  });
+  document.getElementById('js_answer_31').addEventListener('click', () => {
+    document.getElementById('js_answer_31').setAttribute("disabled","true");
+    document.getElementById('js_answer_32').setAttribute("disabled","true");
+    document.getElementById('js_answer_33').setAttribute("disabled","true");
+  });
 
 // 3-2のボタン変化
   let btn32 = document.querySelector('#js_answer_32');
@@ -210,7 +230,12 @@
   document.getElementById('js_answer_32').addEventListener('click', () => {
     const targetnode = document.getElementById('js_answer_32');
     targetnode.style.backgroundColor = "#f6f6f6";
-  })
+  });
+  document.getElementById('js_answer_32').addEventListener('click', () => {
+    document.getElementById('js_answer_31').setAttribute("disabled","true");
+    document.getElementById('js_answer_32').setAttribute("disabled","true");
+    document.getElementById('js_answer_33').setAttribute("disabled","true");
+  });
 
 // 3-3のボタン変化
   let btn33 = document.querySelector('#js_answer_33');
@@ -232,7 +257,12 @@
   document.getElementById('js_answer_33').addEventListener('click', () => {
     const targetnode = document.getElementById('js_answer_33');
     targetnode.style.backgroundColor = "#f6f6f6";
-  })
+  });
+  document.getElementById('js_answer_33').addEventListener('click', () => {
+    document.getElementById('js_answer_31').setAttribute("disabled","true");
+    document.getElementById('js_answer_32').setAttribute("disabled","true");
+    document.getElementById('js_answer_33').setAttribute("disabled","true");
+  });
 
 // 4-1のボタン変化
   let btn41 = document.querySelector('#js_answer_41');
@@ -255,7 +285,12 @@
   document.getElementById('js_answer_41').addEventListener('click', () => {
     const targetnode = document.getElementById('js_answer_41');
     targetnode.style.backgroundColor = "#f6f6f6";
-  })
+  });
+  document.getElementById('js_answer_41').addEventListener('click', () => {
+    document.getElementById('js_answer_41').setAttribute("disabled","true");
+    document.getElementById('js_answer_42').setAttribute("disabled","true");
+    document.getElementById('js_answer_43').setAttribute("disabled","true");
+  });
 
 // 4-2のボタン変化
   let btn42 = document.querySelector('#js_answer_42');
@@ -277,7 +312,12 @@
   document.getElementById('js_answer_42').addEventListener('click', () => {
     const targetnode = document.getElementById('js_answer_42');
     targetnode.style.backgroundColor = "#f6f6f6";
-  })
+  });
+  document.getElementById('js_answer_42').addEventListener('click', () => {
+    document.getElementById('js_answer_41').setAttribute("disabled","true");
+    document.getElementById('js_answer_42').setAttribute("disabled","true");
+    document.getElementById('js_answer_43').setAttribute("disabled","true");
+  });
 
 // 4-3のボタン変化
   let btn43 = document.querySelector('#js_answer_43');
@@ -299,7 +339,12 @@
   document.getElementById('js_answer_43').addEventListener('click', () => {
     const targetnode = document.getElementById('js_answer_43');
     targetnode.style.backgroundColor = "#f6f6f6";
-  })
+  });
+  document.getElementById('js_answer_43').addEventListener('click', () => {
+    document.getElementById('js_answer_41').setAttribute("disabled","true");
+    document.getElementById('js_answer_42').setAttribute("disabled","true");
+    document.getElementById('js_answer_43').setAttribute("disabled","true");
+  });
 
 // 5-1のボタン変化
   let btn51 = document.querySelector('#js_answer_51');
@@ -322,7 +367,12 @@
   document.getElementById('js_answer_51').addEventListener('click', () => {
     const targetnode = document.getElementById('js_answer_51');
     targetnode.style.backgroundColor = "#f6f6f6";
-  })
+  });
+  document.getElementById('js_answer_51').addEventListener('click', () => {
+    document.getElementById('js_answer_51').setAttribute("disabled","true");
+    document.getElementById('js_answer_52').setAttribute("disabled","true");
+    document.getElementById('js_answer_53').setAttribute("disabled","true");
+  });
 
 // 5-2のボタン変化
   let btn52 = document.querySelector('#js_answer_52');
@@ -344,7 +394,11 @@
   document.getElementById('js_answer_52').addEventListener('click', () => {
     const targetnode = document.getElementById('js_answer_52');
     targetnode.style.backgroundColor = "#f6f6f6";
-  })
+  });document.getElementById('js_answer_52').addEventListener('click', () => {
+    document.getElementById('js_answer_51').setAttribute("disabled","true");
+    document.getElementById('js_answer_52').setAttribute("disabled","true");
+    document.getElementById('js_answer_53').setAttribute("disabled","true");
+  });
 
 // 5-3のボタン変化
   let btn53 = document.querySelector('#js_answer_53');
@@ -366,7 +420,12 @@
   document.getElementById('js_answer_53').addEventListener('click', () => {
     const targetnode = document.getElementById('js_answer_53');
     targetnode.style.backgroundColor = "#f6f6f6";
-  })
+  });
+  document.getElementById('js_answer_53').addEventListener('click', () => {
+    document.getElementById('js_answer_51').setAttribute("disabled","true");
+    document.getElementById('js_answer_52').setAttribute("disabled","true");
+    document.getElementById('js_answer_53').setAttribute("disabled","true");
+  });
 
 // 6-1のボタン変化
   let btn61 = document.querySelector('#js_answer_61');
@@ -389,7 +448,12 @@
   document.getElementById('js_answer_61').addEventListener('click', () => {
     const targetnode = document.getElementById('js_answer_61');
     targetnode.style.backgroundColor = "#f6f6f6";
-  })
+  });
+  document.getElementById('js_answer_61').addEventListener('click', () => {
+    document.getElementById('js_answer_61').setAttribute("disabled","true");
+    document.getElementById('js_answer_62').setAttribute("disabled","true");
+    document.getElementById('js_answer_63').setAttribute("disabled","true");
+  });
 
 // 6-2のボタン変化
   let btn62 = document.querySelector('#js_answer_62');
@@ -411,7 +475,12 @@
   document.getElementById('js_answer_62').addEventListener('click', () => {
     const targetnode = document.getElementById('js_answer_62');
     targetnode.style.backgroundColor = "#f6f6f6";
-  })
+  });
+  document.getElementById('js_answer_62').addEventListener('click', () => {
+    document.getElementById('js_answer_61').setAttribute("disabled","true");
+    document.getElementById('js_answer_62').setAttribute("disabled","true");
+    document.getElementById('js_answer_63').setAttribute("disabled","true");
+  });
 
   // 6-3のボタン変化
   let btn63 = document.querySelector('#js_answer_63');
@@ -433,6 +502,11 @@
   document.getElementById('js_answer_63').addEventListener('click', () => {
     const targetnode = document.getElementById('js_answer_63');
     targetnode.style.backgroundColor = "#f6f6f6";
-  })
+  });
+  document.getElementById('js_answer_63').addEventListener('click', () => {
+    document.getElementById('js_answer_61').setAttribute("disabled","true");
+    document.getElementById('js_answer_62').setAttribute("disabled","true");
+    document.getElementById('js_answer_63').setAttribute("disabled","true");
+  });
 
 
