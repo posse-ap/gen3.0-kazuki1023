@@ -7,7 +7,9 @@
 
   // ボタン押したら、もう押せなくしたい
   // https://developer.mozilla.org/ja/docs/Web/API/HTMLSelectElement/disabled
-  
+  // https://web-camp.io/magazine/archives/99168
+  // https://arkgame.com/2022/02/12/post-304878/
+  let quizanswerbox11 = document.getElementById('#js_answer_11')
   
 //ボタン変化まとめ
 // 1-1のボタン変化
@@ -37,6 +39,12 @@
     const targetnode = document.getElementById('js_answer_11');
     targetnode.style.backgroundColor = "#f6f6f6";
   });
+  // 
+  document.getElementById('js_answer_11').addEventListener('click', () => {
+    document.getElementById('js_answer_11').setAttribute("disabled","true");
+    document.getElementById('js_answer_12').setAttribute("disabled","true");
+    document.getElementById('js_answer_13').setAttribute("disabled","true");
+  })
 // 1-2のボタン変化
   // 1-2押された時の正解表示
   let btn12 = document.querySelector('#js_answer_12');
@@ -47,12 +55,10 @@
   btn12.addEventListener('click', function(){
     box12class(box1);
   }, false);
-  
   document.getElementById('js_answer_12').addEventListener('click', () => {
     const targetnode = document.getElementById("js_answer_12");
     targetnode.style.border = "solid 5px #0071BC";
   });
-  
   document.getElementById('js_answer_12').addEventListener('click', () => {
     const targetnode = document.getElementById('js-answer1_correct_title');
     targetnode.style.display = "block";
@@ -60,8 +66,12 @@
   document.getElementById('js_answer_12').addEventListener('click', () => {
     const targetnode = document.getElementById('js_answer_12');
     targetnode.style.backgroundColor = "#f6f6f6";
+  });
+  document.getElementById('js_answer_12').addEventListener('click', () => {
+    document.getElementById('js_answer_11').setAttribute("disabled","true");
+    document.getElementById('js_answer_12').setAttribute("disabled","true");
+    document.getElementById('js_answer_13').setAttribute("disabled","true");
   })
-
 // 1-3のボタン変化
   let btn13 = document.querySelector('#js_answer_13');
   let title13 = document.querySelector('#js-answer1_incorrect_title');
@@ -83,8 +93,12 @@
   document.getElementById('js_answer_13').addEventListener('click', () => {
     const targetnode = document.getElementById('js_answer_13');
     targetnode.style.backgroundColor = "#f6f6f6";
-  })
-
+  });
+  document.getElementById('js_answer_13').addEventListener('click', () => {
+    document.getElementById('js_answer_11').setAttribute("disabled","true");
+    document.getElementById('js_answer_12').setAttribute("disabled","true");
+    document.getElementById('js_answer_13').setAttribute("disabled","true");
+  });
 // 2-1のボタン変化
   let btn21 = document.querySelector('#js_answer_21');
   let box2 = document.getElementsByClassName("js-answer2_box");
