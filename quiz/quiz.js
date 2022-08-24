@@ -12,38 +12,44 @@ const quizSet = [
     ["約28万人", "約79万人", "約183万人"],
     1,
     "img-quiz01.png",
+    ["不正解...","正解!","不正解..."],
   ],
   [
     "既存業界のビジネスと、先進的なテクノロジーを結びつけて生まれた、新しいビジネスのことをなんと言うでしょう？",
     ["INTECH", "BIZZTECH", "X-TECH"],
     2,
     "img-quiz02.png",
+    ["不正解...","不正解...","正解!"],
   ],
   [
     "IoTとは何の略でしょう？",
     ["Internet of Things", "Integrate into Technology", "Information of Tool"],
     0,
-    "img-quiz03.png"
+    "img-quiz03.png",
+    ["正解!","不正解...","不正解..."],
   ],
   [
     "イギリスのコンピューター科学者であるギャビン・ウッド氏が提唱した、ブロックチェーン技術を活用した「次世代分散型インターネット」のことをなんと言うでしょう？",
     ["Society 5.0", "CyPhy", "SDGs"],
     0,
-    "img-quiz04.png"
+    "img-quiz04.png",
+    ["正解!","不正解...","不正解..."],
   ],
   [
     "イギリスのコンピューター科学者であるギャビン・ウッド氏が提唱した、ブロックチェーン技術を活用した「次世代分散型インターネット」のことをなんと言うでしょう？",
     ["Web3.0", "NFT", "メタバース"],
     0,
     "img-quiz05.png"
+    ["正解!","不正解...","不正解..."],
   ],
   [
     "先進テクノロジー活用企業と出遅れた企業の収益性の差はどれくらいあると言われているでしょうか？",
     ["約２倍", "約５倍", "約１１倍"],
     1,
-    "img-quiz06.png"
+    "img-quiz06.png",
+    ["不正解...","正解!","不正解..."],
   ],
-];
+  ]
 const shuffleArray = (array) => {
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
@@ -90,11 +96,12 @@ for (let i = 0; i < quizSetLength; i++) {
     `<p class="question${i + 1}_answer_correct_title" id="js-answer${
       i + 1
     }_correct_title">` +
-    `正解！</p>` +
+    `${quizSet[i][4]}</p>` +
     ` <p class="question${i + 1}_answer_incorrect_title" ` +
-    `id="js-answer${i + 1}_incorrect_title">不正解...</p>` +
+    `id="js-answer${i + 1}_incorrect_title">${quizSet[i][4]}</p>` +
     `<p class="question${i + 1}_answer_correct_content" ` +
     `id="js_answer${i + 1}_title_correct_content">` +
+    // ここをif (正解が押された時){<p class="question${i + 1}_answer_correct_title" id="js-answer${i + 1 }_correct_title">` +`正解！</p>}else... ってやれば上手くいく？？？
     `<span class="question${i + 1}_answer_correct_content_label">A</span>` +
     `<span class="js-answer_text">${quizSet[i][1][index]}</span>` +
     //１問目の場合、 quizSet[i]で[日本〜]、[1]で選択肢、[index]で[選択肢の中の正解]を出した
