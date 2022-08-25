@@ -213,12 +213,12 @@ main {
   padding: 24px;
 }
 
-.js-answer1_box,
-.js-answer2_box,
-.js-answer3_box,
-.js-answer4_box,
-.js-answer5_box,
-.js-answer6_box {
+.js_answer1_box,
+.js_answer2_box,
+.js_answer3_box,
+.js_answer4_box,
+.js_answer5_box,
+.js_answer6_box {
   background-color: #fff2f5;
   border-radius: 8px;
   padding: 10px 40px 0px 40px;
@@ -281,11 +281,6 @@ main {
   font-size: 24px;
 }
 
-/* js-answer1_correct_title{
-  display: block;
-  color: red;
-  font-size: 24px;
-} */
 
 /* question2のcss */
 .question2 {
