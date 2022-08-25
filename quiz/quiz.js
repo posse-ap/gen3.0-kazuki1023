@@ -245,9 +245,9 @@ for (let i = 0; i < quizSetLength; i++) {
     `<p class="question${i + 1}_answer_correct_title" id="js_answer${
       i + 1
     }_correct_title">` +
-    `${quizSet[i][2][index]}</p>` +
+    `"正解！"</p>` +
     ` <p class="question${i + 1}_answer_incorrect_title" ` +
-    `id="js_answer${i + 1}_incorrect_title">${quizSet[i][2][indexin]}</p>` +
+    `id="js_answer${i + 1}_incorrect_title">"不正解..."</p>` +
     `<p class="question${i + 1}_answer_correct_content" ` +
     `id="js_answer${i + 1}_title_correct_content">` +
     // ここをif (正解が押された時){<p class="question${i + 1}_answer_correct_title" id="js_answer${i + 1 }_correct_title">` +`正解！</p>}else... ってやれば上手くいく？？？
