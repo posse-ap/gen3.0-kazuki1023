@@ -106,12 +106,12 @@ const allQuiz = {
     '先進テクノロジー活用企業と出遅れた企業の収益性の差はどれくらいあると言われているでしょうか？'
   ],
   img: [
-    "img-quiz1.png",
-    "img-quiz2.png",
-    "img-quiz3.png",
-    "img-quiz4.png",
-    "img-quiz5.png",
-    "img-quiz6.png"
+    "img-quiz01.png",
+    "img-quiz02.png",
+    "img-quiz03.png",
+    "img-quiz04.png",
+    "img-quiz05.png",
+    "img-quiz06.png"
   ],
   // 画像、番号変わるだけだから、ここをfor文で回せばいい感じになる気がする。まぁ、forでいい感じにいけたら、ここ消す！！
   answerName: [
@@ -145,17 +145,17 @@ const allQuiz = {
 }
 
 
-let allQuizLength = allQuiz.length;
-for (let i = 0; i < allQuizLength; i++) {
+// let allQuizLength = allQuiz.length;
+for (let i = 0; i < 6; i++) {
   let questionContent =
     `<section class="question${i + 1}">` +
     `<div class="question${i + 1}_quiz">` +
     `<h2 class="question${i + 1}_quiz_title">` +
     `<span class="question${i + 1}_quiz_title_label">Q${i + 1}</span>` +
-    `<span class="question${i + 1}_quiz_title_text">${allQuiz.questionName[i + 1]}</span>` +
+    `<span class="question${i + 1}_quiz_title_text">${allQuiz.questionName[i]}</span>` +
     `</h2>` +
     `<figure class="question${i + 1}_quiz_title_image">` +
-    `<img src="${allQuiz.img[i + 1]}" alt="" class="question${
+    `<img src="${allQuiz.img[i]}" alt="" class="question${
       i + 1
     }_quiz_title_img">` +
     ` </figure>` +
@@ -163,7 +163,7 @@ for (let i = 0; i < allQuizLength; i++) {
     `<div class="question${i + 1}_answer">` +
     `<span class="question${i + 1}_answer_label">A</span>` +
     `<ul class="question${i + 1}_answer_list">`;
-  for (let j = 0; j < quizSet[i][1].length; j++) {
+  for (let j = 0; j < allQuiz.answerName[0].length; j++) {
     questionContent +=
       `<li class="question${i + 1}_answer_list_item">` +
       `<button class="question${i + 1}_answer_list_item_button" id="js_answer_${
@@ -193,10 +193,11 @@ for (let i = 0; i < allQuizLength; i++) {
     `</div>` +
     `</div>` +
     `</section>`;
-  document
+    document
     .getElementById("js_main")
     .insertAdjacentHTML("beforeend", questionContent);
 }
+
 
 
 // let btn11 = document.querySelector("#js_answer_11");
