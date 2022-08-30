@@ -3,54 +3,67 @@
 "use strict";
 const allQuiz = [
  {
-    questionName: "日本のIT人材が2030年には最大どれくらい不足すると言われているでしょうか？",
-    img: "img-quiz01.png",
-    answerName: [
-      "約28万人","約79万人","約183万人"
-    ],
-    answerNote: "経済産業省 2019年3月 - IT 人材需給に関する調査",
+   id: 1,
+   questionName: "日本のIT人材が2030年には最大どれくらい不足すると言われているでしょうか？",
+   img: "img-quiz01.png",
+   answerName: [
+     "約28万人","約79万人","約183万人"
+   ],
+   answerNote: "経済産業省 2019年3月 - IT 人材需給に関する調査",
+   correctNumber: 1,
  },
  {
-  questionName: "既存業界のビジネスと、先進的なテクノロジーを結びつけて生まれた、新しいビジネスのことをなんと言うでしょう？",
-  img: "img-quiz02.png",
-  answerName: [
-    "INTECH","BIZZECH","X-TECH"
-  ],
-  answerNote: "",
+   id: 2,
+   questionName: "既存業界のビジネスと、先進的なテクノロジーを結びつけて生まれた、新しいビジネスのことをなんと言うでしょう？",
+   img: "img-quiz02.png",
+   answerName: [
+     "INTECH","BIZZECH","X-TECH"
+   ],
+   answerNote: "",
+   correctNumber: 0,
  },
  {
-  questionName: "IoTとは何の略でしょう？",
-  img: "img-quiz03.png",
-  answerName: [
-    "Internet of Things","Integrate into Technology","Information on Tool"
-  ],
-  answerNote: "",
+   id: 3,
+   questionName: "IoTとは何の略でしょう？",
+   img: "img-quiz03.png",
+   answerName: [
+     "Internet of Things","Integrate into Technology","Information on Tool"
+   ],
+   answerNote: "",
+   correctNumber: 0,
  },
  {
-  questionName: "イギリスのコンピューター科学者であるギャビン・ウッド氏が提唱した、ブロックチェーン技術を活用した「次世代分散型インターネット」のことをなんと言うでしょう？",
-  img: "img-quiz04.png",
-  answerName: [
-    "Society5.0","CyPhy","SDGs"
-  ],
-  answerNote: "Society5.0 - 科学技術政策 - 内閣府",
+   id: 4,
+   questionName: "イギリスのコンピューター科学者であるギャビン・ウッド氏が提唱した、ブロックチェーン技術を活用した「次世代分散型インターネット」のことをなんと言うでしょう？",
+   img: "img-quiz04.png",
+   answerName: [
+     "Society5.0","CyPhy","SDGs"
+   ],
+   answerNote: "Society5.0 - 科学技術政策 - 内閣府",
+   correctNumber: 0,
  },
  {
-  questionName: "イギリスのコンピューター科学者であるギャビン・ウッド氏が提唱した、ブロックチェーン技術を活用した「次世代分散型インターネット」のことをなんと言うでしょう？",
-  img: "img-quiz05.png",
-  answerName: [
-    "Web3.0","NFT","メタバース"
-  ],
-  answerNote: "",
+   id: 5,
+   questionName: "イギリスのコンピューター科学者であるギャビン・ウッド氏が提唱した、ブロックチェーン技術を活用した「次世代分散型インターネット」のことをなんと言うでしょう？",
+   img: "img-quiz05.png",
+   answerName: [
+     "Web3.0","NFT","メタバース"
+   ],
+   answerNote: "",
+   correctNumber: 0,
  },
  {
-  questionName: "先進テクノロジー活用企業と出遅れた企業の収益性の差はどれくらいあると言われているでしょうか？",
-  img: "img-quiz06.png",
-  answerName: [
-    "約２倍","約５倍","約１１倍"
-  ],
-  answerNote: "Accenture Technology Vision 2021",
+   id: 6,
+   questionName: "先進テクノロジー活用企業と出遅れた企業の収益性の差はどれくらいあると言われているでしょうか？",
+   img: "img-quiz06.png",
+   answerName: [
+     "約２倍","約５倍","約１１倍"
+   ],
+   answerNote: "Accenture Technology Vision 2021",
+   correctNumber: 1,
  }
 ]
+
 const shuffleArray = (array) => {
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
@@ -76,6 +89,7 @@ shuffleArray(allQuiz);
 // ↑ちなみにこれはobjectのシャッフル
 
 for (let i = 0; i < 6; i++) {
+  let index = allQuiz[i].correctNumber;
   let questionContent =
     `<section class="question${i + 1}">` +
     `<div class="question${i + 1}_quiz">` +
@@ -116,7 +130,7 @@ for (let i = 0; i < 6; i++) {
     `id="js_answer${i + 1}_title_correct_content">` +
     // ここをif (正解が押された時){<p class="question${i + 1}_answer_correct_title" id="js_answer${i + 1 }_correct_title">` +`正解！</p>}else... ってやれば上手くいく？？？
     `<span class="question${i + 1}_answer_correct_content_label">A</span>` +
-    `<span class="js_answer_text">${allQuiz[i].answerName[1]}</span>` +
+    `<span class="js_answer_text">${allQuiz[i].answerName[index]}</span>` +
     //１問目の場合、 quizSet[i]で[日本〜]、[1]で選択肢、[index]で[選択肢の中の正解]を出した
     `</p>` +
     `</div>` +
@@ -130,97 +144,97 @@ for (let i = 0; i < 6; i++) {
 
 
 
-// let btn11 = document.querySelector("#js_answer_11");
-// // クリックする要素を取得
-// let box1 = document.getElementsByClassName("js_answer1_box");
-// // クラスを追加する要素を取得
-// let title11 = document.querySelector("#js_answer1_incorrect_title");
-// // クラスを追加する要素を取得
-// let box11class = function (el) {
-//   el[0].classList.toggle("question1_answer_incorrect");
-// };
-// // クラスを追加・削除する動きを定義
-// btn11.addEventListener(
-//   "click",
-//   function () {
-//     box11class(box1);
-//   },
-//   false
-// );
-// // ”btn”がクリックされたら”box”に対してbox11classを実行
-// document.getElementById("js_answer_11").addEventListener("click", () => {
-//   const targetnode = document.getElementById("js_answer_11");
-//   targetnode.style.border = "solid 5px #0071BC";
-//   targetnode.style.backgroundColor = "#f6f6f6";
-// });
-// // ↑解答の外枠の色を変えてる
-// document.getElementById("js_answer_11").addEventListener("click", () => {
-//   const targetnode = document.getElementById("js_answer1_incorrect_title");
-//   targetnode.style.display = "block";
-// });
-// // 
-// document.getElementById("js_answer_11").addEventListener("click", () => {
-//   document.getElementById("js_answer_11").setAttribute("disabled", "true");
-//   document.getElementById("js_answer_12").setAttribute("disabled", "true");
-//   document.getElementById("js_answer_13").setAttribute("disabled", "true");
-// });
-// // ここは変えなくても良い
-// // 1-2のボタン変化
-// // 1-2押された時の正解表示
-// let btn12 = document.querySelector("#js_answer_12");
-// let title12 = document.querySelector("#js_answer1_correct_title");
-// let box12class = function (el) {
-//   el[0].classList.toggle("question1_answer_correct");
-// };
-// btn12.addEventListener(
-//   "click",
-//   function () {
-//     box12class(box1);
-//   },
-//   false
-// );
-// document.getElementById("js_answer_12").addEventListener("click", () => {
-//   const targetnode = document.getElementById("js_answer_12");
-//   targetnode.style.border = "solid 5px #0071BC";
-//   targetnode.style.backgroundColor = "#f6f6f6";
-// });
-// document.getElementById("js_answer_12").addEventListener("click", () => {
-//   const targetnode = document.getElementById("js_answer1_correct_title");
-//   targetnode.style.display = "block";
-// });
-// document.getElementById("js_answer_12").addEventListener("click", () => {
-//   document.getElementById("js_answer_11").setAttribute("disabled", "true");
-//   document.getElementById("js_answer_12").setAttribute("disabled", "true");
-//   document.getElementById("js_answer_13").setAttribute("disabled", "true");
-// });
-// // 1-3のボタン変化
-// let btn13 = document.querySelector("#js_answer_13");
-// let title13 = document.querySelector("#js_answer1_incorrect_title");
-// let box13class = function (el) {
-//   el[0].classList.toggle("question1_answer_incorrect");
-// };
-// btn13.addEventListener(
-//   "click",
-//   function () {
-//     box13class(box1);
-//   },
-//   false
-// );
-// document.getElementById("js_answer_13").addEventListener("click", () => {
-//   const targetnode = document.getElementById("js_answer_13");
-//   targetnode.style.border = "solid 5px #0071BC";
-//   targetnode.style.backgroundColor = "#f6f6f6";
-// });
+let btn11 = document.querySelector("#js_answer_11");
+// クリックする要素を取得
+let box1 = document.getElementsByClassName("js_answer1_box");
+// クラスを追加する要素を取得
+let title11 = document.querySelector("#js_answer1_incorrect_title");
+// クラスを追加する要素を取得
+let box11class = function (el) {
+  el[0].classList.toggle("question1_answer_incorrect");
+};
+// クラスを追加・削除する動きを定義
+btn11.addEventListener(
+  "click",
+  function () {
+    box11class(box1);
+  },
+  false
+);
+// ”btn”がクリックされたら”box”に対してbox11classを実行
+document.getElementById("js_answer_11").addEventListener("click", () => {
+  const targetnode = document.getElementById("js_answer_11");
+  targetnode.style.border = "solid 5px #0071BC";
+  targetnode.style.backgroundColor = "#f6f6f6";
+});
+// ↑解答の外枠の色を変えてる
+document.getElementById("js_answer_11").addEventListener("click", () => {
+  const targetnode = document.getElementById("js_answer1_incorrect_title");
+  targetnode.style.display = "block";
+});
+// 
+document.getElementById("js_answer_11").addEventListener("click", () => {
+  document.getElementById("js_answer_11").setAttribute("disabled", "true");
+  document.getElementById("js_answer_12").setAttribute("disabled", "true");
+  document.getElementById("js_answer_13").setAttribute("disabled", "true");
+});
+// ここは変えなくても良い
+// 1-2のボタン変化
+// 1-2押された時の正解表示
+let btn12 = document.querySelector("#js_answer_12");
+let title12 = document.querySelector("#js_answer1_correct_title");
+let box12class = function (el) {
+  el[0].classList.toggle("question1_answer_correct");
+};
+btn12.addEventListener(
+  "click",
+  function () {
+    box12class(box1);
+  },
+  false
+);
+document.getElementById("js_answer_12").addEventListener("click", () => {
+  const targetnode = document.getElementById("js_answer_12");
+  targetnode.style.border = "solid 5px #0071BC";
+  targetnode.style.backgroundColor = "#f6f6f6";
+});
+document.getElementById("js_answer_12").addEventListener("click", () => {
+  const targetnode = document.getElementById("js_answer1_correct_title");
+  targetnode.style.display = "block";
+});
+document.getElementById("js_answer_12").addEventListener("click", () => {
+  document.getElementById("js_answer_11").setAttribute("disabled", "true");
+  document.getElementById("js_answer_12").setAttribute("disabled", "true");
+  document.getElementById("js_answer_13").setAttribute("disabled", "true");
+});
+// 1-3のボタン変化
+let btn13 = document.querySelector("#js_answer_13");
+let title13 = document.querySelector("#js_answer1_incorrect_title");
+let box13class = function (el) {
+  el[0].classList.toggle("question1_answer_incorrect");
+};
+btn13.addEventListener(
+  "click",
+  function () {
+    box13class(box1);
+  },
+  false
+);
+document.getElementById("js_answer_13").addEventListener("click", () => {
+  const targetnode = document.getElementById("js_answer_13");
+  targetnode.style.border = "solid 5px #0071BC";
+  targetnode.style.backgroundColor = "#f6f6f6";
+});
 
-// document.getElementById("js_answer_13").addEventListener("click", () => {
-//   const targetnode = document.getElementById("js_answer1_incorrect_title");
-//   targetnode.style.display = "block";
-// });
-// document.getElementById("js_answer_13").addEventListener("click", () => {
-//   document.getElementById("js_answer_11").setAttribute("disabled", "true");
-//   document.getElementById("js_answer_12").setAttribute("disabled", "true");
-//   document.getElementById("js_answer_13").setAttribute("disabled", "true");
-// });
+document.getElementById("js_answer_13").addEventListener("click", () => {
+  const targetnode = document.getElementById("js_answer1_incorrect_title");
+  targetnode.style.display = "block";
+});
+document.getElementById("js_answer_13").addEventListener("click", () => {
+  document.getElementById("js_answer_11").setAttribute("disabled", "true");
+  document.getElementById("js_answer_12").setAttribute("disabled", "true");
+  document.getElementById("js_answer_13").setAttribute("disabled", "true");
+});
 
 
 
