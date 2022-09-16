@@ -2,66 +2,66 @@
 
 "use strict";
 const allQuiz = [
- {
-   id: 1,
-   questionName: "日本のIT人材が2030年には最大どれくらい不足すると言われているでしょうか？",
-   img: "img-quiz01.png",
-   answerName: [
-     "約28万人","約79万人","約183万人"
-   ],
-   answerNote: "経済産業省 2019年3月 - IT 人材需給に関する調査",
-   correctNumber: 1,
- },
- {
-   id: 2,
-   questionName: "既存業界のビジネスと、先進的なテクノロジーを結びつけて生まれた、新しいビジネスのことをなんと言うでしょう？",
-   img: "img-quiz02.png",
-   answerName: [
-     "INTECH","BIZZECH","X-TECH"
-   ],
-   answerNote: "",
-   correctNumber: 0,
- },
- {
-   id: 3,
-   questionName: "IoTとは何の略でしょう？",
-   img: "img-quiz03.png",
-   answerName: [
-     "Internet of Things","Integrate into Technology","Information on Tool"
-   ],
-   answerNote: "",
-   correctNumber: 0,
- },
- {
-   id: 4,
-   questionName: "イギリスのコンピューター科学者であるギャビン・ウッド氏が提唱した、ブロックチェーン技術を活用した「次世代分散型インターネット」のことをなんと言うでしょう？",
-   img: "img-quiz04.png",
-   answerName: [
-     "Society5.0","CyPhy","SDGs"
-   ],
-   answerNote: "Society5.0 - 科学技術政策 - 内閣府",
-   correctNumber: 0,
- },
- {
-   id: 5,
-   questionName: "イギリスのコンピューター科学者であるギャビン・ウッド氏が提唱した、ブロックチェーン技術を活用した「次世代分散型インターネット」のことをなんと言うでしょう？",
-   img: "img-quiz05.png",
-   answerName: [
-     "Web3.0","NFT","メタバース"
-   ],
-   answerNote: "",
-   correctNumber: 0,
- },
- {
-   id: 6,
-   questionName: "先進テクノロジー活用企業と出遅れた企業の収益性の差はどれくらいあると言われているでしょうか？",
-   img: "img-quiz06.png",
-   answerName: [
-     "約２倍","約５倍","約１１倍"
-   ],
-   answerNote: "Accenture Technology Vision 2021",
-   correctNumber: 1,
- }
+  {
+    id: 1,
+    questionName: "日本のIT人材が2030年には最大どれくらい不足すると言われているでしょうか？",
+    img: "img-quiz01.png",
+    answerName: [
+      "約28万人","約79万人","約183万人"
+    ],
+    answerNote: "経済産業省 2019年3月 - IT 人材需給に関する調査",
+    correctNumber: 1,
+  },
+  {
+    id: 2,
+    questionName: "既存業界のビジネスと、先進的なテクノロジーを結びつけて生まれた、新しいビジネスのことをなんと言うでしょう？",
+    img: "img-quiz02.png",
+    answerName: [
+      "INTECH","BIZZECH","X-TECH"
+    ],
+    answerNote: "",
+    correctNumber: 0,
+  },
+  {
+    id: 3,
+    questionName: "IoTとは何の略でしょう？",
+    img: "img-quiz03.png",
+    answerName: [
+      "Internet of Things","Integrate into Technology","Information on Tool"
+    ],
+    answerNote: "",
+    correctNumber: 0,
+  },
+  {
+    id: 4,
+    questionName: "イギリスのコンピューター科学者であるギャビン・ウッド氏が提唱した、ブロックチェーン技術を活用した「次世代分散型インター ネット」のことをなんと言うでしょう？",
+    img: "img-quiz04.png",
+    answerName: [
+      "Society5.0","CyPhy","SDGs"
+    ],
+    answerNote: "Society5.0 - 科学技術政策 - 内閣府",
+    correctNumber: 0,
+  },
+  {
+    id: 5,
+    questionName: "イギリスのコンピューター科学者であるギャビン・ウッド氏が提唱した、ブロックチェーン技術を活用した「次世代分散型インター ネット」のことをなんと言うでしょう？",
+    img: "img-quiz05.png",
+    answerName: [
+      "Web3.0","NFT","メタバース"
+    ],
+    answerNote: "",
+    correctNumber: 0,
+  },
+  {
+    id: 6,
+    questionName: "先進テクノロジー活用企業と出遅れた企業の収益性の差はどれくらいあると言われているでしょうか？",
+    img: "img-quiz06.png",
+    answerName: [
+      "約２倍","約５倍","約１１倍"
+    ],
+    answerNote: "Accenture Technology Vision 2021",
+    correctNumber: 1,
+  }
 ]
 
 const shuffleArray = (array) => {
@@ -108,7 +108,7 @@ for (let i = 0; i < 6; i++) {
     `<ul class="question${i + 1}_answer_list">`;
   for (let j = 0; j < allQuiz[i].answerName.length; j++) {
     questionContent +=
-      `<li class="question${i + 1}_answer_list_item">` +
+      `<li class="question${allQuiz[i].id}_answer_list_item" id=${j}>` +
       `<button class="question${i + 1}_answer_list_item_button" id="js_answer_${
         i + 1
       }${j + 1}">${allQuiz[i].answerName[j]}` +
@@ -169,9 +169,10 @@ document.getElementById("js_answer_11").addEventListener("click", () => {
 });
 // ↑解答の外枠の色を変えてる
 document.getElementById("js_answer_11").addEventListener("click", () => {
-  const targetnode = document.getElementById("js_answer1_incorrect_title");
+  if(allQuiz[0].id===allQuiz[0].correctNumber){
+  const targetnode = document.getElementById("#js_answer1_incorrect_title");
   targetnode.style.display = "block";
-});
+}});
 // 
 document.getElementById("js_answer_11").addEventListener("click", () => {
   document.getElementById("js_answer_11").setAttribute("disabled", "true");
@@ -179,6 +180,7 @@ document.getElementById("js_answer_11").addEventListener("click", () => {
   document.getElementById("js_answer_13").setAttribute("disabled", "true");
 });
 // ここは変えなくても良い
+
 // 1-2のボタン変化
 // 1-2押された時の正解表示
 let btn12 = document.querySelector("#js_answer_12");
@@ -207,6 +209,7 @@ document.getElementById("js_answer_12").addEventListener("click", () => {
   document.getElementById("js_answer_12").setAttribute("disabled", "true");
   document.getElementById("js_answer_13").setAttribute("disabled", "true");
 });
+
 // 1-3のボタン変化
 let btn13 = document.querySelector("#js_answer_13");
 let title13 = document.querySelector("#js_answer1_incorrect_title");
@@ -235,6 +238,7 @@ document.getElementById("js_answer_13").addEventListener("click", () => {
   document.getElementById("js_answer_12").setAttribute("disabled", "true");
   document.getElementById("js_answer_13").setAttribute("disabled", "true");
 });
+
 
 
 
