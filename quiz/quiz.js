@@ -180,7 +180,6 @@ document.getElementById("js_answer_11").addEventListener("click", () => {
   document.getElementById("js_answer_13").setAttribute("disabled", "true");
 });
 // ここは変えなくても良い
-
 // 1-2のボタン変化
 // 1-2押された時の正解表示
 let btn12 = document.querySelector("#js_answer_12");
@@ -209,7 +208,6 @@ document.getElementById("js_answer_12").addEventListener("click", () => {
   document.getElementById("js_answer_12").setAttribute("disabled", "true");
   document.getElementById("js_answer_13").setAttribute("disabled", "true");
 });
-
 // 1-3のボタン変化
 let btn13 = document.querySelector("#js_answer_13");
 let title13 = document.querySelector("#js_answer1_incorrect_title");
