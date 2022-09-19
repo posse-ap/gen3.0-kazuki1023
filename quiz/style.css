@@ -33,7 +33,7 @@ button {
   padding: 0;
   vertical-align: middle;
 }
-.burger_button {
+#burger_button {
   display: block;
   width: 39px;
   height: 39px;
@@ -63,24 +63,64 @@ button {
   bottom: 10px;
 }
 
-.burger_button.close .bar_top {
+#burger_button.close .bar_top {
   transform: translate(-50%,10px) rotate(45deg);
   transition: transform .3s;
 }
-.burger_button.close .bar_middle {
+#burger_button.close .bar_middle {
   opacity: 0;
   transition: opacity .3s;
 }
-.burger_button.close .bar_bottom {
+#burger_button.close .bar_bottom {
   transform: translate(-50%,-8px) rotate(-45deg);
   transition: transform .3s;
 }
-.l-header_nav {
-  display: flex;
-  margin-left: auto;
-  align-content: center;
 
+  /* 以下、ハンバーガーメニュー */
+  #nav-wrapper{      
+    /* visibility: hidden; */     
+    /* opacity: 0; */ 
+    width: 100vw;      
+    height: 100vh;      
+    position: fixed;      
+    top: 0;      
+    left: 0;
+    transition: all .5s;       
+    z-index: 2;     
+    }  
+
+  .l-header_nav{        
+    width: 100%;        
+    height: 100%;        
+    background-color:#1B1310;        
+    z-index: 2;    
+    display: flex;
+    margin-left: auto;
+    align-content: center;
+  } 
+
+  .l-header_nav_url,
+  .l-header_nav_sns {        
+    display: block;        
+    position: absolute;        
+    top: 50%;        
+    left: 50%;        
+    transform: translate(-50%,-50%);        
+    text-align: center;      
+  } 
+
+  .l-header_nav_url_list_item,
+  .l-header_nav_sns_list {        
+    margin-right: 0;        
+    margin-bottom: 40px;      
+  }
+  
+  /* メニューオープン時 */
+.nav-wrapper.fade {
+	visibility: visible;
+	opacity: 1;
 }
+
 
 .l-header_nav_url_list {
   display: flex;
@@ -904,7 +944,7 @@ main {
 }
 /* レスポンシブデザイン 768px以上の時 */
 @media (min-width: 768px) {
-  .burger_button {
+  #burger_button {
     display: none;
   }
   .l-footer_line {
@@ -932,7 +972,7 @@ main {
     height: 56px;
   }
   .l-header_nav {
-    /* display: none; */
+    display: none;
     width: 0;
   }
   /* mainのtop */
