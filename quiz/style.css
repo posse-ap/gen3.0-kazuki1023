@@ -11,13 +11,70 @@
   padding: 15px 24px;
   background-color: white;
   height: 60px;
+  position: relative;
 }
 
 .l-header_img {
   vertical-align: middle;
   margin-top: 10px;
 }
+button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  margin: 0;
+  outline: none;
+  padding: 0;
+  vertical-align: middle;
+}
+.burger_button {
+  display: block;
+  width: 39px;
+  height: 39px;
+  position: absolute;
+  top: 25px;
+  right: 30px;
+  z-index: 3;
+  border:none;
+}
+.bar {
+  width: 20px;
+  height: 1px;
+  display: block;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: black;
+}
+.bar_top {
+  top: 10px;
+}
+.bar_middle {
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.bar_bottom {
+  bottom: 10px;
+}
 
+.burger_button.close .bar_top {
+  transform: translate(-50%,10px) rotate(45deg);
+  transition: transform .3s;
+}
+.burger_button.close .bar_middle {
+  opacity: 0;
+  transition: opacity .3s;
+}
+.burger_button.close .bar_bottom {
+  transform: translate(-50%,-8px) rotate(-45deg);
+  transition: transform .3s;
+}
 .l-header_nav {
   display: flex;
   margin-left: auto;
@@ -847,6 +904,9 @@ main {
 }
 /* レスポンシブデザイン 768px以上の時 */
 @media (min-width: 768px) {
+  .burger_button {
+    display: none;
+  }
   .l-footer_line {
     position: fixed;
     bottom: 30px;
@@ -872,7 +932,7 @@ main {
     height: 56px;
   }
   .l-header_nav {
-    display: none;
+    /* display: none; */
     width: 0;
   }
   /* mainのtop */
