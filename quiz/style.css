@@ -733,12 +733,10 @@ main {
   background: radial-gradient(#fff 60%, transparent 60%);
 }
 .l-line_main_info_top_title {
-  font-size: 36px;
   color: white;
   letter-spacing: 0.1em;
 }
 .l-line_main_info_main {
-  text-align: center;
   color: white;
 }
 .l-line_main_info_footer {
@@ -766,13 +764,7 @@ main {
   transform: translate(0, -50%);
 }
 /* footerのcss */
-.l-footer_line {
-  position: fixed;
-  bottom: 30px;
-  right: 20px;
-  height: 80px;
-  width: 280px;
-}
+
 .l-footer_line_link {
   align-items: center;
   background-color: #5fdf5b;
@@ -804,7 +796,6 @@ main {
 }
 .l-footer_main {
   border: solid 1px #eee;
-  height: 300px;
 }
 
 .l-footer_main_info {
@@ -854,9 +845,28 @@ main {
   margin-top: 30px;
   margin-bottom: 30px;
 }
-
-/* レスポンシブデザイン */
-@media (max-width: 768px) {
+/* レスポンシブデザイン 768px以上の時 */
+@media (min-width: 768px) {
+  .l-footer_line {
+    position: fixed;
+    bottom: 30px;
+    right: 20px;
+    height: 80px;
+    width: 280px;
+  }
+  .l-footer_main {
+    height: 300px;
+  }
+  .l-line_main_info_top_title {
+    font-size: 36px;
+  }
+  .l-line_main_info_main {
+    text-align: center;
+    line-height: 1.8;
+  }
+}
+/* レスポンシブデザイン 767px以下の時*/
+@media (max-width: 767px) {
   /* header */
   .l-header {
     height: 56px;
@@ -935,8 +945,45 @@ main {
     display: block;
     margin: 10px auto;
   }
+  .l-line_main_info_main {
+    line-height: 1.6;
+  }
+
   .l-line_main_info_top_title {
     text-align: center;
     margin: 0px;
+  }
+  /* footer */ 
+  .l-footer_inner {
+    padding: 30px ;
+  }
+  .l-footer_main_info_img_link {
+    margin-top: 30px;
+  }
+
+  /* footerのline */
+  .l-footer_line {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+  }
+  .l-footer_line_link {
+    gap: 8px;
+    border-radius: 0;
+    justify-content: center;
+    padding: 0 0;
+  }
+  .l-footer_line_link_info {
+    margin-left: 0;
+  }
+  .l-footer_line_link_info br {
+    display: none;
+  }
+  .l-footer_line_link_info_posse {
+    display: none;
+  }
+  .l-footer_line_link_icon_link {
+    margin-left: 0;
   }
 };
