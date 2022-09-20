@@ -14,47 +14,54 @@
         <div class="l-header_img">
           <img src="logo.svg" alt="posse" class="l-header_img_logo" />
         </div>
-        <div class="l-header_nav">
-          <nav class="l-header_nav_url">
-            <ul class="l-header_nav_url_list">
-              <li class="l-header_nav_url_list_item">
-                トップページ<a
-                  href="https://posse-ap.github.io/sample-ph1-website/"
-                ></a>
+        <button id="burger_button">
+          <span class="bar bar_top"></span>
+          <span class="bar bar_middle"></span>
+          <span class="bar bar_bottom"></span>
+        </button>
+        <div id="nav-wrapper">
+          <div class="l-header_nav">
+            <nav class="l-header_nav_url">
+              <ul class="l-header_nav_url_list">
+                <li class="l-header_nav_url_list_item">
+                  トップページ<a
+                    href="https://posse-ap.github.io/sample-ph1-website/"
+                  ></a>
+                </li>
+                <li class="l-header_nav_url_list_item">クイズ<a href=""></a></li>
+              </ul>
+            </nav>
+            <ul class="l-header_nav_sns">
+              <li class="l-header_nav_sns_list">
+                <a
+                  href="https://twitter.com/posse_program"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="l-header_nav_sns_list_link"
+                  aria-label="Twitter"
+                >
+                  <img
+                    src="icon-twitter.svg"
+                    class="l-header_nav_sns_list_icon"
+                  />
+                </a>
               </li>
-              <li class="l-header_nav_url_list_item">クイズ<a href=""></a></li>
+              <li class="l-header_nav_sns_list">
+                <a
+                  href="https://www.instagram.com/posse_programming/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="l-header_nav_sns_list_link"
+                  aria-label="instagram"
+                >
+                  <img
+                    src="icon-instagram.svg"
+                    class="l-header_nav_sns_list_icon"
+                  />
+                </a>
+              </li>
             </ul>
-          </nav>
-          <ul class="l-header_nav_sns">
-            <li class="l-header_nav_sns_list">
-              <a
-                href="https://twitter.com/posse_program"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="l-header_nav_sns_list_link"
-                aria-label="Twitter"
-              >
-                <img
-                  src="icon-twitter.svg"
-                  class="l-header_nav_sns_list_icon"
-                />
-              </a>
-            </li>
-            <li class="l-header_nav_sns_list">
-              <a
-                href="https://www.instagram.com/posse_programming/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="l-header_nav_sns_list_link"
-                aria-label="instagram"
-              >
-                <img
-                  src="icon-instagram.svg"
-                  class="l-header_nav_sns_list_icon"
-                />
-              </a>
-            </li>
-          </ul>
+          </div>
         </div>
       </div>
     </header>
@@ -68,7 +75,7 @@
         </div>
       </section>
       <div class="main" id="js_main">
-        
+
       </div>
     </main>
     <section class="l-line">
@@ -119,7 +126,7 @@
               />
             </i>
             <p class="l-footer_line_link_info">
-              POSSE公式LINEで<br />最新情報をGET!
+              <span class="l-footer_line_link_info_posse">POSSE</span>公式LINEで<br />最新情報をGET!
             </p>
             <i class="l-footer_line_link_icon_link">
               <img
