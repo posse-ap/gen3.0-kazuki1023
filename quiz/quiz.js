@@ -243,8 +243,8 @@ const BurgerBtn = document.getElementById("burger_button");
 const Wrapper = document.getElementById("nav-wrapper");
 
 BurgerBtn.addEventListener("click", () => {
-  BurgerBtn.classList.value.toggle("class");
-  Wrapper.classList.toggle("fade");
+  BurgerBtn.classList.toggle('close');
+  Wrapper.classList.toggle('fade');
 })
 
 
