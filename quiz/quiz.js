@@ -238,5 +238,14 @@ document.getElementById("js_answer_13").addEventListener("click", () => {
 });
 
 
+// ハンバーガーメニューのjs
+const BurgerBtn = document.getElementById("burger_button");
+const Wrapper = document.getElementById("nav-wrapper");
+
+BurgerBtn.addEventListener("click", () => {
+  BurgerBtn.classList.toggle('close');
+  Wrapper.classList.toggle('fade');
+})
+
 
 
