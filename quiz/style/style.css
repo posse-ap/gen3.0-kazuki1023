@@ -1,4 +1,4 @@
-/*! destyle.css v3.0.2 | MIT License | https://github.com/nicolas-cusan/destyle.css */
+
 *,
 ::before,
 ::after {
@@ -677,7 +677,7 @@ body {
 }
 
 .p-quiz-hero {
-  background: url(../img/quiz/sp/bg-hero.jpg) center center/cover;
+  background: url(../img/bg-hero.jpg) center center/cover;
 }
 
 .p-quiz-container {

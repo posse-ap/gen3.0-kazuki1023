@@ -19,30 +19,30 @@ const Quiz = [
   {
     id: 3,
     question: "IoTとは何の略でしょう？",
-    choices :["Internet of Things", "Integrate into Technology", "Information of Tool"],
+    choices :["Internet of Thing", "Integrate into Technology", "Information of Tool"],
     correctchoice :0,
     note :"",
   },
   {
     id: 4,
-    question: "IoTとは何の略でしょう？",
-    choices :["Internet of Things", "Integrate into Technology", "Information of Tool"],
+    question: "イギリスのコンピューター科学者であるギャビン・ウッド氏が提唱した、ブロックチェーン技術を活用した「次世代分散型インターネット」のことをなんと言うでしょう？",
+    choices :["Society 5.0", "CyPhy", "SDGs"],
     correctchoice :0,
-    note :"",
+    note :"Society5.0 - 科学技術政策 - 内閣府",
   },
   {
     id: 5,
-    question: "IoTとは何の略でしょう？",
-    choices :["Internet of Things", "Integrate into Technology", "Information of Tool"],
+    question: "イギリスのコンピューター科学者であるギャビン・ウッド氏が提唱した、ブロックチェーン技術を活用した「次世代分散型インターネット」のことをなんと言うでしょう？",
+    choices :["Web3.0", "NFT", "メタバース"],
     correctchoice :0,
     note :"",
   },
   {
     id: 6,
-    question: "IoTとは何の略でしょう？",
-    choices :["Internet of Things", "Integrate into Technology", "Information of Tool"],
+    question: "先進テクノロジー活用企業と出遅れた企業の収益性の差はどれくらいあると言われているでしょうか？",
+    choices :["約2倍", "約5倍", "約11倍"],
     correctchoice :0,
-    note :"",
+    note :"Accenture Technology Vision 2021",
   },
 ]
 
@@ -99,52 +99,32 @@ const shufflearray = array => {
 const quizArray= shufflearray(Quiz);
 
 
-/**
- * @type {string}
- * @description 生成したクイズのHTMLを #js-quizContainer に挿入
- */
 
 quizContainer.innerHTML = quizArray.map((quizItem, index) => {
   return createQuizHtml(quizItem, index)
 }).join('')
 
-/**
- * @type {NodeListOf<Element>}
- * @description すべての問題を取得
- */
+
 const allQuiz  = document.querySelectorAll('.js-quiz');
 
-/**
- * @description buttonタグにdisabledを付与
- * @param answers {NodeListOf<Element>}
- */
+
 const setDisabled = answers => {
   answers.forEach(answer => {
     answer.disabled = true;
   })
 }
 
-/**
- * @description trueかfalseで出力する文字列を出し分ける
- * @param target {Element}
- * @param isCorrect {boolean}
- */
+
 const setTitle = (target, isCorrect) => {
   target.innerText = isCorrect ? '正解！' : '不正解...';
 }
 
-/**
- * @description trueかfalseでクラス名を付け分ける
- * @param target {Element}
- * @param isCorrect {boolean}
- */
+
 const setClassName = (target, isCorrect) => {
   target.classList.add(isCorrect ? 'is-correct' : 'is-incorrect');
 }
 
-/**
- * 各問題の中での処理
- */
+
 allQuiz.forEach(quiz => {
   const answers = quiz.querySelectorAll('.js-answer');
   const selectedQuiz = Number(quiz.getAttribute('data-quiz'));
@@ -161,12 +141,14 @@ allQuiz.forEach(quiz => {
       setDisabled(answers);
 
       // 正解ならtrue, 不正解ならfalseをcheckCorrectに格納
-      const correctNumber = quizArray[selectedQuiz].correctNumber
+      const correctNumber = quizArray[selectedQuiz].correctchoice
       const isCorrect = correctNumber === selectedAnswerNumber;
+      
 
       // 回答欄にテキストやclass名を付与
-      answerText.innerText = quizArray[selectedQuiz].answers[correctchoice];
-      console.log(quizArray[selectedQuiz].answers)
+      // answerText.innerText = quizArray[selectedQuiz].answers[correctNumber];
+      answerText.innerText = quizArray[selectedQuiz].answers;
+      
       setTitle(answerTitle, isCorrect);
       setClassName(answerBox, isCorrect);
     })
