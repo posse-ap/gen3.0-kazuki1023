@@ -1006,7 +1006,8 @@ body {
     margin-top: 42px;
   } */
   .p-quiz-hero {
-    background-image: url(../img/quiz/bg-hero.jpg);
+    background-image: url(../img/bg-hero.jpg) center center/cover;
+    
   }
   .p-quiz-container {
     margin-top: 120px;

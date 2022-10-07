@@ -41,7 +41,7 @@ const Quiz = [
     id: 6,
     question: "先進テクノロジー活用企業と出遅れた企業の収益性の差はどれくらいあると言われているでしょうか？",
     choices :["約2倍", "約5倍", "約11倍"],
-    correctchoice :0,
+    correctchoice :1,
     note :"Accenture Technology Vision 2021",
   },
 ]
@@ -117,6 +117,7 @@ const setDisabled = answers => {
 
 const setTitle = (target, isCorrect) => {
   target.innerText = isCorrect ? '正解！' : '不正解...';
+  console.log(target);
 }
 
 
@@ -144,11 +145,9 @@ allQuiz.forEach(quiz => {
       const correctNumber = quizArray[selectedQuiz].correctchoice
       const isCorrect = correctNumber === selectedAnswerNumber;
       
-
       // 回答欄にテキストやclass名を付与
       // answerText.innerText = quizArray[selectedQuiz].answers[correctNumber];
-      answerText.innerText = quizArray[selectedQuiz].answers;
-      
+      answerText.innerText = quizArray[selectedQuiz].choices[correctNumber];
       setTitle(answerTitle, isCorrect);
       setClassName(answerBox, isCorrect);
     })
@@ -160,7 +159,7 @@ allQuiz.forEach(quiz => {
 
 
 
-const allquiz = document.querySelectorAll('.js-quiz');
+// const allquiz = document.querySelectorAll('.js-quiz');
 // // ボタンの不活性化
 // const setDisabled = answers => {
 //   answers.forEach(answer => {
