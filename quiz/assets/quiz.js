@@ -54,6 +54,7 @@ const createQuizHtml = (quizItem, questionNumber) => {
     ${answer}<img class="u-icon__arrow" src="../quiz/icon/icon-arrow.svg"></img>
   </button>
 </li>`,
+
 ).join('');
 
 // note 引用テキストの作成
@@ -96,16 +97,20 @@ const shufflearray = array => {
   }
   return array
 };
+
 const quizArray= shufflearray(Quiz);
+
 
 
 
 quizContainer.innerHTML = quizArray.map((quizItem, index) => {
   return createQuizHtml(quizItem, index)
+  
 }).join('')
 
 
 const allQuiz  = document.querySelectorAll('.js-quiz');
+
 
 
 const setDisabled = answers => {
@@ -150,6 +155,7 @@ allQuiz.forEach(quiz => {
       answerText.innerText = quizArray[selectedQuiz].choices[correctNumber];
       setTitle(answerTitle, isCorrect);
       setClassName(answerBox, isCorrect);
+      
     })
   })
 })
