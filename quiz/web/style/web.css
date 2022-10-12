@@ -1,0 +1,92 @@
+/* header */
+.header {
+  display: flex;
+  height: 60px;
+}
+
+.header_logo {
+  margin: auto 30px;
+}
+
+.header_week {
+  margin: auto 10px;
+}
+.header_week_4th {
+  list-style: none;
+  color: gray;
+}
+
+.header_record {
+  margin-left: auto;
+  margin-right: 30px;
+  margin-top: 10px;
+  
+}
+
+.header_record_button {
+  width: 180px;
+  height: 40px;
+  border-radius: 50px;
+  box-shadow: 5px 5px 5px rgb(98, 179, 237, 0.8);
+  background: linear-gradient(to right, rgb(99, 138, 230), rgb(7, 168, 237));
+}
+
+.header_record_button_link {
+  text-decoration: none;
+  color: white;
+}
+/* main */
+.container {
+  position: relative;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  gap: 20px;
+  padding-top: 50px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.hours_container {
+  display: grid;
+  gap: 20px;
+}
+
+.hours {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  height: 100px;
+  padding: 0;
+  margin: 0;
+}
+
+.today_hours{
+  background-color: aqua;
+  list-style: none;
+}
+
+.month_hours{
+  background-color: aqua;
+  list-style: none;
+}
+
+.total_hours{
+  background-color: aqua;
+  list-style: none;
+}
+
+.box2 {
+  background-color: aqua;
+  height: 400px;
+}
+
+.box-wrapper2 {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(2, 1fr);
+  height: 520px;
+}
+
+.box3 {
+  background-color: aqua;
+}
