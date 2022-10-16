@@ -20,37 +20,47 @@
       <button class="header_record_button">
         <a href="" class="header_record_button_link">記録・投稿</a>
       </button>
+      
     </div>
   </header>
-  <main>
+  <main class="main">
     <div class="container">
       <div class="hours_container">
         <div class="hours">
           <ul class="today_hours">
-            <li class="today_hours_title">Today</li>
-            <li class="today_hours_count">3</li>
-            <li class="today_hours_hour">hour</li>
+            <li class="hours_title">Today</li>
+            <li class="hours_count">3</li>
+            <li class="hours_hour">hour</li>
           </ul>
           <ul class="month_hours">
-            <li class="month_hours_title">Month</li>
-            <li class="month_hours_count">120</li>
-            <li class="month_hours_hour">hour</li>
+            <li class="hours_title">Month</li>
+            <li class="hours_count">120</li>
+            <li class="hours_hour">hour</li>
           </ul>
           <ul class="total_hours">
-            <li class="total_hours_title">Total</li>
-            <li class="total_hours_count">1348</li>
-            <li class="total_hours_hour">hour</li>
+            <li class="hours_title">Total</li>
+            <li class="hours_count">1348</li>
+            <li class="hours_hour">hour</li>
           </ul>
         </div>
-        <div class="box2">
+        <canvas id="hours_chart" width="540px" height="400px"></canvas>
+      </div>
+      <div class="learning">
+        <div class="learning_character">
+          <p class="learning_title">学習言語</p>
+        </div>
+        <div class="learning_content">
+          <p class="learning_title">学習コンテンツ</p>
         </div>
       </div>
-      <div class="box-wrapper2">
-        <div class="box3"></div>
-        <div class="box3"></div>
-      </div>
+    </div>
+    <div class="date">
+      <div class="arrow arrow-left"></div>
+      <div id="date_detail">2022年 10月</div>
+      <div class="arrow arrow-right"></div>
     </div>
   </main>
-  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+  <script src="../web/script/web.js"></script>
 </body>
 </html>
