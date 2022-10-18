@@ -23,18 +23,23 @@
   
 }
 
-#header_record_button {
+#header_record_button,
+.modal_record {
   width: 180px;
   height: 40px;
   border-radius: 50px;
   box-shadow: 5px 5px 5px rgb(98, 179, 237, 0.8);
+  color: white;
   background: linear-gradient(to right, rgb(99, 138, 230), rgb(7, 168, 237));
 }
 
-.header_record_button_link {
-  text-decoration: none;
-  color: white;
+.modal_record {
+  position: absolute;
+  bottom: 5%;
+  left: 40%;
+  right: 40%;
 }
+
 
 /* モーダル作成 */
 .modal {
@@ -63,6 +68,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  width: 75%;
+  height: 70%;
 }
 
 .modal_close {
@@ -75,6 +82,9 @@
   height: 30px;
 }
 
+.modal_detail {
+  
+}
 /* main */
 .main {
   background-color: rgba(117, 111, 111, 0.047);
