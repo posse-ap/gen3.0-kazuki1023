@@ -63,7 +63,7 @@
   min-height: 400px;
   text-align: center;
   border-radius: 8px;
-  padding: 10px;
+  padding: 20px;
   background-color: #fff;
   top: 50%;
   left: 50%;
@@ -83,7 +83,116 @@
 }
 
 .modal_detail {
-  
+  height: 500px;
+  display: flex;
+}
+.modal_detail_left {
+  width: 50%;
+  height: 85%;
+  margin-top: 20px;
+}
+.modal_detail_right {
+  width: 50%;
+  height: 85%;
+  margin-top: 20px;
+}
+
+/* 学習日 */
+.modal_learning_day {
+  height: 20%;
+}
+.modal_learning_day_detail {
+  border-radius: 5px;
+}
+.learning_day_title {
+  text-align: left;
+  margin-left: 20px;
+}
+.learning_day_detail {
+  width: 80%;
+  border-radius: 10px;
+  height: 35px;
+  border-color: rgba(117, 111, 111, 0.047);
+  background-color: rgba(117, 111, 111, 0.047);
+}
+/* 学習コンテンツ */
+.modal_learning_content {
+  height: 30%;
+}
+.learning_content_title {
+  text-align: left;
+  margin-left: 20px;
+}
+
+.modal_learning_content_detail {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 20px;
+  gap: 20px;
+}
+.modal_N ,
+.modal_dot,
+.modal_Posse,
+.modal_html,
+.modal_css,
+.modal_js,
+.modal_php,
+.modal_laravel,
+.modal_sql,
+.modal_shell,
+.modal_others{
+  border-radius: 5px;
+  border: solid;
+  border-color: rgba(117, 111, 111, 0.047);
+  background-color: rgba(117, 111, 111, 0.047);
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+/* 学習言語 */
+.learning_language_title {
+  text-align: left;
+  margin-left: 20px;
+}
+.learning_language_content {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 20px;
+  gap: 20px;
+}
+.modal_learning_language {
+  height: 45%;
+  margin-top: 20px;
+}
+
+/* 学習時間 */
+.modal_learning_time {
+  height: 20%;
+}
+.learning_time_title {
+  text-align: left;
+  margin-left: 20px;
+}
+.learning_time_title_detail {
+  width: 80%;
+  border-radius: 10px;
+  height: 30px;
+  border-color: rgba(117, 111, 111, 0.047);
+  background-color: rgba(117, 111, 111, 0.047);
+}
+/* Twitter用コメント */
+.modal_comment {
+}
+.comment_title {
+  text-align: left;
+  margin-left: 20px;
+}
+.comment_title_detail {
+  border-radius: 10px;
+  border-color: rgba(117, 111, 111, 0.047);
+  background-color: rgba(117, 111, 111, 0.047);
+  width: 80%;
 }
 /* main */
 .main {

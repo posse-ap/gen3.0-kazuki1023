@@ -60,60 +60,70 @@
       <div class="modal_content">
         <button class="modal_close">✖️</button>
         <div class="modal_detail">
-          <div class="modal_learning_day">
-            <div>
-              <div>学習日</div>
-              <input type="date" name="" id="">
-            </div>
-          </div>
-          <div class="modal_learning_content">
-            <div>学習コンテンツ （複数選択可）</div>
-            <div class="modal_learning_content_detail">
-              <div>
-                <button>N予備校</button>
-              </div>
-              <div>
-                <button>ドットインストール</button>
-              </div>
-              <div>
-                <button>POSSE課題</button>
+          <div class="modal_detail_left">
+            <div class="modal_learning_day">
+              <div class="modal_learning_day_detail">
+                <p class="learning_day_title" >学習日</p>
+                <button type="text" class="learning_day_detail" placeholder="2022年10月23日">
               </div>
             </div>
-          </div>
-          <div class="modal_learning_language">
-            <div>学習言語 （複数選択可）</div>
-            <div>
-              <div>
-                <button>HTML</button>
+            <div class="modal_learning_content">
+              <p class="learning_content_title">学習コンテンツ （複数選択可）</p>
+              <div class="modal_learning_content_detail">
+                <label class="modal_N">
+                  <span class="modal_N_button">N予備校</span>
+                </label>
+                <label class="modal_dot">
+                  <span class="modal_dot_detail">ドットインストール</span>
+                </label>
+                <label class="modal_Posse">
+                  <span class="modal_Posse_button">POSSE課題</span>
+                </label>
               </div>
-              <div>
-                <button>CSS</button>
-              </div>
-              <div>
-                <button>JavaScript</button>
-              </div>
-              <div>
-                <button>PHP</button>
-              </div>
-              <div>
-                <button>Laravel</button>
-              </div>
-              <div>
-                <button>SQL</button>
-              </div>
-              <div>
-                <button>SHELL</button>
-              </div>
-              <div>
-                <button>情報システム基礎情報（その他）</button>
+            </div>
+            <div class="modal_learning_language">
+              <p class="learning_language_title">学習言語 （複数選択可)</p>
+              <div class="learning_language_content">
+                <label class="modal_html">
+                  <span>HTML</span>
+                </label>
+                <label class="modal_css">
+                  <span>CSS</span>
+                </label>
+                <label class="modal_js">
+                  <span>JavaScript</span>
+                </label>
+                <label class="modal_php">
+                  <span>PHP</span>
+                </label>
+                <label class="modal_laravel">
+                  <span>Laravel</span>
+                </label>
+                <label class="modal_sql">
+                  <span>SQL</span>
+                </label>
+                <label class="modal_shell">
+                  <span>SHELL</span>
+                </label>
+                <label class="modal_others">
+                  <span>情報システム基礎情報（その他）</span>
+                </label>
               </div>
             </div>
           </div>
-          <div class="modal_learning_time">
-            <div>学習時間</div>
+          <div class="modal_detail_right">
+            <div class="modal_learning_time">
+              <p class="learning_time_title">学習時間</p>
+              <input type="text" name="" class="learning_time_title_detail" placeholder="時間お願いします">
+            </div>
+            <div class="modal_comment">
+              <p class="comment_title">Twitter用コメント</p>
+              <textarea name="" class="comment_title_detail" cols="30" rows="10"></textarea>
+            </div>
+            <div class="modal_twitter">
+              <label for=""></label>
+            </div>
           </div>
-          <div class="modal_comment"></div>
-          <div class="modal_twitter"></div>
         </div>
         <button class="modal_record">記録・投稿</button>
       </div>
