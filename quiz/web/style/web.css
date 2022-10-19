@@ -214,6 +214,14 @@ td.today {
 }
 .weekday {
   color: rgba(118, 174, 226, 0.571);
+  width: 60px;
+}
+
+.thisMonth_day_active {
+  border: 1px solid #5a76db;
+  border-radius: 50%;
+  background-color: #5a76db;
+  color: white;
 }
 
 table {
@@ -224,7 +232,7 @@ table {
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   width: 60%;
-  height: 70%;
+  height: 80%;
 }
 /* 学習コンテンツ */
 .modal_learning_content {

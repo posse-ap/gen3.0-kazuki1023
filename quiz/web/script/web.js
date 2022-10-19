@@ -30,12 +30,13 @@ calenderCloseButton.addEventListener("click", () => {
 
 // カレンダーのjs
 
-
 {
   const today = new Date();
   let year = today.getFullYear();
   let month = today.getMonth();
 
+
+  // 先月
   const getCalenderHead= () => {
     const dates = [];
     const d = new Date(year, month, 0).getDate();
@@ -48,10 +49,9 @@ calenderCloseButton.addEventListener("click", () => {
         isDisabled: true,
       })
     }
-
     return dates;
-
   }
+  // 今月
   const getCalenderBody= () => {
     const dates = [];
     const lastDate = new Date(year, month + 1, 0).getDate();
@@ -69,7 +69,7 @@ calenderCloseButton.addEventListener("click", () => {
   
     return dates;
   };
-  
+  // 来月
   const getCalenderTail = () => {
     const dates = [];
     const lastDay = new Date(year, month + 1, 0).getDay();
@@ -80,39 +80,38 @@ calenderCloseButton.addEventListener("click", () => {
         isDisabled: true,
       });
     };
-    console.log(dates)
     return dates;
-
-
   };
   const createCalender = () => {
     const tbody = document.querySelector('tbody');
-
     while(tbody.firstChild) {
       tbody.removeChild(tbody.firstChild)
     }
 
+    // これでタイトルの年月を習得
     const title = `${year}/${String(month + 1).padStart(2, '0')}`;
     document.getElementById('title').textContent = title;
+
+    // 先月、今月、来月の情報を取得
     const dates = [
       ...getCalenderHead(),
       ...getCalenderBody(),
       ...getCalenderTail(),
     ];
 
-
     const weeks = [];
+    // weeksには先月、今月、来月の日にちが入っている
     const weekCount = dates.length / 7;
+    // weekcount 6
 
     for(let i = 0; i < weekCount; i++){
       weeks.push(dates.splice(0, 7));
+      
     }
-    
     weeks.forEach(week => {
       const tr = document.createElement('tr');
       week.forEach(date => {
         const td = document.createElement('td');
-
         td.textContent = date.date;
         if(date.isToday) {
           td.classList.add('today');
@@ -120,7 +119,9 @@ calenderCloseButton.addEventListener("click", () => {
         if(date.isDisabled) {
           td.classList.add('disabled');
         }
-
+        else {
+          td.classList.add('thisMonth_day')
+        }
         tr.appendChild(td);
       });
       document.querySelector('tbody').appendChild(tr)
@@ -147,4 +148,10 @@ calenderCloseButton.addEventListener("click", () => {
   })
   
 
+  // 今月の日付を押したら青くなる処理
+  const thisMonthDay = document.getElementsByClassName('thisMonth_day')
+  console.log(thisMonthDay[0])
+  thisMonthDay[0].addEventListener("click", () => {
+    thisMonthDay[0].classList.toggle("thisMonth_day_active")
+  })
 };
