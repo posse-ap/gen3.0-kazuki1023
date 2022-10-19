@@ -107,6 +107,7 @@
 .learning_day_title {
   text-align: left;
   margin-left: 20px;
+  margin-bottom: 5px;
 }
 .learning_day_detail {
   width: 80%;
@@ -173,6 +174,7 @@
 .learning_time_title {
   text-align: left;
   margin-left: 20px;
+  margin-bottom: 5px;
 }
 .learning_time_title_detail {
   width: 80%;
