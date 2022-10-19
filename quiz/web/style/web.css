@@ -96,7 +96,30 @@
   height: 85%;
   margin-top: 20px;
 }
+/* モーダル、カレンダーを閉じるばつ印の作成 */
+.batsu {
+  display: block;
+  position: relative;
+}
 
+.batsu::before, .batsu::after { /* 共通設定 */
+  content: "";
+  position: absolute;
+  border-radius: 1px;
+  top: 50%;
+  left: 50%;
+  width: 5px; /* 棒の幅（太さ） */
+  height: 20px; /* 棒の高さ */
+  background: #333;
+}
+
+.batsu::before {
+  transform: translate(-50%,-50%) rotate(45deg);
+}
+
+.batsu::after {
+  transform: translate(-50%,-50%) rotate(-45deg);
+}
 /* 学習日 */
 .modal_learning_day {
   height: 20%;
@@ -109,12 +132,52 @@
   margin-left: 20px;
   margin-bottom: 5px;
 }
-.learning_day_detail {
+#learning_day_detail {
   width: 80%;
   border-radius: 10px;
   height: 35px;
   border-color: rgba(117, 111, 111, 0.047);
   background-color: rgba(117, 111, 111, 0.047);
+}
+/* 学習日押した時に表示されるカレンダー作成 */
+.calender {
+  display: none;
+}
+.calender_active {
+  display: block;
+}
+.calender:before {
+  content: "";
+  /* display: block; */
+  background-color: rgba(0, 0, 0, .3);
+  position: absolute;
+  inset: 0;
+}
+/* ↑ここに大きさ指定入れるとめんどいので入れないで */
+
+.calender_content {
+  position: absolute;
+  min-width: 500px;
+  min-height: 400px;
+  text-align: center;
+  border-radius: 8px;
+  padding: 20px;
+  background-color: #fff;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 75%;
+  height: 70%;
+}
+
+#calender_close {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  background-color: rgba(117, 111, 111, 0.047);
+  border-radius: 15px;
+  width: 30px;
+  height: 30px;
 }
 /* 学習コンテンツ */
 .modal_learning_content {
@@ -345,3 +408,19 @@
 .arrow.arrow-right::before {
   transform: rotate(45deg);
 }
+
+
+
+
+/* checkobox */
+/* 途中で断念 */
+.checkbox {
+  content: '';
+  width: 10px;
+  height: 5px;
+  border-left: 3px solid #9c9c9c;
+  border-bottom: 3px solid #9c9c9c;
+  transform: rotate(-45deg);
+}
+
+

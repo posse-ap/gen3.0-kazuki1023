@@ -5,6 +5,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Posse-webapp</title>
+  <!-- <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet"> -->
   <link rel="stylesheet" href="../web/style/normalize.css">
   <link rel="stylesheet" href="../web/style/web.css">
 </head>
@@ -58,22 +60,25 @@
     </div>
     <div class="modal">
       <div class="modal_content">
-        <button class="modal_close">✖️</button>
+        <button class="modal_close"><span class="batsu"></span></button>
         <div class="modal_detail">
           <div class="modal_detail_left">
             <div class="modal_learning_day">
               <div class="modal_learning_day_detail">
                 <p class="learning_day_title" >学習日</p>
-                <button type="text" class="learning_day_detail" placeholder="2022年10月23日">
+                <button type="text" id="learning_day_detail" placeholder="2022年10月23日">
+                  
               </div>
             </div>
             <div class="modal_learning_content">
               <p class="learning_content_title">学習コンテンツ （複数選択可）</p>
               <div class="modal_learning_content_detail">
                 <label class="modal_N">
+                  <input type="checkbox" name='email1' checked><i class="fa fa-square-o fa-2x"></i><i class="fa fa-check-square-o fa-2x"></i>
                   <span class="modal_N_button">N予備校</span>
                 </label>
                 <label class="modal_dot">
+                  <i class="checkbox"></i>
                   <span class="modal_dot_detail">ドットインストール</span>
                 </label>
                 <label class="modal_Posse">
@@ -126,6 +131,13 @@
           </div>
         </div>
         <button class="modal_record">記録・投稿</button>
+      </div>
+    </div>
+    <div class="calender">
+      <div class="calender_content">
+        <button id="calender_close"><span class="batsu"></span></button>
+        <div class="calender_detail"></div>
+        <!-- <button class="calender_decide"></button> -->
       </div>
     </div>
   </main>
