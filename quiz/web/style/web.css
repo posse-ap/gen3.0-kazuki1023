@@ -20,7 +20,6 @@
   margin-left: auto;
   margin-right: 30px;
   margin-top: 10px;
-  
 }
 
 #header_record_button,
@@ -60,7 +59,7 @@
 .modal_content {
   position: absolute;
   min-width: 500px;
-  min-height: 400px;
+  min-height: 500px;
   text-align: center;
   border-radius: 8px;
   padding: 20px;
@@ -153,6 +152,20 @@
   position: absolute;
   inset: 0;
 }
+.calender_decide {
+  width: 200px;
+  height: 40px;
+  border-radius: 50px;
+  box-shadow: 5px 5px 5px rgb(98, 179, 237, 0.8);
+  color: white;
+  background: linear-gradient(to right, rgb(99, 138, 230), rgb(7, 168, 237));
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+}
 /* ↑ここに大きさ指定入れるとめんどいので入れないで */
 
 .calender_content {
@@ -173,11 +186,45 @@
 #calender_close {
   position: absolute;
   top: 5%;
-  right: 5%;
+  left: 5%;
   background-color: rgba(117, 111, 111, 0.047);
   border-radius: 15px;
   width: 30px;
   height: 30px;
+}
+
+#prev,
+#next {
+  color: #5070e3;
+}
+#prev,
+#next,
+#today {
+  cursor: pointer;
+  user-select: none;
+}
+tr {
+  padding: 10px;
+}
+td.disabled {
+  opacity: 0.3;
+}
+td.today {
+  font-weight: bold;
+}
+.weekday {
+  color: rgba(118, 174, 226, 0.571);
+}
+
+table {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  width: 60%;
+  height: 70%;
 }
 /* 学習コンテンツ */
 .modal_learning_content {
