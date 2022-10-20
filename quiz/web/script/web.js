@@ -29,7 +29,6 @@ calenderCloseButton.addEventListener("click", () => {
 
 
 // カレンダーのjs
-
 {
   const today = new Date();
   let year = today.getFullYear();
@@ -155,3 +154,36 @@ calenderCloseButton.addEventListener("click", () => {
     thisMonthDay[0].classList.toggle("thisMonth_day_active")
   })
 };
+// 記録ボタンを押すとローディング画面に行く
+const modalRecord = document.getElementsByClassName("modal_record")
+const loading = document.getElementsByClassName('loading');
+let timerid
+const finish = document.getElementsByClassName("finish")
+modalRecord[0].addEventListener("click", () => {
+  loading[0].classList.add("loading_active");
+  modal[0].classList.remove("modal_active");
+  // https://www.javadrive.jp/javascript/webpage/index4.html#section1
+
+  // ここから、記録ボタンを押してから3秒後に記録完了のモーダルが出てくるようにする
+  timerid = window.setTimeout(function(){
+    loading[0].classList.remove("loading_active");
+    finish[0].classList.add("finish_active")
+}, 3000);
+
+// 記録完了ボタンのばつ印を押すとモーダルが閉じるようにする.
+// 閉じるボタン
+const finishClose = document.getElementsByClassName("finish_close");
+finishClose[0].addEventListener("click", () => {
+  finish[0].classList.remove("finish_active")
+})
+})
+
+// ローディング画面のばつ印押すと、モーダルの画面に戻る
+const loadingClose = document.getElementsByClassName("loading_close");
+loadingClose[0].addEventListener("click", () => {
+  loading[0].classList.remove("loading_active");
+  modal[0].classList.toggle("modal_active");
+})
+
+
+
