@@ -73,46 +73,44 @@
             <div class="modal_learning_content">
               <p class="learning_content_title">学習コンテンツ （複数選択可）</p>
               <div class="modal_learning_content_detail">
-                <label class="modal_N">
-                  <input type="checkbox" name='email1' checked><i class="fa fa-square-o fa-2x"></i><i class="fa fa-check-square-o fa-2x"></i>
-                  <span class="modal_N_button">N予備校</span>
-                </label>
-                <label class="modal_dot">
-                  <i class="checkbox"></i>
-                  <span class="modal_dot_detail">ドットインストール</span>
-                </label>
-                <label class="modal_Posse">
-                  <span class="modal_Posse_button">POSSE課題</span>
-                </label>
+                <div class="modal_N">
+                  <input type="checkbox"  name=""><label for="N_cramSchool" class="N_cramSchool">N予備校</label>
+                </div>
+                <div class="modal_dot">
+                  <input type="checkbox"  name=""><label for="dotinstall" class="dotinstall">ドットインストール</label>
+                </div>
+                <div class="modal_Posse">
+                  <input type="checkbox"  name=""><label for="posse"class="posse">POSSE課題</label>
+                </div>
               </div>
             </div>
             <div class="modal_learning_language">
               <p class="learning_language_title">学習言語 （複数選択可)</p>
               <div class="learning_language_content">
-                <label class="modal_html">
-                  <span>HTML</span>
-                </label>
-                <label class="modal_css">
-                  <span>CSS</span>
-                </label>
-                <label class="modal_js">
-                  <span>JavaScript</span>
-                </label>
-                <label class="modal_php">
-                  <span>PHP</span>
-                </label>
-                <label class="modal_laravel">
-                  <span>Laravel</span>
-                </label>
-                <label class="modal_sql">
-                  <span>SQL</span>
-                </label>
-                <label class="modal_shell">
-                  <span>SHELL</span>
-                </label>
-                <label class="modal_others">
-                  <span>情報システム基礎情報（その他）</span>
-                </label>
+                <div class="modal_html">
+                  <input type="checkbox"  name=""><label for="html"class="html">HTML</label>
+                </div>
+                <div class="modal_css">
+                  <input type="checkbox"  name=""><label for="css"class="css">CSS</label>
+                </div>
+                <div class="modal_js">
+                  <input type="checkbox"  name=""><label for="js"class="js">JavaScript</label>
+                </div>
+                <div class="modal_php">
+                  <input type="checkbox"  name=""><label for="php"class="php">PHP</label>
+                </div>
+                <div class="modal_laravel">
+                  <input type="checkbox" name=""><label for="laravel"class="laravel">Laravel</label>
+                </div>
+                <div class="modal_sql">
+                  <input type="checkbox" name=""><label for="sql"class="sql">SQL</label>
+                </div>
+                <div class="modal_shell">
+                  <input type="checkbox"  name=""><label for="shell"class="shell">SHELL</label>
+                </div>
+                <div class="modal_others">
+                  <input type="checkbox"  name=""><label for="others"class="others">情報システム基礎情報（その他</label>
+                </div>
               </div>
             </div>
           </div>
@@ -126,7 +124,11 @@
               <textarea name="" class="comment_title_detail" cols="30" rows="10"></textarea>
             </div>
             <div class="modal_twitter">
-              <label for=""></label>
+              <!-- labelのforとIDと結びつけてクリック範囲を広げる -->
+              <ul class="twitter_checkobox">
+                <li class="twitter_checkbox_item"></li>
+                <li class=""></li>
+              </ul>
             </div>
           </div>
         </div>

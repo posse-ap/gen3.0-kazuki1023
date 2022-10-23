@@ -248,7 +248,7 @@ table {
   display: flex;
   flex-wrap: wrap;
   margin-left: 20px;
-  gap: 20px;
+  gap: 10px;
 }
 .modal_N ,
 .modal_dot,
@@ -261,14 +261,89 @@ table {
 .modal_sql,
 .modal_shell,
 .modal_others{
-  border-radius: 5px;
+  border-radius: 8px;
   border: solid;
   border-color: rgba(117, 111, 111, 0.047);
   background-color: rgba(117, 111, 111, 0.047);
   padding-top: 5px;
   padding-bottom: 5px;
-  padding-right: 10px;
   padding-left: 10px;
+}
+
+.modal_N_active,
+.modal_dot_active,
+.modal_Posse_active,
+.modal_html_active,
+.modal_css_active,
+.modal_js_active,
+.modal_php_active,
+.modal_laravel_active,
+.modal_sql_active,
+.modal_shell_active,
+.modal_others_active
+{
+  background-color: rgb(110, 196, 250, 0.7);
+}
+
+.N_cramSchool_active::before,
+.dotinstall_active::before,
+.posse_active::before,
+.html_active::before,
+.css_active::before,
+.js_active::before,
+.php_active::before,
+.laravel_active::before,
+.sql_active::before,
+.shell_active::before,
+.others_active::before{
+  position: absolute;
+  top: 32%;
+  display: block;
+  margin-top: -8px;
+  width: 25px;
+  height: 25px;
+  content: '';
+  background: rgb(75, 129, 210)  !important;;
+  border-radius: 50%;
+  left: -5px;
+}
+input[type=checkbox]{
+	display: none;
+}
+
+input[type=checkbox] + label {
+  box-sizing: border-box;
+  cursor: pointer;
+  padding: 5px 20px;
+  position: relative;
+  width: auto;
+}
+
+input[type=checkbox] + label::before {
+  position: absolute;
+  top: 32%;
+  display: block;
+  margin-top: -8px;
+  width: 25px;
+  height: 25px;
+  content: '';
+  background: rgba(59, 33, 33, 0.047);
+  border-radius: 50%;
+  left: -5px;
+}
+
+input[type=checkbox] + label::after {
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  content: '';
+  display: block;
+  height: 7px;
+  left: 5px;
+  margin-top: -7px;
+  position: absolute;
+  top: 50%;
+  transform: rotate(45deg);
+  width: 5px;
 }
 /* 学習言語 */
 .learning_language_title {
@@ -279,11 +354,10 @@ table {
   display: flex;
   flex-wrap: wrap;
   margin-left: 20px;
-  gap: 20px;
+  gap: 10px;
 }
 .modal_learning_language {
   height: 45%;
-  margin-top: 20px;
 }
 
 /* 学習時間 */
@@ -625,4 +699,40 @@ table {
   border-radius: 15px;
   width: 30px;
   height: 30px;
+}
+
+.finish_mark {
+  position: absolute;
+  top: 20%;
+  left: 45%;
+}
+.finish_awesome {
+  color: #6ed155;
+}
+.finish_checkbox {
+  list-style-type: none;
+  padding-right: 40px;
+  border: solid;
+  border-radius: 50%;
+  background-color: #6ed155;
+}
+.finish_checkbox_item {
+  position: relative;
+  height: 93px;
+}
+.finish_checkbox_item::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 36%;
+  left: -7px;
+  width: 30px;
+  height: 15px;
+  border-left: 5px solid white;
+  border-bottom: 5px solid white;
+  transform: rotate(-45deg);
+}
+
+.finish_anounce {
+  margin-top: 20px;
 }

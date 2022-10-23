@@ -1,4 +1,7 @@
 "use strict"
+
+// モーダル
+
 // 記録ボタンを押すとモーダルが出てくる
 const headerRecordButton = document.getElementById('header_record_button');
 const modal = document.getElementsByClassName('modal');
@@ -26,6 +29,97 @@ calenderCloseButton.addEventListener("click", () => {
   calender[0].classList.remove("calender_active");
   modal[0].classList.toggle("modal_active");
 })
+
+// モーダル内の学習コンテンツの項目を押した時に青くなる処理
+{
+  // N予備校
+  const NcramSchool = document.getElementsByClassName('N_cramSchool');
+  const modalN = document.getElementsByClassName('modal_N');
+  NcramSchool[0].addEventListener("click", () => {
+    NcramSchool[0].classList.toggle("N_cramSchool_active");
+    modalN[0].classList.toggle("modal_N_active");
+  })
+
+  // ドットインストール
+  const dotinstall = document.getElementsByClassName('dotinstall');
+  const modalDot = document.getElementsByClassName('modal_dot');
+  dotinstall[0].addEventListener("click", () => {
+    dotinstall[0].classList.toggle("dotinstall_active");
+    modalDot[0].classList.toggle("modal_dot_active");
+  })
+
+  // Posse課題
+  const Posse = document.getElementsByClassName('posse');
+  const modalPosse = document.getElementsByClassName('modal_Posse');
+  Posse[0].addEventListener("click", () => {
+    Posse[0].classList.toggle("posse_active");
+    modalPosse[0].classList.toggle("modal_Posse_active");
+  })
+
+  // HTML
+  const HTML = document.getElementsByClassName('html');
+  const modalHtml = document.getElementsByClassName('modal_html');
+  HTML[0].addEventListener("click", () => {
+    HTML[0].classList.toggle("html_active");
+    modalHtml[0].classList.toggle("modal_html_active");
+  })
+
+  // CSS 
+  const CSS = document.getElementsByClassName('css');
+  const modalcss = document.getElementsByClassName('modal_css');
+  CSS[0].addEventListener("click", () => {
+    CSS[0].classList.toggle("css_active");
+    modalcss[0].classList.toggle("modal_css_active");
+})
+
+  // js
+  const js = document.getElementsByClassName('js');
+  const modalJs = document.getElementsByClassName('modal_js');
+  js[0].addEventListener("click", () => {
+    js[0].classList.toggle("js_active");
+    modalJs[0].classList.toggle("modal_js_active");
+  })
+
+  // php
+  const php = document.getElementsByClassName('php');
+  const modalPhp = document.getElementsByClassName('modal_php');
+  php[0].addEventListener("click", () => {
+    php[0].classList.toggle("php_active");
+    modalPhp[0].classList.toggle("modal_php_active");
+  })
+
+  // laravel
+  const laravel = document.getElementsByClassName('laravel');
+  const modalLaravel = document.getElementsByClassName('modal_laravel');
+  laravel[0].addEventListener("click", () => {
+    laravel[0].classList.toggle("laravel_active");
+    modalLaravel[0].classList.toggle("modal_laravel_active");
+  })
+
+  // sql
+  const sql = document.getElementsByClassName('sql');
+  const modalSql = document.getElementsByClassName('modal_sql');
+  sql[0].addEventListener("click", () => {
+    sql[0].classList.toggle("sql_active");
+    modalSql[0].classList.toggle("modal_sql_active");
+  })
+
+  // shell
+  const shell = document.getElementsByClassName('shell');
+  const modalShell = document.getElementsByClassName('modal_shell');
+  shell[0].addEventListener("click", () => {
+    shell[0].classList.toggle("shell_active");
+    modalShell[0].classList.toggle("modal_shell_active");
+  })
+
+  // others
+  const others = document.getElementsByClassName('others');
+  const modalOthers = document.getElementsByClassName('modal_others');
+  others[0].addEventListener("click", () => {
+    others[0].classList.toggle("others_active");
+    modalOthers[0].classList.toggle("modal_others_active");
+  })
+}
 
 
 // カレンダーのjs
@@ -62,10 +156,17 @@ calenderCloseButton.addEventListener("click", () => {
         isDisabled: false,
       });
     };
+    // console.log(dates)
+    
+    const chartDate = [];
+    chartDate.push({
+      date: dates[1].date
+    })
+    // console.log(chartDate[0].date)
+
     if(year === today.getFullYear() && month === today.getMonth()) {
       dates[today.getDate() - 1].isToday = true;
     }
-  
     return dates;
   };
   // 来月
@@ -107,6 +208,7 @@ calenderCloseButton.addEventListener("click", () => {
       weeks.push(dates.splice(0, 7));
       
     }
+    
     weeks.forEach(week => {
       const tr = document.createElement('tr');
       week.forEach(date => {
@@ -149,41 +251,60 @@ calenderCloseButton.addEventListener("click", () => {
 
   // 今月の日付を押したら青くなる処理
   const thisMonthDay = document.getElementsByClassName('thisMonth_day')
-  console.log(thisMonthDay[0])
   thisMonthDay[0].addEventListener("click", () => {
     thisMonthDay[0].classList.toggle("thisMonth_day_active")
   })
+  // for文で回したいんだけど、できない。どうしよう？？
 };
 // 記録ボタンを押すとローディング画面に行く
-const modalRecord = document.getElementsByClassName("modal_record")
+{
+  const modalRecord = document.getElementsByClassName("modal_record")
 const loading = document.getElementsByClassName('loading');
 let timerid
 const finish = document.getElementsByClassName("finish")
 modalRecord[0].addEventListener("click", () => {
+
   loading[0].classList.add("loading_active");
   modal[0].classList.remove("modal_active");
   // https://www.javadrive.jp/javascript/webpage/index4.html#section1
-
   // ここから、記録ボタンを押してから3秒後に記録完了のモーダルが出てくるようにする
   timerid = window.setTimeout(function(){
     loading[0].classList.remove("loading_active");
     finish[0].classList.add("finish_active")
 }, 3000);
-
-// 記録完了ボタンのばつ印を押すとモーダルが閉じるようにする.
-// 閉じるボタン
-const finishClose = document.getElementsByClassName("finish_close");
-finishClose[0].addEventListener("click", () => {
-  finish[0].classList.remove("finish_active")
-})
-})
-
-// ローディング画面のばつ印押すと、モーダルの画面に戻る
-const loadingClose = document.getElementsByClassName("loading_close");
-loadingClose[0].addEventListener("click", () => {
-  loading[0].classList.remove("loading_active");
-  modal[0].classList.toggle("modal_active");
+    
+  // 記録完了ボタンのばつ印を押すとモーダルが閉じるようにする.
+  // 閉じるボタン
+  const finishClose = document.getElementsByClassName("finish_close");
+  finishClose[0].addEventListener("click", () => {
+    finish[0].classList.remove("finish_active")
+       // ローディング中の3秒の間にばつ印が押されると、記録完了のモーダルが出てこないようにする
+  window.clearTimeout(timerid);
+  console.log('キャンセルされました')
+  })
 })
 
 
+}
+
+
+// 棒グラフの作成
+{
+  const ctx = document.getElementById("hours_chart").getContext('2d');
+const houtsChart = new Chart(ctx, {
+  type: "bar",
+  data: {
+    labels:  ["00年", "05年", "10年", "15年", "20年"],
+    datasets: [
+        {
+          label: "学習時間",
+          data: [],
+          backgroundColor: "rgba(255,0,0,0.4)",
+          borderColor: "red",
+          borderWidth: 2
+        }
+    ]
+},
+})
+}
 
