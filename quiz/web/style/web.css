@@ -384,7 +384,7 @@ input[type=checkbox] + label::after {
   text-align: left;
   margin-left: 20px;
 }
-.comment_title_detail {
+#comment_title_detail {
   border-radius: 10px;
   border-color: rgba(117, 111, 111, 0.047);
   background-color: rgba(117, 111, 111, 0.047);

@@ -262,14 +262,31 @@ calenderCloseButton.addEventListener("click", () => {
   console.log(thisMonthDay);
   for(let i = 0; i <= thisMonthDay.length - 1; i ++){
     thisMonthDay[i].addEventListener("click", () => {
+      for(let j = 0; j <= thisMonthDay.length - 1; j++) {
+          // カレンダー上で押せるのは１日だけにする
+            thisMonthDay[j].classList.remove("thisMonth_day_active")
+      }
       thisMonthDay[i].classList.toggle("thisMonth_day_active")
+      let calenderTitle = document.getElementById('title');
+      // console.log(calenderTitle.innerHTML)
+      let clickDay = i + 1;
+
+      let selectedDay = `${calenderTitle.innerHTML}/${clickDay}`
+      console.log(selectedDay)
+      // selectedDayにクリックした年、月、日が入ってる
+
+      // 決定ボタンを押した時の処理
+      const calenderDecide = document.getElementsByClassName("calender_decide")
+      calenderDecide[0].addEventListener("click", () => {
+        learningDayDetail.insertAdjacentHTML('afterbegin', selectedDay)
+        calender[0].classList.remove("calender_active");
+        modal[0].classList.toggle("modal_active");
+      })
     })
   }
   // これで今月分は押したら青くなるようになった
-
-  
-  // for文で回したいんだけど、できない。どうしよう？？
 };
+
 // 記録ボタンを押すとローディング画面に行く
 {
   const modalRecord = document.getElementsByClassName("modal_record")
@@ -283,8 +300,15 @@ modalRecord[0].addEventListener("click", () => {
   // https://www.javadrive.jp/javascript/webpage/index4.html#section1
   // ここから、記録ボタンを押してから3秒後に記録完了のモーダルが出てくるようにする
   timerid = window.setTimeout(function(){
+    // textareaに書かれた内容を反映する
+    let twitterShare = document.getElementById('twitter_share');
+    console.log(twitterShare);
+    if(twitterShare.classList.contains('modal_twitter_button_active') === true) {
+      const textarea = document.getElementById("comment_title_detail").value
+      window.open(`https://twitter.com/intent/tweet?text=${textarea}`)
+    }
     loading[0].classList.remove("loading_active");
-    finish[0].classList.add("finish_active")
+    finish[0].classList.add("finish_active");
 }, 3000);
     
   // 記録完了ボタンのばつ印を押すとモーダルが閉じるようにする.
