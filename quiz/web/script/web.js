@@ -259,9 +259,15 @@ calenderCloseButton.addEventListener("click", () => {
 
   // 今月の日付を押したら青くなる処理
   const thisMonthDay = document.getElementsByClassName('thisMonth_day')
-  thisMonthDay[0].addEventListener("click", () => {
-    thisMonthDay[0].classList.toggle("thisMonth_day_active")
-  })
+  console.log(thisMonthDay);
+  for(let i = 0; i <= thisMonthDay.length - 1; i ++){
+    thisMonthDay[i].addEventListener("click", () => {
+      thisMonthDay[i].classList.toggle("thisMonth_day_active")
+    })
+  }
+  // これで今月分は押したら青くなるようになった
+
+  
   // for文で回したいんだけど、できない。どうしよう？？
 };
 // 記録ボタンを押すとローディング画面に行く
