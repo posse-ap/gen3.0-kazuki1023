@@ -30,7 +30,7 @@ calenderCloseButton.addEventListener("click", () => {
   modal[0].classList.toggle("modal_active");
 })
 
-// モーダル内の学習コンテンツの項目を押した時に青くなる処理
+// モーダル内の学習コンテンツ,学習言語の項目を押したら青くなる処理
 {
   // N予備校
   const NcramSchool = document.getElementsByClassName('N_cramSchool');
@@ -121,8 +121,16 @@ calenderCloseButton.addEventListener("click", () => {
   })
 }
 
+// モーダル内のtwitterにシェアボタンを押すと青くなる処理 
+{
+  const twitterButton = document.getElementsByClassName('modal_twitter_button');
+  twitterButton[0].addEventListener("click", () => {
+    twitterButton[0].classList.toggle("modal_twitter_button_active")
+  })
+}
 
-// カレンダーのjs
+
+// カレンダー
 {
   const today = new Date();
   let year = today.getFullYear();

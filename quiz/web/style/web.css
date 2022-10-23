@@ -376,6 +376,7 @@ input[type=checkbox] + label::after {
   border-color: rgba(117, 111, 111, 0.047);
   background-color: rgba(117, 111, 111, 0.047);
 }
+
 /* Twitter用コメント */
 .modal_comment {
 }
@@ -388,6 +389,27 @@ input[type=checkbox] + label::after {
   border-color: rgba(117, 111, 111, 0.047);
   background-color: rgba(117, 111, 111, 0.047);
   width: 80%;
+}
+
+/* twitteにシェアする */
+.modal_twitter {
+  padding-top: 5px;
+  height: 20%;
+  margin-top: 20px;
+}
+
+
+.modal_twitter_button_active::before {
+  position: absolute;
+  top: 32%;
+  display: block;
+  margin-top: -8px;
+  width: 25px;
+  height: 25px;
+  content: '';
+  background: rgb(75, 129, 210)  !important;;
+  border-radius: 50%;
+  left: -5px;
 }
 /* main */
 .main {
@@ -537,20 +559,6 @@ input[type=checkbox] + label::after {
 
 .arrow.arrow-right::before {
   transform: rotate(45deg);
-}
-
-
-
-
-/* checkobox */
-/* 途中で断念 */
-.checkbox {
-  content: '';
-  width: 10px;
-  height: 5px;
-  border-left: 3px solid #9c9c9c;
-  border-bottom: 3px solid #9c9c9c;
-  transform: rotate(-45deg);
 }
 
 /* loading画面 */
