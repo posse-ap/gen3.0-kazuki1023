@@ -259,7 +259,6 @@ calenderCloseButton.addEventListener("click", () => {
 
   // 今月の日付を押したら青くなる処理
   const thisMonthDay = document.getElementsByClassName('thisMonth_day')
-  console.log(thisMonthDay);
   for(let i = 0; i <= thisMonthDay.length - 1; i ++){
     thisMonthDay[i].addEventListener("click", () => {
       for(let j = 0; j <= thisMonthDay.length - 1; j++) {
@@ -332,17 +331,191 @@ modalRecord[0].addEventListener("click", () => {
 const houtsChart = new Chart(ctx, {
   type: "bar",
   data: {
-    labels:  ["00年", "05年", "10年", "15年", "20年"],
+    labels:  ["2", "4", "6", "8", "10", "12", "14", "16", "18", "20", "22", "24", "26", "28", "30"],
     datasets: [
         {
           label: "学習時間",
-          data: [],
-          backgroundColor: "rgba(255,0,0,0.4)",
-          borderColor: "red",
+          data: [
+            {
+                "day": 1,
+                "time": 3
+            },
+            {
+                "day": 2,
+                "time": 4
+            },
+            {
+                "day": 3,
+                "time": 5
+            },
+            {
+                "day": 4,
+                "time": 3
+            },
+            {
+                "day": 5,
+                "time": 0
+            },
+            {
+                "day": 6,
+                "time": 0
+            },
+            {
+                "day": 7,
+                "time": 4
+            },
+            {
+                "day": 8,
+                "time": 2
+            },
+            {
+                "day": 9,
+                "time": 2
+            },
+            {
+                "day": 10,
+                "time": 8
+            },
+            {
+                "day": 11,
+                "time": 8
+            },
+            {
+                "day": 12,
+                "time": 2
+            },
+            {
+                "day": 13,
+                "time": 2
+            },
+            {
+                "day": 14,
+                "time": 1
+            },
+            {
+                "day": 15,
+                "time": 7
+            },
+            {
+                "day": 16,
+                "time": 4
+            },
+            {
+                "day": 17,
+                "time": 4
+            },
+            {
+                "day": 18,
+                "time": 3
+            },
+            {
+                "day": 19,
+                "time": 3
+            },
+            {
+                "day": 20,
+                "time": 3
+            },
+            {
+                "day": 21,
+                "time": 2
+            },
+            {
+                "day": 22,
+                "time": 2
+            },
+            {
+                "day": 23,
+                "time": 6
+            },
+            {
+                "day": 24,
+                "time": 2
+            },
+            {
+                "day": 25,
+                "time": 2
+            },
+            {
+                "day": 26,
+                "time": 1
+            },
+            {
+                "day": 27,
+                "time": 1
+            },
+            {
+                "day": 28,
+                "time": 1
+            },
+            {
+                "day": 29,
+                "time": 7
+            },
+            {
+                "day": 30,
+                "time": 8
+            }
+        ],
+          parsing: {
+            xAxesKey: 'time'
+          },
+          borderColor: "linear-gradient(blue, rgb(75, 129, 210))",
+          backgroundColor: "linear-gradient(blue, rgb(75, 129, 210))",
           borderWidth: 2
         }
     ]
 },
+  options: {
+    responsive: false,
+    legend: {
+        display: false
+    },
+    scales: {                          // 軸設定
+        xAxis: [                           // Ｘ軸設定
+            {
+                scaleLabel: {                 // 軸ラベル
+                    display: false,                // 表示設定
+                    labelString: '横軸ラベル',    // ラベル
+                    fontColor: "red",             // 文字の色
+                    fontSize: 16                  // フォントサイズ
+                },
+                gridLines: {                   // 補助線
+                  display: false,
+                  color: "rgba(255, 0, 0, 0.2)", // 補助線の色
+                },
+                ticks: {                      // 目盛り
+                    fontColor: "rgb(75, 129, 210)",             // 目盛りの色
+                    fontSize: 14                  // フォントサイズ
+                }
+            }
+        ],
+        yAxis: [                           // Ｙ軸設定
+            {
+                scaleLabel: {                  // 軸ラベル
+                    display: false,                 // 表示の有無
+                    labelString: '縦軸ラベル',     // ラベル
+                    fontFamily: "sans-serif",
+                    fontColor: "blue",             // 文字の色
+                    fontFamily: "sans-serif",
+                    fontSize: 16                   // フォントサイズ
+                },
+                gridLines: {                   // 補助線
+                    display: false,
+                    color: "rgba(0, 0, 255, 0.2)", // 補助線の色
+                    zeroLineColor: "white"         // y=0（Ｘ軸の色）
+                },
+                ticks: {                       // 目盛り
+                    min: 0,                        // 最小値
+                    max: 8,                       // 最大値
+                    stepSize: 2,                   // 軸間隔
+                    fontColor: "blue",             // 目盛りの色
+                    fontSize: 10                   // フォントサイズ
+                }
+            }
+        ]
+    }
+  }
 })
 }
 
