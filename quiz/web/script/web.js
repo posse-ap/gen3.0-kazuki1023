@@ -331,153 +331,30 @@ modalRecord[0].addEventListener("click", () => {
 const houtsChart = new Chart(ctx, {
   type: "bar",
   data: {
-    labels:  ["2", "4", "6", "8", "10", "12", "14", "16", "18", "20", "22", "24", "26", "28", "30"],
+    labels:  ["", "2", "", "4", "", "6", "", "8", "", "10", "", "12", "","14", "", "16", "","18", "","20", "", "22", "", "24", "","26", "", "28", "", "30"],
     datasets: [
         {
           label: "学習時間",
-          data: [
-            {
-                "day": 1,
-                "time": 3
-            },
-            {
-                "day": 2,
-                "time": 4
-            },
-            {
-                "day": 3,
-                "time": 5
-            },
-            {
-                "day": 4,
-                "time": 3
-            },
-            {
-                "day": 5,
-                "time": 0
-            },
-            {
-                "day": 6,
-                "time": 0
-            },
-            {
-                "day": 7,
-                "time": 4
-            },
-            {
-                "day": 8,
-                "time": 2
-            },
-            {
-                "day": 9,
-                "time": 2
-            },
-            {
-                "day": 10,
-                "time": 8
-            },
-            {
-                "day": 11,
-                "time": 8
-            },
-            {
-                "day": 12,
-                "time": 2
-            },
-            {
-                "day": 13,
-                "time": 2
-            },
-            {
-                "day": 14,
-                "time": 1
-            },
-            {
-                "day": 15,
-                "time": 7
-            },
-            {
-                "day": 16,
-                "time": 4
-            },
-            {
-                "day": 17,
-                "time": 4
-            },
-            {
-                "day": 18,
-                "time": 3
-            },
-            {
-                "day": 19,
-                "time": 3
-            },
-            {
-                "day": 20,
-                "time": 3
-            },
-            {
-                "day": 21,
-                "time": 2
-            },
-            {
-                "day": 22,
-                "time": 2
-            },
-            {
-                "day": 23,
-                "time": 6
-            },
-            {
-                "day": 24,
-                "time": 2
-            },
-            {
-                "day": 25,
-                "time": 2
-            },
-            {
-                "day": 26,
-                "time": 1
-            },
-            {
-                "day": 27,
-                "time": 1
-            },
-            {
-                "day": 28,
-                "time": 1
-            },
-            {
-                "day": 29,
-                "time": 7
-            },
-            {
-                "day": 30,
-                "time": 8
-            }
-          ],
-          parsing: {
-            xAxesKey: 'time'
-          },
+          data: [3,4,5,3,0,0,4,2,2,8,8,2,2,1,7,4,4,3,3,3,2,2,6,2,2,1,1,1,7,8],
           borderColor: "linear-gradient(blue, rgb(75, 129, 210))",
-          backgroundColor: "linear-gradient(blue, rgb(75, 129, 210))",
-          borderWidth: 2
+          backgroundColor: "blue",
+          borderWidth: 2,
+          
         }
-    ]
-},
+    ],
+  }, 
   options: {
     responsive: false,
     legend: {
         display: false
     },
     scales: {                          // 軸設定
-        xAxis: [                           // Ｘ軸設定
+        xAxes: [                           // Ｘ軸設定
             {
                 scaleLabel: {                 // 軸ラベル
                     display: false,                // 表示設定
                     labelString: '横軸ラベル',    // ラベル
-                    fontColor: "red",             // 文字の色
+                    fontColor: "white",             // 文字の色
                     fontSize: 16                  // フォントサイズ
                 },
                 gridLines: {                   // 補助線
@@ -490,7 +367,7 @@ const houtsChart = new Chart(ctx, {
                 }
             }
         ],
-        yAxis: [                           // Ｙ軸設定
+        yAxes: [                           // Ｙ軸設定
             {
                 scaleLabel: {                  // 軸ラベル
                     display: false,                 // 表示の有無
@@ -510,7 +387,10 @@ const houtsChart = new Chart(ctx, {
                     max: 8,                       // 最大値
                     stepSize: 2,                   // 軸間隔
                     fontColor: "blue",             // 目盛りの色
-                    fontSize: 10                   // フォントサイズ
+                    fontSize: 10,                   // フォントサイズ
+                    callback: function(value, index, values){
+                      return  value +  'h'
+                    },                               // y軸に"h"つけた
                 }
             }
         ]
@@ -519,3 +399,4 @@ const houtsChart = new Chart(ctx, {
 })
 }
 
+// 
