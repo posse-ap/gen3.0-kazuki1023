@@ -277,9 +277,9 @@ calenderCloseButton.addEventListener("click", () => {
       // 決定ボタンを押した時の処理
       const calenderDecide = document.getElementsByClassName("calender_decide")
       calenderDecide[0].addEventListener("click", () => {
-        learningDayDetail.insertAdjacentHTML('afterbegin', selectedDay)
+        learningDayDetail.innerHTML = selectedDay
         calender[0].classList.remove("calender_active");
-        modal[0].classList.toggle("modal_active");
+        modal[0].classList.add("modal_active");
       })
     })
   }
@@ -299,13 +299,13 @@ modalRecord[0].addEventListener("click", () => {
   // https://www.javadrive.jp/javascript/webpage/index4.html#section1
   // ここから、記録ボタンを押してから3秒後に記録完了のモーダルが出てくるようにする
   timerid = window.setTimeout(function(){
-    // textareaに書かれた内容を反映する
+    // textareaに書かれた内容をtwitterに反映する
     let twitterShare = document.getElementById('twitter_share');
     console.log(twitterShare);
     if(twitterShare.classList.contains('modal_twitter_button_active') === true) {
       const textarea = document.getElementById("comment_title_detail").value
       window.open(`https://twitter.com/intent/tweet?text=${textarea}`)
-    }
+    };
     loading[0].classList.remove("loading_active");
     finish[0].classList.add("finish_active");
 }, 3000);
@@ -456,7 +456,7 @@ const houtsChart = new Chart(ctx, {
                 "day": 30,
                 "time": 8
             }
-        ],
+          ],
           parsing: {
             xAxesKey: 'time'
           },
