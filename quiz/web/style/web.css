@@ -501,12 +501,15 @@ input[type=checkbox] + label::after {
   grid-template-columns: repeat(2, 1fr);
   height: 530px;
 }
-
+/* 学習言語 */
 .learning_character {
   background-color: white;
   border-radius: 10px;
 }
-
+#learning_character_chart {
+  width: 100%;
+  height: 100%;
+}
 .learning_content {
   background-color: white;
   border-radius: 10px;

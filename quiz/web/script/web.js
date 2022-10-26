@@ -328,7 +328,7 @@ modalRecord[0].addEventListener("click", () => {
 // 棒グラフの作成
 {
   const ctx = document.getElementById("hours_chart").getContext('2d');
-const houtsChart = new Chart(ctx, {
+  const houtsChart = new Chart(ctx, {
   type: "bar",
   data: {
     labels:  ["", "2", "", "4", "", "6", "", "8", "", "10", "", "12", "","14", "", "16", "","18", "","20", "", "22", "", "24", "","26", "", "28", "", "30"],
@@ -339,7 +339,6 @@ const houtsChart = new Chart(ctx, {
           borderColor: "linear-gradient(blue, rgb(75, 129, 210))",
           backgroundColor: "blue",
           borderWidth: 2,
-          
         }
     ],
   }, 
@@ -347,6 +346,10 @@ const houtsChart = new Chart(ctx, {
     responsive: false,
     legend: {
         display: false
+    },
+    maintainAspectRatio: false,
+    tooltips: {
+      enabled: false
     },
     scales: {                          // 軸設定
         xAxes: [                           // Ｘ軸設定
@@ -378,8 +381,8 @@ const houtsChart = new Chart(ctx, {
                     fontSize: 16                   // フォントサイズ
                 },
                 gridLines: {                   // 補助線
-                    display: false,
-                    color: "rgba(0, 0, 255, 0.2)", // 補助線の色
+                    display: true,
+                    color: "white", // 補助線の色
                     zeroLineColor: "white"         // y=0（Ｘ軸の色）
                 },
                 ticks: {                       // 目盛り
@@ -399,4 +402,26 @@ const houtsChart = new Chart(ctx, {
 })
 }
 
-// 
+// 学習言語の円グラフの作成
+{
+  const ctx = document.getElementById("learning_character_chart").getContext('2d');
+  let characterChart = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+      labels: ["42%", "18%", "10%", "", "", "", "", ""],
+      datasets: [{
+        data: [
+          30, 20, 10, 5, 5, 20, 20, 10
+        ],
+        backgroundColor: ["#0445EB", "#347EC2", "#20BDDD", "#3DCDFE", "#B29EF3", "#6D46EC", "	#4A17EF", "	#3205C0"],
+      }]
+    },
+    options: {
+      responsive: false,
+      legend: {
+        display: false,
+      }
+    }
+  });
+  characterChart.canvas.parentNode.style.width = '300px';
+}
