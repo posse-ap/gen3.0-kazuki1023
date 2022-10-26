@@ -9,7 +9,8 @@
   <link rel="stylesheet" href="../web/style/web.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
   <!-- datalabelsプラグインを呼び出す -->
-<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+  <script src="https://unpkg.com/apexcharts/dist/apexcharts.min.js" defer></script>
+  <scrip src="script/piechart.js" defer></scrip>
 </head>
 <body>
   <header class="header">
@@ -48,12 +49,13 @@
       <div class="learning">
         <div class="learning_character">
           <p class="learning_title">学習言語</p>
-          <div class="learning_chart">
+          <div class="character_chart">
             <canvas id="learning_character_chart"></canvas>
           </div>
         </div>
         <div class="learning_content">
           <p class="learning_title">学習コンテンツ</p>
+          <div id="learning_content_chart"></div>
         </div>
       </div>
     </div>
@@ -183,5 +185,6 @@
     </div>
   </main>
   <script src="../web/script/web.js"></script>
+
 </body>
 </html>

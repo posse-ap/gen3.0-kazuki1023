@@ -423,5 +423,8 @@ modalRecord[0].addEventListener("click", () => {
       }
     }
   });
-  characterChart.canvas.parentNode.style.width = '300px';
+  characterChart.canvas.parentNode.style.height = '500px';
 }
+
+
+
