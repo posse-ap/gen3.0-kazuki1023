@@ -10,7 +10,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
   <!-- datalabelsプラグインを呼び出す -->
   <script src="https://unpkg.com/apexcharts/dist/apexcharts.min.js" defer></script>
-  <scrip src="script/piechart.js" defer></scrip>
+  <script src="./script/piechart.js" defer></script>
 </head>
 <body>
   <header class="header">
@@ -50,12 +50,27 @@
         <div class="learning_character">
           <p class="learning_title">学習言語</p>
           <div class="character_chart">
-            <canvas id="learning_character_chart"></canvas>
+            <div id="learning_character_chart"></div>
+            <ul class="learning_character_detail">
+              <li class="circle circle_js">JavaScript</li>
+              <li class="circle circle_css">CSS</li>
+              <li class="circle circle_php">PHP</li>
+              <li class="circle circle_html">HTML</li>
+              <li class="circle circle_laravel">Laravel</li>
+              <li class="circle circle_sql">SQL</li>
+              <li class="circle circle_shell">Shell</li>
+              <li class="circle circle_others">情報システム基礎情報（その他)</li>
+            </ul>
           </div>
         </div>
         <div class="learning_content">
           <p class="learning_title">学習コンテンツ</p>
           <div id="learning_content_chart"></div>
+          <ul class="learning_content_detail">
+            <li class="circle circle_dot">ドットインストール</li>
+            <li class="circle circle_N_cramSchool">N予備校</li>
+            <li class="circle circle_posse">Posse課題</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -183,8 +198,14 @@
         </div>
       </div>
     </div>
+    <div class="error">
+      <div class="error_content">
+        <p class="error_content_error">ERROR</p>
+        <i class="gg-danger"></i>
+        <p class="error_anounce">一時的にご利用できない状態です。<br>しばらく経ってから<br>再度アクセスしてください</p>
+      </div>
+    </div>
   </main>
   <script src="../web/script/web.js"></script>
-
 </body>
 </html>

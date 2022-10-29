@@ -423,7 +423,7 @@ input[type=checkbox] + label::after {
   display: grid;
   gap: 20px;
   padding-top: 30px;
-  grid-template-columns: repeat(2, 1fr);
+  /* grid-template-columns: repeat(2, 1fr); */
 }
 
 .hours_container {
@@ -521,6 +521,61 @@ input[type=checkbox] + label::after {
   margin-left: 10px;
   font-size: 20px;
 }
+
+.learning_character_detail {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 60px;
+}
+
+.learning_content_detail {
+  margin-top: 60px;
+}
+/* ●の作成 */
+.circle {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+.circle::marker {
+  content: "";
+}
+.circle:before {
+	content:'●';
+}
+.circle_js::before{
+  color: #0544EC;
+}
+.circle_css::before {
+  color: #0B71BD;
+}
+.cicle_php::before {
+  color: #22BCDE;
+}
+.circle_html::before {
+  color: #3CCEFE;
+}
+.circle_laravel::before {
+  color: #B19EF2;
+}
+.circle_sql::before {
+  color: #6E47EC;
+}
+.circle_shell::before {
+  color: 	#4B17EE;
+}
+.circle_others::before {
+  color: 	#3005C0;
+}
+.circle_dot::before{
+  color: #1755EF;
+}
+.circle_N_cramSchool::before{
+  color: #0D72BD;
+}
+.circle_posse::before{
+  color: #20BDDE;
+}
+
 
 .arrow {
   position: relative;
@@ -751,4 +806,56 @@ input[type=checkbox] + label::after {
 #learning_content_chart {
   /* height: 300px;
   width: 150px; */
+}
+
+/* errorモーダル作成 */ 
+.error {
+  display: none;
+}
+.error_content_error {
+  color: #F3BD67;
+}
+/* ！作成 */
+.gg-danger {
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  transform: scale(var(--ggs,1));
+  width: 20px;
+  height: 20px;
+  border: 2px solid;
+  border-radius: 40px;
+  background-color: #F3BD67;
+  border-color: #F3BD67;
+}
+.gg-danger::after,
+.gg-danger::before {
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+  border-radius: 3px;
+  width: 2px;
+  background: currentColor;
+  left: 7px
+}
+.gg-danger::after {
+  top: 2px;
+  height: 8px;
+  background-color: white;
+}
+.gg-danger::before {
+  height: 2px;
+  bottom: 2px;
+  background-color: white;
+}
+.error_anounce {
+  text-align: center;
+}
+/* レスポンシブ */
+@media screen and (min-width: 768px){
+  /* 767px以下でこれになるよー*/
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }

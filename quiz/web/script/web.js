@@ -403,28 +403,28 @@ modalRecord[0].addEventListener("click", () => {
 }
 
 // 学習言語の円グラフの作成
-{
-  const ctx = document.getElementById("learning_character_chart").getContext('2d');
-  let characterChart = new Chart(ctx, {
-    type: 'doughnut',
-    data: {
-      labels: ["42%", "18%", "10%", "", "", "", "", ""],
-      datasets: [{
-        data: [
-          30, 20, 10, 5, 5, 20, 20, 10
-        ],
-        backgroundColor: ["#0445EB", "#347EC2", "#20BDDD", "#3DCDFE", "#B29EF3", "#6D46EC", "	#4A17EF", "	#3205C0"],
-      }]
-    },
-    options: {
-      responsive: false,
-      legend: {
-        display: false,
-      }
-    }
-  });
-  characterChart.canvas.parentNode.style.height = '500px';
-}
+// {
+//   const ctx = document.getElementById("learning_character_chart").getContext('2d');
+//   let characterChart = new Chart(ctx, {
+//     type: 'doughnut',
+//     data: {
+//       labels: ["42%", "18%", "10%", "", "", "", "", ""],
+//       datasets: [{
+//         data: [
+//           30, 20, 10, 5, 5, 20, 20, 10
+//         ],
+//         backgroundColor: ["#0445EB", "#347EC2", "#20BDDD", "#3DCDFE", "#B29EF3", "#6D46EC", "	#4A17EF", "	#3205C0"],
+//       }]
+//     },
+//     options: {
+//       responsive: false,
+//       legend: {
+//         display: false,
+//       }
+//     }
+//   });
+//   characterChart.canvas.parentNode.style.height = '500px';
+// }
 
 
 
