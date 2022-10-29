@@ -24,6 +24,9 @@
           },
         }
       },
+      tooltips: {
+        enabled: false
+      },
       chart: {
         width: 100
       },

@@ -2,12 +2,18 @@
 
 // モーダル
 
-// 記録ボタンを押すとモーダルが出てくる
+// headerの記録ボタンを押すとモーダルが出てくる
 const headerRecordButton = document.getElementById('header_record_button');
 const modal = document.getElementsByClassName('modal');
 headerRecordButton.addEventListener("click", () => {
   modal[0].classList.toggle("modal_active");
 });
+
+// footerの記録ボタンを押すとモーダルが出てくる
+const footerRecoedButton = document.getElementById('footer_record_button');
+footerRecoedButton.addEventListener("click", () => {
+  modal[0].classList.toggle("modal_active")
+})
 
 // ボタンを押すと、モーダルが閉じる処理
 const modalCloseButton = document.getElementsByClassName('modal_close');
