@@ -307,7 +307,7 @@ modalRecord[0].addEventListener("click", () => {
   timerid = window.setTimeout(function(){
     // textareaに書かれた内容をtwitterに反映する
     let twitterShare = document.getElementById('twitter_share');
-    console.log(twitterShare);
+    // console.log(twitterShare);
     if(twitterShare.classList.contains('modal_twitter_button_active') === true) {
       const textarea = document.getElementById("comment_title_detail").value
       window.open(`https://twitter.com/intent/tweet?text=${textarea}`)
