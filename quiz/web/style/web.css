@@ -810,7 +810,7 @@ input[type=checkbox] + label::after {
   width: 150px; */
 }
 
-/* errorモーダル作成 */ 
+/* errorモーダル作成 */
 .error {
   display: none;
 }

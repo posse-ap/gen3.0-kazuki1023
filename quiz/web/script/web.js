@@ -9,6 +9,8 @@ headerRecordButton.addEventListener("click", () => {
   modal[0].classList.toggle("modal_active");
 });
 
+console.log(modal);
+
 // footerの記録ボタンを押すとモーダルが出てくる
 const footerRecoedButton = document.getElementById('footer_record_button');
 footerRecoedButton.addEventListener("click", () => {
@@ -17,6 +19,7 @@ footerRecoedButton.addEventListener("click", () => {
 
 // ボタンを押すと、モーダルが閉じる処理
 const modalCloseButton = document.getElementsByClassName('modal_close');
+console.log(modalCloseButton)
 modalCloseButton[0].addEventListener("click", () => {
   modal[0].classList.remove("modal_active");
 })
@@ -239,7 +242,9 @@ calenderCloseButton.addEventListener("click", () => {
         }
         tr.appendChild(td);
       });
-      document.querySelector('tbody').appendChild(tr)
+      const tbody = document.querySelector('tbody').appendChild(tr);
+      console.log(document.querySelector('tbody'));
+      console.log(tbody);
     })
   } 
   createCalender()
@@ -294,7 +299,7 @@ calenderCloseButton.addEventListener("click", () => {
 
 // 記録ボタンを押すとローディング画面に行く
 {
-  const modalRecord = document.getElementsByClassName("modal_record")
+const modalRecord = document.getElementsByClassName("modal_record")
 const loading = document.getElementsByClassName('loading');
 let timerid
 const finish = document.getElementsByClassName("finish")
@@ -307,7 +312,6 @@ modalRecord[0].addEventListener("click", () => {
   timerid = window.setTimeout(function(){
     // textareaに書かれた内容をtwitterに反映する
     let twitterShare = document.getElementById('twitter_share');
-    // console.log(twitterShare);
     if(twitterShare.classList.contains('modal_twitter_button_active') === true) {
       const textarea = document.getElementById("comment_title_detail").value
       window.open(`https://twitter.com/intent/tweet?text=${textarea}`)
@@ -315,7 +319,6 @@ modalRecord[0].addEventListener("click", () => {
     loading[0].classList.remove("loading_active");
     finish[0].classList.add("finish_active");
 }, 3000);
-    
   // 記録完了ボタンのばつ印を押すとモーダルが閉じるようにする.
   // 閉じるボタン
   const finishClose = document.getElementsByClassName("finish_close");
