@@ -14,7 +14,7 @@
     type: 'donut',
   },
   responsive: [{
-    breakpoint: 480,
+    // breakpoint: 480,
     options: {
       plotOptions: {
         pie: {

@@ -493,7 +493,7 @@ input[type=checkbox] + label::after {
   background-color: white;
   height: 400px;
   border-radius: 9px;
-  width: 100%;
+  /* width: 100%; */
 }
 
 .learning {
@@ -810,7 +810,7 @@ input[type=checkbox] + label::after {
   width: 150px; */
 }
 
-/* errorモーダル作成 */ 
+/* errorモーダル作成 */
 .error {
   display: none;
 }
