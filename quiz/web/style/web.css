@@ -1,0 +1,942 @@
+/* header */
+.header {
+  display: flex;
+  height: 60px;
+}
+
+.header_logo {
+  margin: auto 30px;
+}
+
+.header_week {
+  margin: auto 10px;
+}
+.header_week_4th {
+  list-style: none;
+  color: gray;
+}
+
+.header_record {
+  margin-left: auto;
+  margin-right: 30px;
+  margin-top: 10px;
+  display: none;
+}
+
+#header_record_button,
+.modal_record {
+  width: 180px;
+  height: 40px;
+  border-radius: 50px;
+  box-shadow: 5px 5px 5px rgb(98, 179, 237, 0.8);
+  color: white;
+  background: linear-gradient(to right, rgb(99, 138, 230), rgb(7, 168, 237));
+}
+
+.modal_record {
+  position: absolute;
+  bottom: 5%;
+  left: 40%;
+  right: 40%;
+}
+
+
+/* モーダル作成 */
+.modal {
+  display: none;
+}
+
+.modal_active {
+  display: block;
+}
+.modal:before {
+  content: "";
+  /* display: block; */
+  background-color: rgba(0, 0, 0, .3);
+  position: absolute;
+  inset: 0;
+}
+
+.modal_content {
+  position: absolute;
+  min-width: 500px;
+  min-height: 500px;
+  text-align: center;
+  border-radius: 30px;
+  padding: 20px;
+  background-color: #fff;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 75%;
+  height: 70%;
+}
+
+.modal_close {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  background-color: rgba(117, 111, 111, 0.047);
+  border-radius: 15px;
+  width: 30px;
+  height: 30px;
+}
+
+.modal_detail {
+  height: 500px;
+  display: flex;
+}
+.modal_detail_left {
+  width: 50%;
+  height: 85%;
+  margin-top: 20px;
+}
+.modal_detail_right {
+  width: 50%;
+  height: 85%;
+  margin-top: 20px;
+}
+/* モーダル、カレンダーを閉じるばつ印の作成 */
+.batsu {
+  display: block;
+  position: relative;
+}
+
+.batsu::before, .batsu::after { /* 共通設定 */
+  content: "";
+  position: absolute;
+  border-radius: 1px;
+  top: 50%;
+  left: 50%;
+  width: 5px; /* 棒の幅（太さ） */
+  height: 20px; /* 棒の高さ */
+  background: #333;
+}
+
+.batsu::before {
+  transform: translate(-50%,-50%) rotate(45deg);
+}
+
+.batsu::after {
+  transform: translate(-50%,-50%) rotate(-45deg);
+}
+/* 学習日 */
+.modal_learning_day {
+  height: 20%;
+}
+.modal_learning_day_detail {
+  border-radius: 5px;
+}
+.learning_day_title {
+  text-align: left;
+  margin-left: 20px;
+  margin-bottom: 5px;
+}
+#learning_day_detail {
+  width: 80%;
+  border-radius: 10px;
+  height: 35px;
+  border-color: rgba(117, 111, 111, 0.047);
+  background-color: rgba(117, 111, 111, 0.047);
+}
+/* 学習日押した時に表示されるカレンダー作成 */
+.calender {
+  display: none;
+}
+.calender_active {
+  display: block;
+}
+.calender:before {
+  content: "";
+  /* display: block; */
+  background-color: rgba(0, 0, 0, .3);
+  position: absolute;
+  inset: 0;
+}
+.calender_decide {
+  width: 200px;
+  height: 40px;
+  border-radius: 50px;
+  box-shadow: 5px 5px 5px rgb(98, 179, 237, 0.8);
+  color: white;
+  background: linear-gradient(to right, rgb(99, 138, 230), rgb(7, 168, 237));
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+}
+/* ↑ここに大きさ指定入れるとめんどいので入れないで */
+
+.calender_content {
+  position: absolute;
+  min-width: 500px;
+  min-height: 400px;
+  text-align: center;
+  border-radius: 30px;
+  padding: 20px;
+  background-color: #fff;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 75%;
+  height: 70%;
+}
+
+#calender_close {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  background-color: rgba(117, 111, 111, 0.047);
+  border-radius: 15px;
+  width: 30px;
+  height: 30px;
+}
+
+#prev,
+#next {
+  color: #5070e3;
+}
+#prev,
+#next,
+#today {
+  cursor: pointer;
+  user-select: none;
+}
+tr {
+  padding: 10px;
+  height: 40px;
+}
+td.disabled {
+  opacity: 0.3;
+}
+td.today {
+  font-weight: bold;
+}
+.weekday {
+  color: rgba(118, 174, 226, 0.571);
+  width: 60px;
+}
+
+.thisMonth_day_active {
+  border: 1px solid #5a76db;
+  border-radius: 50%;
+  background-color: #5a76db;
+  color: white;
+}
+
+table {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  width: 60%;
+  height: 80%;
+}
+/* 学習コンテンツ */
+.modal_learning_content {
+  height: 30%;
+}
+.learning_content_title {
+  text-align: left;
+  margin-left: 20px;
+}
+
+.modal_learning_content_detail {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 20px;
+  gap: 10px;
+}
+.modal_N ,
+.modal_dot,
+.modal_Posse,
+.modal_html,
+.modal_css,
+.modal_js,
+.modal_php,
+.modal_laravel,
+.modal_sql,
+.modal_shell,
+.modal_others{
+  border-radius: 8px;
+  border: solid;
+  border-color: rgba(117, 111, 111, 0.047);
+  background-color: rgba(117, 111, 111, 0.047);
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+}
+
+.modal_N_active,
+.modal_dot_active,
+.modal_Posse_active,
+.modal_html_active,
+.modal_css_active,
+.modal_js_active,
+.modal_php_active,
+.modal_laravel_active,
+.modal_sql_active,
+.modal_shell_active,
+.modal_others_active
+{
+  background-color: rgb(110, 196, 250, 0.7);
+}
+
+.N_cramSchool_active::before,
+.dotinstall_active::before,
+.posse_active::before,
+.html_active::before,
+.css_active::before,
+.js_active::before,
+.php_active::before,
+.laravel_active::before,
+.sql_active::before,
+.shell_active::before,
+.others_active::before{
+  position: absolute;
+  top: 32%;
+  display: block;
+  margin-top: -8px;
+  width: 25px;
+  height: 25px;
+  content: '';
+  background: rgb(75, 129, 210)  !important;;
+  border-radius: 50%;
+  left: -5px;
+}
+input[type=checkbox]{
+	display: none;
+}
+
+input[type=checkbox] + label {
+  box-sizing: border-box;
+  cursor: pointer;
+  padding: 5px 20px;
+  position: relative;
+  width: auto;
+}
+
+input[type=checkbox] + label::before {
+  position: absolute;
+  top: 32%;
+  display: block;
+  margin-top: -8px;
+  width: 25px;
+  height: 25px;
+  content: '';
+  background: rgba(59, 33, 33, 0.047);
+  border-radius: 50%;
+  left: -5px;
+}
+
+input[type=checkbox] + label::after {
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  content: '';
+  display: block;
+  height: 7px;
+  left: 5px;
+  margin-top: -7px;
+  position: absolute;
+  top: 50%;
+  transform: rotate(45deg);
+  width: 5px;
+}
+/* 学習言語 */
+.learning_language_title {
+  text-align: left;
+  margin-left: 20px;
+}
+.learning_language_content {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 20px;
+  gap: 10px;
+}
+.modal_learning_language {
+  height: 45%;
+}
+
+/* 学習時間 */
+.modal_learning_time {
+  height: 20%;
+}
+.learning_time_title {
+  text-align: left;
+  margin-left: 20px;
+  margin-bottom: 5px;
+}
+.learning_time_title_detail {
+  width: 80%;
+  border-radius: 10px;
+  height: 30px;
+  border-color: rgba(117, 111, 111, 0.047);
+  background-color: rgba(117, 111, 111, 0.047);
+}
+
+/* Twitter用コメント */
+.modal_comment {
+}
+.comment_title {
+  text-align: left;
+  margin-left: 20px;
+}
+#comment_title_detail {
+  border-radius: 10px;
+  border-color: rgba(117, 111, 111, 0.047);
+  background-color: rgba(117, 111, 111, 0.047);
+  width: 80%;
+}
+
+/* twitteにシェアする */
+.modal_twitter {
+  padding-top: 5px;
+  height: 20%;
+  margin-top: 20px;
+}
+
+
+.modal_twitter_button_active::before {
+  position: absolute;
+  top: 32%;
+  display: block;
+  margin-top: -8px;
+  width: 25px;
+  height: 25px;
+  content: '';
+  background: rgb(75, 129, 210)  !important;
+  border-radius: 50%;
+  left: -5px;
+}
+/* main */
+.main {
+  background-color: rgba(117, 111, 111, 0.047);
+}
+.container {
+  position: relative;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  gap: 20px;
+  padding-top: 30px;
+  /* grid-template-columns: repeat(2, 1fr); */
+}
+
+.hours_container {
+  display: grid;
+  gap: 20px;
+}
+
+.hours {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  height: 110px;
+  padding: 0;
+  margin: 0;
+}
+
+.today_hours{
+  background-color: white;
+  list-style: none;
+  border-radius: 8px;
+  margin-top: 0px;
+  padding: 0;
+  text-align: center;
+  height: 110px;
+  gap: 10px;
+}
+
+.month_hours{
+  background-color: white;
+  list-style: none;
+  border-radius: 8px;
+  margin-top: 0px;
+  padding: 0;
+  text-align: center;
+  height: 110px;
+}
+
+.total_hours{
+  background-color: white;
+  list-style: none;
+  border-radius: 8px;
+  margin-top: 0px;
+  padding: 0;
+  text-align: center;
+  height: 110px;
+}
+
+.hours_title{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: rgba(25, 72, 243, 0.605);
+  font-weight: 600;
+}
+
+.hours_count {
+  padding-bottom: 10px;
+  font-weight: bold;
+  font-size: 28px;
+}
+
+.hours_hour {
+  padding-bottom: 10px;
+  color: gray;
+}
+
+#hours_chart {
+  background-color: white;
+  height: 400px;
+  border-radius: 9px;
+  /* width: 100%; */
+}
+
+.learning {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(2, 1fr);
+  height: 530px;
+}
+/* 学習言語 */
+.learning_character {
+  background-color: white;
+  border-radius: 10px;
+}
+#learning_character_chart {
+  width: 100%;
+  height: 100%;
+}
+.learning_content {
+  background-color: white;
+  border-radius: 10px;
+}
+
+.learning_title {
+  font-weight: bold;
+  margin-top: 30px;
+  margin-left: 10px;
+  font-size: 20px;
+}
+
+.learning_character_detail {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 60px;
+}
+
+.learning_content_detail {
+  margin-top: 60px;
+}
+/* ●の作成 */
+.circle {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+.circle::marker {
+  content: "";
+}
+.circle:before {
+	content:'●';
+}
+.circle_js::before{
+  color: #0544EC;
+}
+.circle_css::before {
+  color: #0B71BD;
+}
+.cicle_php::before {
+  color: #22BCDE;
+}
+.circle_html::before {
+  color: #3CCEFE;
+}
+.circle_laravel::before {
+  color: #B19EF2;
+}
+.circle_sql::before {
+  color: #6E47EC;
+}
+.circle_shell::before {
+  color: 	#4B17EE;
+}
+.circle_others::before {
+  color: 	#3005C0;
+}
+.circle_dot::before{
+  color: #1755EF;
+}
+.circle_N_cramSchool::before{
+  color: #0D72BD;
+}
+.circle_posse::before{
+  color: #20BDDE;
+}
+
+
+.arrow {
+  position: relative;
+  display: inline-block;
+  padding: 10px;
+}
+
+.arrow::before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-top: solid 2px #5070e3;
+  border-right: solid 2px #5070e3;
+  position: absolute;
+  left: 10px;
+  top: 8px;
+}
+
+.date {
+  display: flex;
+  text-align: center;
+  vertical-align: middle;
+  margin-top: 20px;
+}
+
+#date_detail {
+  margin-top: 3px;
+}
+
+.arrow-left {
+  margin: 0 auto;
+}
+
+.arrow-right {
+  margin: 0 auto;
+}
+.arrow.arrow-left::before {
+  transform: rotate(-135deg);
+}
+
+.arrow.arrow-right::before {
+  transform: rotate(45deg);
+}
+
+/* loading画面 */
+.loading {
+  display: none;
+}
+
+.loading_active {
+  display: block;
+}
+
+.loading:before {
+  content: "";
+  /* display: block; */
+  background-color: rgba(0, 0, 0, .3);
+  position: absolute;
+  inset: 0;
+}
+
+.loading_content {
+  position: absolute;
+  min-width: 500px;
+  min-height: 500px;
+  text-align: center;
+  border-radius: 30px;
+  padding: 20px;
+  background-color: #fff;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 75%;
+  height: 70%;
+}
+
+.loading_close {
+  position: absolute;
+  top: 15%;
+  right: 12%;
+  background-color: rgba(117, 111, 111, 0.047);
+  border-radius: 15px;
+  width: 30px;
+  height: 30px;
+  z-index: 10;
+}
+.loader {
+  font-size: 10px;
+  margin: 100px auto 50px auto;
+  text-indent: -9999em;
+  width: 14em;
+  height: 14em;
+  border-radius: 50%;
+  background: #ffffff;
+  background: -moz-linear-gradient(left, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
+  background: -webkit-linear-gradient(left, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
+  background: -o-linear-gradient(left, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
+  background: -ms-linear-gradient(left, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
+  background: linear-gradient(to right, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
+  /* position: relative; */
+  -webkit-animation: load3 1.4s infinite linear;
+  animation: load3 1.4s infinite linear;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+}
+.loader:before {
+  width: 50%;
+  height: 50%;
+  background: linear-gradient(to right, blue, 30%, rgb(0, 204, 255));
+  border-radius: 100% 0 0 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '';
+}
+.loader:after {
+  background: white;
+  width: 75%;
+  height: 75%;
+  border-radius: 50%;
+  content: '';
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+@-webkit-keyframes load3 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes load3 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+/* loading画面表示3秒後にでてくる、記録完了のやつ */
+.finish {
+  display: none;
+}
+
+.finish_active {
+  display: block;
+}
+
+.finish:before {
+  content: "";
+  /* display: block; */
+  background-color: rgba(0, 0, 0, .3);
+  position: absolute;
+  inset: 0;
+}
+
+.finish_content {
+  position: absolute;
+  min-width: 500px;
+  min-height: 500px;
+  text-align: center;
+  border-radius: 30px;
+  padding: 20px;
+  background-color: #fff;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 75%;
+  height: 70%;
+}
+
+.finish_close {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  background-color: rgba(117, 111, 111, 0.047);
+  border-radius: 15px;
+  width: 30px;
+  height: 30px;
+}
+
+.finish_mark {
+  position: absolute;
+  top: 20%;
+  left: 45%;
+}
+.finish_awesome {
+  color: #6ed155;
+}
+.finish_checkbox {
+  list-style-type: none;
+  padding-right: 40px;
+  border: solid;
+  border-radius: 50%;
+  background-color: #6ed155;
+}
+.finish_checkbox_item {
+  position: relative;
+  height: 93px;
+}
+.finish_checkbox_item::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 36%;
+  left: -7px;
+  width: 30px;
+  height: 15px;
+  border-left: 5px solid white;
+  border-bottom: 5px solid white;
+  transform: rotate(-45deg);
+}
+
+.finish_anounce {
+  margin-top: 20px;
+}
+
+#learning_content_chart {
+  /* height: 300px;
+  width: 150px; */
+}
+
+/* errorモーダル作成 */
+.error {
+  display: none;
+}
+.error_content_error {
+  color: #F3BD67;
+}
+/* ！作成 */
+.gg-danger {
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  transform: scale(var(--ggs,1));
+  width: 20px;
+  height: 20px;
+  border: 2px solid;
+  border-radius: 40px;
+  background-color: #F3BD67;
+  border-color: #F3BD67;
+}
+.gg-danger::after,
+.gg-danger::before {
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+  border-radius: 3px;
+  width: 2px;
+  background: currentColor;
+  left: 7px
+}
+.gg-danger::after {
+  top: 2px;
+  height: 8px;
+  background-color: white;
+}
+.gg-danger::before {
+  height: 2px;
+  bottom: 2px;
+  background-color: white;
+}
+.error_anounce {
+  text-align: center;
+}
+
+.footer_record {
+  display: block;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+#footer_record_button {
+  width: 90%;
+  height: 40px;
+  border-radius: 50px;
+  box-shadow: 5px 5px 5px rgb(98, 179, 237, 0.8);
+  color: white;
+  background: linear-gradient(to right, rgb(99, 138, 230), rgb(7, 168, 237));
+}
+/* レスポンシブ */
+@media screen and (min-width: 768px){
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .footer_record {
+    display: none;
+  }
+  .header_record {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .modal_content {
+    width: 100%;
+    min-width: auto;
+    height: 90%;
+    top: 55%;
+  }
+}
+
+@media screen and (max-width: 512px) {
+  .modal_detail {
+    display: block;
+  }
+  #learning_character_chart {
+    min-height: 229px  !important;
+  }
+  .learning_character,
+  .learning_content
+  {
+    position: relative;
+  }
+  .learning_character_detail,
+  .learning_content_detail {
+    position: absolute;
+    bottom: 10px;
+    margin-top: 0;
+  }
+  .modal_detail_left,
+  .modal_detail_right{
+    width: 100%;
+    height: 70%;
+  }
+  .modal_content {
+    position: fixed;
+  }
+  .modal_learning_content {
+    height: 20%;
+  }
+  .modal_twitter {
+    margin-top: 10px;
+  }
+  .modal_record {
+    width: 90%;
+    left: 5%;
+    right: 0%;
+  }
+  .calender_content,
+  .loading_content,
+  .finish_content
+  {
+    height: 90%;
+    bottom: -50%;
+    position: fixed;
+  }
+  .loading_close {
+    top: 5%;
+    right: 5%;
+  }
+}
