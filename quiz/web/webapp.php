@@ -1,3 +1,7 @@
+<?php
+include_once("../dbconnect.php");
+include_once("./admin/index.php");
+?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -30,17 +34,17 @@
         <div class="hours">
           <ul id="today_hours">
             <li class="hours_title" id="today_title" name="today"></li>
-            <li class="hours_count">3</li>
+            <li class="hours_count"><?php echo $today_sum;?></li>
             <li class="hours_hour">hour</li>
           </ul>
           <ul class="month_hours">
-            <li class="hours_title" id="month_title">今月の情報</li>
-            <li class="hours_count">120</li>
+            <li class="hours_title" id="month_title"><?php echo $this_month?>の合計</li>
+            <li class="hours_count"><?php echo $month_sum;?></li>
             <li class="hours_hour">hour</li>
           </ul>
           <ul class="total_hours">
-            <li class="hours_title">Total</li>
-            <li class="hours_count">1348</li>
+            <li class="hours_title">総計</li>
+            <li class="hours_count"><?php echo $total_sum;?></li>
             <li class="hours_hour">hour</li>
           </ul>
         </div>
@@ -74,67 +78,85 @@
         </div>
       </div>
     </div>
-    <div class="date">
-      <div class="arrow arrow-left"></div>
-      <div id="date_detail">2022年 10月</div>
-      <div class="arrow arrow-right"></div>
-    </div>
+    <form class="date" action="./webapp.php" method="POST">
+      <button class="date_button" type="submit" name="before_month">
+        <div class="arrow arrow-left"></div>
+      </button>
+      <div id="date_detail"><?php echo $this_month;?></div>
+      <button class="date_button" type="submit" name="after_month">
+        <div class="arrow arrow-right"></div>
+      </button>
+    </form>
     <div class="footer_record">
       <button id="footer_record_button">記録・投稿</button>
     </div>
     <div class="modal">
-      <form action="" method="post" id="form_record">
+      <form action="./admin/form.php" method="post" id="form_record">
         <div class="modal_content">
           <button class="modal_close"><span class="batsu"></span></button>
           <div class="modal_detail">
             <div class="modal_detail_left">
               <div class="modal_learning_day">
                 <div class="modal_learning_day_detail">
-                  <p class="learning_day_title" >学習日</p>
+                  <p class="learning_day_title">学習日</p>
                   <input type="date" name="learning_day_detail" class="learning_day_text">
-                  <!-- <button id="learning_day_detail" placeholder="2022年10月23日"> -->
+                  <div class="modal_date">
+                    <label for="date_confirm" class="date_check"></label>
+                    <input type="checkbox" name ="date[]" id="date_confirm">
+                  </div>
                 </div>
               </div>
               <div class="modal_learning_content">
-                <p class="learning_content_title">学習コンテンツ （複数選択可）</p>
+                <p class="learning_content_title">学習コンテンツ（複数選択可)</p>
                 <div class="modal_learning_content_detail">
                   <div class="modal_N">
-                    <input type="checkbox"  name=""><label for="N_cramSchool" class="N_cramSchool">N予備校</label>
+                    <label for="N_cramSchool" class="N_cramSchool"></label>
+                    <input type="checkbox"  name="date[1][]" id="N_cramSchool" value="N予備校">N予備校
                   </div>
                   <div class="modal_dot">
-                    <input type="checkbox"  name=""><label for="dotinstall" class="dotinstall">ドットインストール</label>
+                    <label for="dotinstall" class="dotinstall"></label>
+                    <input type="checkbox" name="date[1][]" id="dotinstall" value="ドットインストール">ドットインストール
                   </div>
                   <div class="modal_Posse">
-                    <input type="checkbox"  name=""><label for="posse"class="posse">POSSE課題</label>
+                    <label for="posse"class="posse"></label>
+                    <input type="checkbox"  name="date[1][]" id="posse" value="POSSE課題">POSSE課題
                   </div>
                 </div>
               </div>
               <div class="modal_learning_language">
-                <p class="learning_language_title">学習言語 （複数選択可)</p>
+                <p class="learning_language_title">学習言語（複数選択可)</p>
                 <div class="learning_language_content">
                   <div class="modal_html">
-                    <input type="checkbox"  name=""><label for="html"class="html">HTML</label>
+                    <label for="html"class="html"></label>
+                    <input type="checkbox" name="date[2][]" id="html" value="HTML">HTML
                   </div>
                   <div class="modal_css">
-                    <input type="checkbox"  name=""><label for="css"class="css">CSS</label>
+                    <label for="css"class="css"></label>
+                    <input type="checkbox"  name="date[2][]" id="css" value="CSS">CSS
                   </div>
                   <div class="modal_js">
-                    <input type="checkbox"  name=""><label for="js"class="js">JavaScript</label>
+                    <label for="js"class="js"></label>
+                    <input type="checkbox"  name="date[2][]" id="js" value="JavaScript">JavaScript
                   </div>
                   <div class="modal_php">
-                    <input type="checkbox"  name=""><label for="php"class="php">PHP</label>
+                    <label for="php"class="php"></label>
+                    <input type="checkbox"  name="date[2][]" id="php" value="PHP">PHP
                   </div>
                   <div class="modal_laravel">
-                    <input type="checkbox" name=""><label for="laravel"class="laravel">Laravel</label>
+                    <label for="laravel"class="laravel"></label>
+                    <input type="checkbox" name="date[2][]" id="laravel" value="Laravel">Laravel
                   </div>
                   <div class="modal_sql">
-                    <input type="checkbox" name=""><label for="sql"class="sql">SQL</label>
+                  <label for="sql"class="sql"></label>
+                    <input type="checkbox" name="date[2][]" id="sql" value="SQL">SQL
                   </div>
                   <div class="modal_shell">
-                    <input type="checkbox"  name=""><label for="shell"class="shell">SHELL</label>
+                    <label for="shell"class="shell"></label>
+                    <input type="checkbox"  name="date[2][]" id="shell" value="SHELL">SHELL
                   </div>
                   <div class="modal_others">
-                    <input type="checkbox"  name=""><label for="others"class="others">情報システム基礎情報（その他</label>
+                    <label for="others"class="others"></label>
+                    <input type="checkbox"  name="date[2][]" id="others" value="情報システム基礎情報（その他)">情報システム基礎情報（その他)
                   </div>
                 </div>
               </div>
@@ -165,7 +187,7 @@
             <thead>
               <tr>
                 <th id="prev">&laquo;</th>
-                <th id="title" colspan="5">2022/10</th>
+                <th id="title" colspan="3">2022/10</th>
                 <th id="next">&raquo;</th>
               </tr>
               <tr>
@@ -191,7 +213,7 @@
       </div>
 
     </div>
-    <div class="finish">
+    <!-- <div class="finish">
       <div class="finish_content">
         <button class="finish_close"><span class="batsu"></span></button>
         <div class="finish_mark">
@@ -209,9 +231,9 @@
         <i class="gg-danger"></i>
         <p class="error_anounce">一時的にご利用できない状態です。<br>しばらく経ってから<br>再度アクセスしてください</p>
       </div>
-    </div>
-
+    </div> -->
   </main>
   <script src="../web/script/web.js"></script>
+  <script src="../web/script/form.js"></script>
 </body>
 </html>

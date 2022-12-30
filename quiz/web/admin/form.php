@@ -1,89 +1,27 @@
+<?php
+if (isset($_POST['date']) && is_array($_POST['date'])) {
+  $modal_date = $_POST['date'];
+  echo "<pre>";
+  var_dump($modal_date);
+  echo "</pre>";
+};
+
+?>
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Posse-webapp</title>
-  <link rel="stylesheet" href="../web/style/normalize.css">
-  <link rel="stylesheet" href="../web/style/web.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
-  <!-- datalabelsプラグインを呼び出す -->
-  <script src="https://unpkg.com/apexcharts/dist/apexcharts.min.js" defer></script>
-  <script src="./script/piechart.js" defer></script>
+  <title>Document</title>
+  <link rel="stylesheet" href="../style/normalize.css">
+  <link rel="stylesheet" href="../style/web.css">
 </head>
 <body>
-  <header class="header">
-    <div class="header_logo">
-      <img src="../web/img/logo.svg" alt="">
-    </div>
-    <div class="header_week">
-      <li class="header_week_4th">4th week</li>
-    </div>
-    <div class="header_record">
-      <button id="header_record_button">記録・投稿</button>
-    </div>
-  </header>
-  <main class="main">
-    <div class="container">
-      <div class="hours_container">
-        <div class="hours">
-          <ul id="today_hours">
-            <li class="hours_title" id="today_title" name="today"></li>
-            <li class="hours_count">3</li>
-            <li class="hours_hour">hour</li>
-          </ul>
-          <ul class="month_hours">
-            <li class="hours_title" id="month_title">今月の情報</li>
-            <li class="hours_count">120</li>
-            <li class="hours_hour">hour</li>
-          </ul>
-          <ul class="total_hours">
-            <li class="hours_title">Total</li>
-            <li class="hours_count">1348</li>
-            <li class="hours_hour">hour</li>
-          </ul>
-        </div>
-        <div class="canvas_container" id="hours_chart"></div>
-      </div>
-      <div class="learning">
-        <div class="learning_character">
-          <p class="learning_title">学習言語</p>
-          <div class="character_chart">
-            <div id="learning_character_chart"></div>
-            <ul class="learning_character_detail">
-              <li class="circle circle_js">JavaScript</li>
-              <li class="circle circle_css">CSS</li>
-              <li class="circle circle_php">PHP</li>
-              <li class="circle circle_html">HTML</li>
-              <li class="circle circle_laravel">Laravel</li>
-              <li class="circle circle_sql">SQL</li>
-              <li class="circle circle_shell">Shell</li>
-              <li class="circle circle_others">情報システム基礎情報（その他)</li>
-            </ul>
-          </div>
-        </div>
-        <div class="learning_content">
-          <p class="learning_title">学習コンテンツ</p>
-          <div id="learning_content_chart"></div>
-          <ul class="learning_content_detail">
-            <li class="circle circle_dot">ドットインストール</li>
-            <li class="circle circle_N_cramSchool">N予備校</li>
-            <li class="circle circle_posse">Posse課題</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="date">
-      <div class="arrow arrow-left"></div>
-      <div id="date_detail">2022年 10月</div>
-      <div class="arrow arrow-right"></div>
-    </div>
-    <div class="footer_record">
-      <button id="footer_record_button">記録・投稿</button>
-    </div>
+  <main>
     <div class="modal">
-      <form action="" method="post" id="form_record">
+      <form action="./admin/form.php" method="post" id="form_record">
         <div class="modal_content">
           <button class="modal_close"><span class="batsu"></span></button>
           <div class="modal_detail">
@@ -165,7 +103,7 @@
             <thead>
               <tr>
                 <th id="prev">&laquo;</th>
-                <th id="title" colspan="5">2022/10</th>
+                <th id="title" colspan="3">2022/10</th>
                 <th id="next">&raquo;</th>
               </tr>
               <tr>
@@ -189,18 +127,21 @@
       <div class="loading_content">
         <div class="loader"></div>
       </div>
-
     </div>
     <div class="finish">
       <div class="finish_content">
-        <button class="finish_close"><span class="batsu"></span></button>
-        <div class="finish_mark">
-          <p class="finish_awesome">AWESOME!</p>
-          <ul class="finish_checkbox">
-            <li class="finish_checkbox_item"></li>
-          </ul>
-          <p class="finish_anounce">記録・投稿<br>完了しました</p>
-        </div>
+        <form action="../webapp.php">
+          <button class="finish_close">
+            <span class="batsu"></span>
+          </button>
+          <div class="finish_mark">
+            <p class="finish_awesome">AWESOME!</p>
+            <ul class="finish_checkbox">
+              <li class="finish_checkbox_item"></li>
+            </ul>
+            <p class="finish_anounce">記録・投稿<br>完了しました</p>
+          </div>
+        </form>
       </div>
     </div>
     <div class="error">
@@ -210,8 +151,7 @@
         <p class="error_anounce">一時的にご利用できない状態です。<br>しばらく経ってから<br>再度アクセスしてください</p>
       </div>
     </div>
-
   </main>
-  <script src="../web/script/web.js"></script>
+  <script src="../script/form.js"></script>
 </body>
 </html>
