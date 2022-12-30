@@ -28,13 +28,13 @@
     <div class="container">
       <div class="hours_container">
         <div class="hours">
-          <ul class="today_hours">
-            <li class="hours_title">Today</li>
+          <ul id="today_hours">
+            <li class="hours_title" id="today_title" name="today"></li>
             <li class="hours_count">3</li>
             <li class="hours_hour">hour</li>
           </ul>
           <ul class="month_hours">
-            <li class="hours_title">Month</li>
+            <li class="hours_title" id="month_title">今月の情報</li>
             <li class="hours_count">120</li>
             <li class="hours_hour">hour</li>
           </ul>
@@ -44,7 +44,7 @@
             <li class="hours_hour">hour</li>
           </ul>
         </div>
-        <canvas id="hours_chart" width="390px" height="400px"></canvas>
+        <div class="canvas_container" id="hours_chart"></div>
       </div>
       <div class="learning">
         <div class="learning_character">
@@ -83,76 +83,79 @@
       <button id="footer_record_button">記録・投稿</button>
     </div>
     <div class="modal">
-      <div class="modal_content">
-        <button class="modal_close"><span class="batsu"></span></button>
-        <div class="modal_detail">
-          <div class="modal_detail_left">
-            <div class="modal_learning_day">
-              <div class="modal_learning_day_detail">
-                <p class="learning_day_title" >学習日</p>
-                <button type="text" id="learning_day_detail" placeholder="2022年10月23日">
-              </div>
-            </div>
-            <div class="modal_learning_content">
-              <p class="learning_content_title">学習コンテンツ （複数選択可）</p>
-              <div class="modal_learning_content_detail">
-                <div class="modal_N">
-                  <input type="checkbox"  name=""><label for="N_cramSchool" class="N_cramSchool">N予備校</label>
-                </div>
-                <div class="modal_dot">
-                  <input type="checkbox"  name=""><label for="dotinstall" class="dotinstall">ドットインストール</label>
-                </div>
-                <div class="modal_Posse">
-                  <input type="checkbox"  name=""><label for="posse"class="posse">POSSE課題</label>
+      <form action="" method="post" id="form_record">
+        <div class="modal_content">
+          <button class="modal_close"><span class="batsu"></span></button>
+          <div class="modal_detail">
+            <div class="modal_detail_left">
+              <div class="modal_learning_day">
+                <div class="modal_learning_day_detail">
+                  <p class="learning_day_title" >学習日</p>
+                  <input type="date" name="learning_day_detail" class="learning_day_text">
+                  <!-- <button id="learning_day_detail" placeholder="2022年10月23日"> -->
                 </div>
               </div>
+              <div class="modal_learning_content">
+                <p class="learning_content_title">学習コンテンツ （複数選択可）</p>
+                <div class="modal_learning_content_detail">
+                  <div class="modal_N">
+                    <input type="checkbox"  name=""><label for="N_cramSchool" class="N_cramSchool">N予備校</label>
+                  </div>
+                  <div class="modal_dot">
+                    <input type="checkbox"  name=""><label for="dotinstall" class="dotinstall">ドットインストール</label>
+                  </div>
+                  <div class="modal_Posse">
+                    <input type="checkbox"  name=""><label for="posse"class="posse">POSSE課題</label>
+                  </div>
+                </div>
+              </div>
+              <div class="modal_learning_language">
+                <p class="learning_language_title">学習言語 （複数選択可)</p>
+                <div class="learning_language_content">
+                  <div class="modal_html">
+                    <input type="checkbox"  name=""><label for="html"class="html">HTML</label>
+                  </div>
+                  <div class="modal_css">
+                    <input type="checkbox"  name=""><label for="css"class="css">CSS</label>
+                  </div>
+                  <div class="modal_js">
+                    <input type="checkbox"  name=""><label for="js"class="js">JavaScript</label>
+                  </div>
+                  <div class="modal_php">
+                    <input type="checkbox"  name=""><label for="php"class="php">PHP</label>
+                  </div>
+                  <div class="modal_laravel">
+                    <input type="checkbox" name=""><label for="laravel"class="laravel">Laravel</label>
+                  </div>
+                  <div class="modal_sql">
+                    <input type="checkbox" name=""><label for="sql"class="sql">SQL</label>
+                  </div>
+                  <div class="modal_shell">
+                    <input type="checkbox"  name=""><label for="shell"class="shell">SHELL</label>
+                  </div>
+                  <div class="modal_others">
+                    <input type="checkbox"  name=""><label for="others"class="others">情報システム基礎情報（その他</label>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="modal_learning_language">
-              <p class="learning_language_title">学習言語 （複数選択可)</p>
-              <div class="learning_language_content">
-                <div class="modal_html">
-                  <input type="checkbox"  name=""><label for="html"class="html">HTML</label>
-                </div>
-                <div class="modal_css">
-                  <input type="checkbox"  name=""><label for="css"class="css">CSS</label>
-                </div>
-                <div class="modal_js">
-                  <input type="checkbox"  name=""><label for="js"class="js">JavaScript</label>
-                </div>
-                <div class="modal_php">
-                  <input type="checkbox"  name=""><label for="php"class="php">PHP</label>
-                </div>
-                <div class="modal_laravel">
-                  <input type="checkbox" name=""><label for="laravel"class="laravel">Laravel</label>
-                </div>
-                <div class="modal_sql">
-                  <input type="checkbox" name=""><label for="sql"class="sql">SQL</label>
-                </div>
-                <div class="modal_shell">
-                  <input type="checkbox"  name=""><label for="shell"class="shell">SHELL</label>
-                </div>
-                <div class="modal_others">
-                  <input type="checkbox"  name=""><label for="others"class="others">情報システム基礎情報（その他</label>
-                </div>
+            <div class="modal_detail_right">
+              <div class="modal_learning_time">
+                <p class="learning_time_title">学習時間</p>
+                <input type="text" name="" class="learning_time_title_detail" placeholder="">
+              </div>
+              <div class="modal_comment">
+                <p class="comment_title">Twitter用コメント</p>
+                <textarea name="" id="comment_title_detail" cols="30" rows="10"></textarea>
+              </div>
+              <div class="modal_twitter">
+                <input type="checkbox"  name=""><label for="modal_twitter_button" class="modal_twitter_button" id="twitter_share">Twitterにシャアする</label>
               </div>
             </div>
           </div>
-          <div class="modal_detail_right">
-            <div class="modal_learning_time">
-              <p class="learning_time_title">学習時間</p>
-              <input type="text" name="" class="learning_time_title_detail" placeholder="">
-            </div>
-            <div class="modal_comment">
-              <p class="comment_title">Twitter用コメント</p>
-              <textarea name="" id="comment_title_detail" cols="30" rows="10"></textarea>
-            </div>
-            <div class="modal_twitter">
-              <input type="checkbox"  name=""><label for="modal_twitter_button" class="modal_twitter_button" id="twitter_share">Twitterにシャアする</label>
-            </div>
-          </div>
+          <button class="modal_record" id="modal_record">記録・投稿</button>
         </div>
-        <button class="modal_record">記録・投稿</button>
-      </div>
+      </form>
     </div>
     <div class="calender">
       <div class="calender_content">

@@ -127,11 +127,13 @@
 .modal_learning_day_detail {
   border-radius: 5px;
 }
+
 .learning_day_title {
   text-align: left;
   margin-left: 20px;
   margin-bottom: 5px;
 }
+
 #learning_day_detail {
   width: 80%;
   border-radius: 10px;
@@ -261,7 +263,8 @@ table {
 .modal_laravel,
 .modal_sql,
 .modal_shell,
-.modal_others{
+.modal_others,
+.modal_date{
   border-radius: 8px;
   border: solid;
   border-color: rgba(117, 111, 111, 0.047);
@@ -269,6 +272,11 @@ table {
   padding-top: 5px;
   padding-bottom: 5px;
   padding-left: 10px;
+}
+
+.date_check {
+  width: 100% !important;
+  display: inline-block;
 }
 
 .modal_N_active,
@@ -281,7 +289,8 @@ table {
 .modal_laravel_active,
 .modal_sql_active,
 .modal_shell_active,
-.modal_others_active
+.modal_others_active,
+.modal_date_active
 {
   background-color: rgb(110, 196, 250, 0.7);
 }
@@ -296,7 +305,9 @@ table {
 .laravel_active::before,
 .sql_active::before,
 .shell_active::before,
-.others_active::before{
+.others_active::before,
+.date_check_active::before
+{
   position: absolute;
   top: 32%;
   display: block;
@@ -319,6 +330,20 @@ input[type=checkbox] + label {
   position: relative;
   width: auto;
 }
+label {
+  box-sizing: border-box;
+  cursor: pointer;
+  padding: 5px 20px;
+  position: relative;
+  width: auto;
+}
+input[type=checkbox] + label {
+  box-sizing: border-box;
+  cursor: pointer;
+  padding: 5px 20px;
+  position: relative;
+  width: auto;
+}
 
 input[type=checkbox] + label::before {
   position: absolute;
@@ -332,8 +357,34 @@ input[type=checkbox] + label::before {
   border-radius: 50%;
   left: -5px;
 }
+label::before {
+  position: absolute;
+  top: 32%;
+  display: block;
+  margin-top: -8px;
+  width: 25px;
+  height: 25px;
+  content: '';
+  background: rgba(59, 33, 33, 0.047);
+  border-radius: 50%;
+  left: -5px;
+}
 
 input[type=checkbox] + label::after {
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  content: '';
+  display: block;
+  height: 7px;
+  left: 5px;
+  margin-top: -7px;
+  position: absolute;
+  top: 50%;
+  transform: rotate(45deg);
+  width: 5px;
+}
+
+label::after {
   border-right: 2px solid #fff;
   border-bottom: 2px solid #fff;
   content: '';
@@ -440,7 +491,7 @@ input[type=checkbox] + label::after {
   margin: 0;
 }
 
-.today_hours{
+#today_hours{
   background-color: white;
   list-style: none;
   border-radius: 8px;
@@ -488,10 +539,16 @@ input[type=checkbox] + label::after {
   padding-bottom: 10px;
   color: gray;
 }
-
+/* 学習時間のグラフ */
+.canvas_container {
+  /* position: relative;
+  width:  calc(100% - 40px);
+  height: 300px;
+  overflow: hidden;
+  margin:20px; */
+}
 #hours_chart {
   background-color: white;
-  height: 400px;
   border-radius: 9px;
   /* width: 100%; */
 }
@@ -509,7 +566,6 @@ input[type=checkbox] + label::after {
 }
 #learning_character_chart {
   width: 100%;
-  height: 100%;
 }
 .learning_content {
   background-color: white;
@@ -600,6 +656,13 @@ input[type=checkbox] + label::after {
   text-align: center;
   vertical-align: middle;
   margin-top: 20px;
+  justify-content: center;
+  gap: 30px;
+}
+.date_button {
+  border: none;
+  background-color: #F8F8F8;
+  color: #F8F8F8;
 }
 
 #date_detail {
