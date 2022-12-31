@@ -1,0 +1,27 @@
+h2 {
+  display: flex;
+  justify-content: center;
+}
+/* ログイン画面 */
+
+.login_form {
+  margin: 0 auto;
+}
+
+.login_form_email,
+.login_form_password,
+.login_button {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+/* 新規登録画面 */
+.register_form_name,
+.register_form_email,
+.register_form_password,
+.register_button {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}

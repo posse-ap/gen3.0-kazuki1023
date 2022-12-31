@@ -5,7 +5,7 @@
 }
 
 .header_logo {
-  margin: auto 30px;
+  margin: auto 50px;
 }
 
 .header_week {
@@ -530,7 +530,6 @@ label::after {
 }
 
 .hours_count {
-  padding-bottom: 10px;
   font-weight: bold;
   font-size: 28px;
 }
