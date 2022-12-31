@@ -1,6 +1,6 @@
 <?php
-include_once("../dbconnect.php");
-include_once("./admin/index.php");
+include_once("./dbconnect.php");
+include_once("./index.php");
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -9,17 +9,17 @@ include_once("./admin/index.php");
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Posse-webapp</title>
-  <link rel="stylesheet" href="../web/style/normalize.css">
-  <link rel="stylesheet" href="../web/style/web.css">
+  <link rel="stylesheet" href="../style/normalize.css">
+  <link rel="stylesheet" href="./styles/web.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
   <!-- datalabelsプラグインを呼び出す -->
   <script src="https://unpkg.com/apexcharts/dist/apexcharts.min.js" defer></script>
-  <script src="./script/piechart.js" defer></script>
+  <script src="./assets/scripts/piechart.js" defer></script>
 </head>
 <body>
   <header class="header">
     <div class="header_logo">
-      <img src="../web/img/logo.svg" alt="">
+      <img src="../img/logo.svg" alt="">
     </div>
     <div class="header_week">
       <li class="header_week_4th">4th week</li>
@@ -78,7 +78,7 @@ include_once("./admin/index.php");
         </div>
       </div>
     </div>
-    <form class="date" action="./webapp.php" method="POST">
+    <form class="date" action="./admin/form.php" method="POST">
       <button class="date_button" type="submit" name="before_month">
         <div class="arrow arrow-left"></div>
       </button>
@@ -233,7 +233,7 @@ include_once("./admin/index.php");
       </div>
     </div> -->
   </main>
-  <script src="../web/script/web.js"></script>
-  <script src="../web/script/form.js"></script>
+  <script src="./assets/scripts/web.js"></script>
+  <script src="./assets/scripts/form.js"></script>
 </body>
 </html>

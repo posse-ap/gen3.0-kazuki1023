@@ -34,9 +34,9 @@ $dateid_hours = $dbh->query($sql_dateid_hours)->fetchAll(PDO::FETCH_ASSOC);
 
 $sql_hour_hours = 'SELECT hours FROM hours';
 $hour_hours = $dbh->query($sql_hour_hours)->fetchAll(PDO::FETCH_ASSOC);
-echo "<pre>";
-print_r($hour_hours);
-echo "</pre>";
+// echo "<pre>";
+// print_r($hour_hours);
+// echo "</pre>";
 
 // contentsテーブルを持ってきて配列に挿入
 $sql_contents = 'SELECT * FROM contents';

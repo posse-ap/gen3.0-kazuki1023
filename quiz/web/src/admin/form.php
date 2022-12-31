@@ -1,10 +1,10 @@
 <?php
-if (isset($_POST['date']) && is_array($_POST['date'])) {
-  $modal_date = $_POST['date'];
-  echo "<pre>";
-  var_dump($modal_date);
-  echo "</pre>";
-};
+// if (isset($_POST['date']) && is_array($_POST['date'])) {
+//   $modal_date = $_POST['date'];
+//   echo "<pre>";
+//   var_dump($modal_date);
+//   echo "</pre>";
+// };
 
 ?>
 
@@ -14,9 +14,13 @@ if (isset($_POST['date']) && is_array($_POST['date'])) {
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>登録画面</title>
   <link rel="stylesheet" href="../style/normalize.css">
-  <link rel="stylesheet" href="../style/web.css">
+  <link rel="stylesheet" href="../styles/web.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+  <!-- datalabelsプラグインを呼び出す -->
+  <script src="https://unpkg.com/apexcharts/dist/apexcharts.min.js" defer></script>
+  <script src="../assets/scripts/piechart.js" defer></script>
 </head>
 <body>
   <main>
@@ -152,6 +156,6 @@ if (isset($_POST['date']) && is_array($_POST['date'])) {
       </div>
     </div>
   </main>
-  <script src="../script/form.js"></script>
+  <script src="../assets/scripts/form.js"></script>
 </body>
 </html>
