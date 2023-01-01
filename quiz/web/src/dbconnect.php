@@ -27,6 +27,7 @@ foreach ($choices as $key => $choice) {
   $questions[$index]["choices"][] = $choice;
 }
 
+//////////  webapp ////////////////////
 // hoursテーブルを持ってきて配列に挿入
 $sql_dateid_hours = 'SELECT date_id FROM hours';
 $dateid_hours = $dbh->query($sql_dateid_hours)->fetchAll(PDO::FETCH_ASSOC);
@@ -45,6 +46,33 @@ $contents = $dbh->query($sql_contents)->fetchAll(PDO::FETCH_ASSOC);
 // languagesテーブルを持ってきて配列に挿入
 $sql_languages = 'SELECT * FROM languages';
 $languages = $dbh->query($sql_languages)->fetchAll(PDO::FETCH_ASSOC);
+
+// 日付ごとの学習時間を算出して，日付と学習時間の配列を持つ2次元配列を作成する
+class Study {
+  public $day;
+  public $hours;
+
+  public function get_day() {
+      return $this->day;
+  }
+
+  public function get_hours() {
+      return (int)$this->hours;
+  }
+}
+$date_sql = "SELECT DATE_FORMAT(hours.date, '%Y-%m-%d') day, sum(hours.hours) hours FROM hours group by day";
+$date = $dbh->query($date_sql)->fetchAll(\PDO::FETCH_CLASS, Study::class);
+echo "<pre>";
+var_dump($date);
+echo "</pre>";
+$formatted_study_var_data = array_map(function($study) {
+    return [$study->get_day(), $study->get_hours()];
+},$date);
+$chart_var_data = json_encode($formatted_study_var_data);
+// ここに日付と学習時間の配列を持つ2次元配列を作成している.
+echo "<pre>";
+print_r($chart_data);
+echo "</pre>";
 
 
 
