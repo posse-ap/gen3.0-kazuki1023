@@ -65,10 +65,10 @@ $date = $dbh->query($date_sql)->fetchAll(\PDO::FETCH_CLASS, Study::class);
 echo "<pre>";
 var_dump($date);
 echo "</pre>";
-$formatted_study_data = array_map(function($study) {
+$formatted_study_var_data = array_map(function($study) {
     return [$study->get_day(), $study->get_hours()];
 },$date);
-$chart_data = json_encode($formatted_study_data);
+$chart_var_data = json_encode($formatted_study_var_data);
 // ここに日付と学習時間の配列を持つ2次元配列を作成している.
 echo "<pre>";
 print_r($chart_data);

@@ -13,8 +13,26 @@ include_once("./index.php");
   <link rel="stylesheet" href="./styles/web.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
   <!-- datalabelsプラグインを呼び出す -->
-  <script src="https://unpkg.com/apexcharts/dist/apexcharts.min.js" defer></script>
+  <!-- <script src="https://unpkg.com/apexcharts/dist/apexcharts.min.js" defer></script> -->
   <script src="./assets/scripts/piechart.js" defer></script>
+  <script src="https://www.gstatic.com/charts/loader.js"></script>
+  <script>
+  google.charts.load('current', {'packages':['corechart']});
+  google.charts.setOnLoadCallback(VerticalBarChart);
+
+  function VerticalBarChart () {
+    const data = new google.visualization.DataTable();
+    data.addColumn('string' ,'学習日');
+    data.addColumn('number', '学習時間');
+    data.addRows(<?= $chart_var_data?>);
+    const chart = new google.visualization.ColumnChart(document.getElementById('hours_chart'));
+    chart.draw(data, { title: '日毎の学習時間' });
+  }
+
+
+
+
+  </script>
 </head>
 <body>
   <header class="header">
