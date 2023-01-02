@@ -60,7 +60,7 @@ class Study {
       return (int)$this->hours;
   }
 }
-$date_sql = "SELECT DATE_FORMAT(hours.date, '%Y-%m-%d') day, sum(hours.hours) hours FROM hours group by day";
+$date_sql = "SELECT DATE_FORMAT(hours.date, '%Y-%m-%d') day, sum(hours.hours) hours FROM hours group by day having day > '2023-01-00' and day < '2023-01-32' ";
 $date = $dbh->query($date_sql)->fetchAll(\PDO::FETCH_CLASS, Study::class);
 echo "<pre>";
 var_dump($date);
