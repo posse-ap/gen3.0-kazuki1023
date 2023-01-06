@@ -28,10 +28,6 @@ include_once("./index.php");
     const chart = new google.visualization.ColumnChart(document.getElementById('hours_chart'));
     chart.draw(data, { title: '日毎の学習時間' });
   }
-
-
-
-
   </script>
 </head>
 <body>

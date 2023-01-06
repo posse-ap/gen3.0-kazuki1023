@@ -62,17 +62,17 @@ class Study {
 }
 $date_sql = "SELECT DATE_FORMAT(hours.date, '%Y-%m-%d') day, sum(hours.hours) hours FROM hours group by day having day > '2023-01-00' and day < '2023-01-32' ";
 $date = $dbh->query($date_sql)->fetchAll(\PDO::FETCH_CLASS, Study::class);
-echo "<pre>";
-var_dump($date);
-echo "</pre>";
+// echo "<pre>";
+// var_dump($date);
+// echo "</pre>";
 $formatted_study_var_data = array_map(function($study) {
     return [$study->get_day(), $study->get_hours()];
 },$date);
 $chart_var_data = json_encode($formatted_study_var_data);
 // ここに日付と学習時間の配列を持つ2次元配列を作成している.
-echo "<pre>";
-print_r($chart_data);
-echo "</pre>";
+// echo "<pre>";
+// print_r($chart_var_data);
+// echo "</pre>";
 
 
 
