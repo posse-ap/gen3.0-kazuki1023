@@ -48,6 +48,7 @@ $sql_languages = 'SELECT * FROM languages';
 $languages = $dbh->query($sql_languages)->fetchAll(PDO::FETCH_ASSOC);
 
 // 日付ごとの学習時間を算出して，日付と学習時間の配列を持つ2次元配列を作成する
+/////////// 棒グラフ用のデータをテーブルから持ってくる //////////////
 class Study {
   public $day;
   public $hours;
@@ -61,8 +62,6 @@ class Study {
   }
 }
 
-
-/////////// 棒グラフ用のデータをテーブルから持ってくる //////////////
 $date_sql = "SELECT DATE_FORMAT(hours.date, '%Y-%m-%d') day, sum(hours.hours) hours FROM hours group by day having day > '2023-01-00' and day < '2023-01-32' ";
 $date = $dbh->query($date_sql)->fetchAll(\PDO::FETCH_CLASS, Study::class);
 // echo "<pre>";
@@ -82,7 +81,42 @@ $chart_var_data = json_encode($formatted_study_var_data);
 
 
 //////////////// パイグラフ用のデータをテーブルから持ってくる //////////
-// 
+// 学習コンテンツ用のデータ
+class Contents {
+  public $content;
+  public $hours;
+
+  public function get_content() {
+    return $this->content;
+}
+
+public function get_hours() {
+  return (int)$this->hours;
+  }
+}
+
+$contents_sql = "SELECT contents.content, sum(hours.hours) hours from hoursContents join contents on hoursContents.contents_id = contents.id join hours on hoursContents.hours_id = hours.id group by contents.content";
+
+$content_data = $dbh->query($contents_sql)->fetchAll(\PDO::FETCH_CLASS, Contents::class);
+
+echo "<pre>";
+print_r($content_data);
+echo "</pre>";
+
+$formatted_content_pai_data = array_map(function($study) {
+    return [$study->get_content(), $study->get_hours()];
+}, $content_data);
+echo "<pre>";
+print_r($formatted_content_pai_data);
+echo "</pre>";
+$content_pai_data = json_encode($formatted_content_pai_data, JSON_UNESCAPED_UNICODE);
+echo "<pre>";
+print_r($content_pai_data);
+echo "</pre>";
+
+
+
+
 
 
 
