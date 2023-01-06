@@ -67,9 +67,9 @@ foreach($result_todays as $key => $result_today) {
 // unset($result_today[0], $result_today[1], $result_today[2], $result_today[3]);
 // $result_todayに今日の学習時間の合計を代入
 $result_today["day_sum"] = $today_sum;
-echo "<pre>";
-print_r($result_today);
-echo "</pre>";
+// echo "<pre>";
+// print_r($result_today);
+// echo "</pre>";
 
 
 // 今月のデータを検索し、今月の勉強時間を出す
@@ -104,18 +104,18 @@ $total_sum = 0;
 foreach($result_totals as $key => $result_total) {
   $total_sum += $result_total["hours"];
   unset($result_total[0], $result_total["id"], $result_total[1], $result_total[2], $result_total[3], $result_total["date"]);
-  echo "<pre>";
-  print_r($result_total);
-  echo "</pre>";
+  // echo "<pre>";
+  // print_r($result_total);
+  // echo "</pre>";
   $result_totals[$key] += $result_total;
 };
 
 for($i = 0; $i <=count($result_totals); $i++){
   
 }
-echo "<pre>";
-print_r($result_totals);
-echo "</pre>";
+// echo "<pre>";
+// print_r($result_totals);
+// echo "</pre>";
 // この配列の中身をdate_idとhoursにする
 
 ?>
