@@ -550,6 +550,7 @@ label::after {
   background-color: white;
   border-radius: 9px;
   /* width: 100%; */
+  height: 400px;
 }
 
 .learning {
