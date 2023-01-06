@@ -60,6 +60,9 @@ class Study {
       return (int)$this->hours;
   }
 }
+
+
+/////////// 棒グラフ用のデータをテーブルから持ってくる //////////////
 $date_sql = "SELECT DATE_FORMAT(hours.date, '%Y-%m-%d') day, sum(hours.hours) hours FROM hours group by day having day > '2023-01-00' and day < '2023-01-32' ";
 $date = $dbh->query($date_sql)->fetchAll(\PDO::FETCH_CLASS, Study::class);
 // echo "<pre>";
@@ -73,6 +76,14 @@ $chart_var_data = json_encode($formatted_study_var_data);
 // echo "<pre>";
 // print_r($chart_var_data);
 // echo "</pre>";
+
+
+
+
+
+//////////////// パイグラフ用のデータをテーブルから持ってくる //////////
+// 
+
 
 
 
