@@ -95,7 +95,7 @@ public function get_hours() {
   }
 }
 
-$contents_sql = "SELECT contents.content, sum(hours.hours) hours from hoursContents join contents on hoursContents.contents_id = contents.id join hours on hoursContents.hours_id = hours.id group by contents.content";
+$contents_sql = "SELECT contents.content, sum(hours.hours) hours from hoursContents join contents on hoursContents.contents_id = contents.id join hours on hoursContents.hours_id = hours.id Where hours_id > 11 group by contents.content";
 
 $content_data = $dbh->query($contents_sql)->fetchAll(\PDO::FETCH_CLASS, Contents::class);
 
@@ -112,6 +112,34 @@ echo "</pre>";
 $content_pai_data = json_encode($formatted_content_pai_data, JSON_UNESCAPED_UNICODE);
 echo "<pre>";
 print_r($content_pai_data);
+echo "</pre>";
+
+
+// 学習言語用のデータ
+
+class Languages {
+  public $language;
+  public $hours;
+
+  public function get_language() {
+    return $this -> language;
+  }
+
+  public function get_hours() {
+    return(int)$this -> hours;
+  }
+}
+
+$languages_sql = "SELECT sum(hours.hours) hours ,languages.language from hoursLanguages join languages on hoursLanguages.languages_id = languages.id join hours on hoursLanguages.hours_id = hours.id where hours_id > 11 group by languages.language";
+
+$language_data = $dbh->query($languages_sql)->fetchAll(\PDO::FETCH_CLASS, Languages::class);
+
+$formatted_language_pai_data = array_map(function($study) {
+  return [$study->get_language(), $study->get_hours()];
+}, $language_data);
+$language_pai_data = json_encode($formatted_language_pai_data, JSON_UNESCAPED_UNICODE);
+echo "<pre>";
+print_r($language_pai_data);
 echo "</pre>";
 
 
