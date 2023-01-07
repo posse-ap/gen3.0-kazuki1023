@@ -19,7 +19,8 @@ include_once("./index.php");
   <script type="text/javascript">
   google.charts.load('current', {'packages':['corechart']});
   google.charts.setOnLoadCallback(VerticalBarChart);
-  google.charts.setOnLoadCallback(ContentPaiChart);
+  google.charts.setOnLoadCallback(ContentPieChart);
+  google.charts.setOnLoadCallback(languagePieChart);
 
   function VerticalBarChart () {
     const data = new google.visualization.DataTable();
@@ -30,20 +31,38 @@ include_once("./index.php");
     varChart.draw(data, { title: '日毎の学習時間' });
   }
 
-  function ContentPaiChart(){
+  function ContentPieChart(){
     const data = new google.visualization.DataTable();
     data.addColumn('string', '学習コンテンツ');
     data.addColumn('number', '学習時間');
     data.addRows(<?= $content_pai_data?>);
     const contentChart = new google.visualization.PieChart(document.getElementById('learning_content_chart'));
     const options = {
-      width: 220,
-      height: 220,
+      width: 200,
+      height: 200,
       pieHole: 0.4,
       legend: {
         position: 'none'
       },
       colors: ["#1755EF", "#0D72BD", "#20BDDE"]
+    };
+    contentChart.draw(data, options);
+  }
+
+  function languagePieChart() {
+    const data = new google.visualization.DataTable();
+    data.addColumn('string', '学習言語');
+    data.addColumn('number', '学習時間');
+    data.addRows(<?= $language_pai_data?>);
+    const contentChart = new google.visualization.PieChart(document.getElementById('learning_character_chart'));
+    const options = {
+      width: 200,
+      height: 200,
+      pieHole: 0.4,
+      legend: {
+        position: 'none'
+      },
+      colors: ["#3FCEFE", "#0F71BD", "#0643EC", "#000000", "#B19EF2", "#6E47EC", "#6D48EC", "#4B16EE", "#2E05C1"]
     };
     contentChart.draw(data, options);
   }

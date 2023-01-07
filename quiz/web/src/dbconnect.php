@@ -99,20 +99,14 @@ $contents_sql = "SELECT contents.content, sum(hours.hours) hours from hoursConte
 
 $content_data = $dbh->query($contents_sql)->fetchAll(\PDO::FETCH_CLASS, Contents::class);
 
-echo "<pre>";
-print_r($content_data);
-echo "</pre>";
+
 
 $formatted_content_pai_data = array_map(function($study) {
     return [$study->get_content(), $study->get_hours()];
 }, $content_data);
-echo "<pre>";
-print_r($formatted_content_pai_data);
-echo "</pre>";
+
 $content_pai_data = json_encode($formatted_content_pai_data, JSON_UNESCAPED_UNICODE);
-echo "<pre>";
-print_r($content_pai_data);
-echo "</pre>";
+
 
 
 // 学習言語用のデータ
@@ -138,9 +132,7 @@ $formatted_language_pai_data = array_map(function($study) {
   return [$study->get_language(), $study->get_hours()];
 }, $language_data);
 $language_pai_data = json_encode($formatted_language_pai_data, JSON_UNESCAPED_UNICODE);
-echo "<pre>";
-print_r($language_pai_data);
-echo "</pre>";
+
 
 
 

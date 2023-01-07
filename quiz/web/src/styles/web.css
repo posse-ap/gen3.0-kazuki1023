@@ -932,10 +932,12 @@ label::after {
   background: linear-gradient(to right, rgb(99, 138, 230), rgb(7, 168, 237));
 }
 /* レスポンシブ */
-@media screen and (min-width: 768px){
+@media screen and (min-width: 960px) {
   .container {
     grid-template-columns: repeat(2, 1fr);
   }
+}
+@media screen and (min-width: 768px){
   .footer_record {
     display: none;
   }
