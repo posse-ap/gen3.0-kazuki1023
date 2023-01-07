@@ -15,18 +15,37 @@ include_once("./index.php");
   <!-- datalabelsプラグインを呼び出す -->
   <!-- <script src="https://unpkg.com/apexcharts/dist/apexcharts.min.js" defer></script> -->
   <script src="./assets/scripts/piechart.js" defer></script>
-  <script src="https://www.gstatic.com/charts/loader.js"></script>
-  <script>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
   google.charts.load('current', {'packages':['corechart']});
   google.charts.setOnLoadCallback(VerticalBarChart);
+  google.charts.setOnLoadCallback(ContentPaiChart);
 
   function VerticalBarChart () {
     const data = new google.visualization.DataTable();
     data.addColumn('string' ,'学習日');
     data.addColumn('number', '学習時間');
     data.addRows(<?= $chart_var_data?>);
-    const chart = new google.visualization.ColumnChart(document.getElementById('hours_chart'));
-    chart.draw(data, { title: '日毎の学習時間' });
+    const varChart = new google.visualization.ColumnChart(document.getElementById('hours_chart'));
+    varChart.draw(data, { title: '日毎の学習時間' });
+  }
+
+  function ContentPaiChart(){
+    const data = new google.visualization.DataTable();
+    data.addColumn('string', '学習コンテンツ');
+    data.addColumn('number', '学習時間');
+    data.addRows(<?= $content_pai_data?>);
+    const contentChart = new google.visualization.PieChart(document.getElementById('learning_content_chart'));
+    const options = {
+      width: 220,
+      height: 220,
+      pieHole: 0.4,
+      legend: {
+        position: 'none'
+      },
+      colors: ["#1755EF", "#0D72BD", "#20BDDE"]
+    };
+    contentChart.draw(data, options);
   }
   </script>
 </head>
