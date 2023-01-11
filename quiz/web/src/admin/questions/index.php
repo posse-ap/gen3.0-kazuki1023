@@ -6,7 +6,7 @@ idカラム、contentカラムの値を出力 -->
 
 <!-- 問題一覧・削除画面 -->
 <?php
-include_once('../dbconnect.php');
+include_once('../../dbconnect.php');
 // include_once ('../services/delate_question.php');
 // print_r($questions);
 ?>

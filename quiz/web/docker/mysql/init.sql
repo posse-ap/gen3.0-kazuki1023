@@ -1,7 +1,7 @@
 DROP DATABASE IF EXISTS posse;
 CREATE DATABASE posse;
 use posse;
-
+-- quiz用のdb
 -- quiestionsテーブルの作成
 DROP TABLE IF EXISTS questions;
 CREATE TABLE questions (
@@ -27,6 +27,37 @@ CREATE TABLE users (
   email VARCHAR(255) COLLATE utf8mb3_general_ci NOT NULL COMMENT 'メールアドレス',
   password VARCHAR(255) COLLATE utf8mb3_general_ci NOT NULL NOT NULL COMMENT 'パスワード'
 );
+
+INSERT INTO `questions` VALUES
+(1, '日本のIT人材が2030年には最大どれくらい不足すると言われているでしょうか？', 'img-quiz01.png', '経済産業省 2019年3月 － IT 人材需給に関する調査'),
+(2, '既存業界のビジネスと、先進的なテクノロジーを結びつけて生まれた、新しいビジネスのことをなんと言うでしょう？', 'img-quiz02.png', ''),
+(3, 'IoTとは何の略でしょう？', 'img-quiz03.png', ''),
+(4, 'イギリスのコンピューター科学者であるギャビン・ウッド氏が提唱した、ブロックチェーン技術を活用した「次世代分散型インターネット」のことをなんと言うでしょう？', 'img-quiz04.png', 'Society5.0 - 科学技術政策 - 内閣府'),
+(5, '日本のIT人材が2030年には最大どれくらい不足すると言われているでしょうか？', 'img-quiz05.png', ''),
+(6, '日本のIT人材が2030年には最大どれくらい不足すると言われているでしょうか？', 'img-quiz06.png', 'Accenture Technology Vision 2021');
+
+INSERT INTO `choices` VALUES
+(1, 1, "約28万人", 0),
+(2, 1, "約79万人", 1),
+(3, 1, "約183万人", 0),
+(4, 2, "INTECH", 0),
+(5, 2, "BIZZTECH", 0),
+(6, 2, "X-TECH", 1),
+(7, 3, "Internet of Things", 1),
+(8, 3, "Integrate into Technology", 0),
+(9, 3, "Information on Tool", 0),
+(10, 4, "Society 5.0", 1),
+(11, 4, "CyPhy", 0),
+(12, 4, "SDGs", 0),
+(13, 5, "Web3.0", 0),
+(14, 5, "NFT", 0),
+(15, 5, "メタバース", 0),
+(16, 6, "約2倍", 0),
+(17, 6, "約5倍", 0),
+(18, 6, "約11倍", 0);
+
+
+-- webapp用のdb
 -- hoursテーブルの作成
 DROP TABLE IF EXISTS hours;
 CREATE TABLE hours (
