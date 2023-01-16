@@ -1,4 +1,23 @@
 "use strict"
+// 今日の日付を持ってくる(年、月、日)
+const today = new Date();
+let year = today.getFullYear();
+let month = today.getMonth() + 1;
+let date = today. getDate();
+
+// 取得した日付を挿入
+let today_title = year + "/" + month + "/" + date
+const hours_today_title = document.getElementById("today_title");
+hours_today_title.insertAdjacentHTML("afterbegin", today_title);
+// 取得した日付をname属性に挿入
+  // 取得した日付を数値から、文字列に変換
+  let character_year = String(year);
+  let character_month = String(month);
+  let character_date = String(date);
+const today_date = character_year + character_month + character_date;
+hours_today_title.setAttribute('name', today_date);
+
+
 
 // モーダル
 
@@ -9,7 +28,7 @@ headerRecordButton.addEventListener("click", () => {
   modal[0].classList.toggle("modal_active");
 });
 
-console.log(modal);
+// console.log(modal);
 
 // footerの記録ボタンを押すとモーダルが出てくる
 const footerRecoedButton = document.getElementById('footer_record_button');
@@ -19,18 +38,18 @@ footerRecoedButton.addEventListener("click", () => {
 
 // ボタンを押すと、モーダルが閉じる処理
 const modalCloseButton = document.getElementsByClassName('modal_close');
-console.log(modalCloseButton)
+// console.log(modalCloseButton)
 modalCloseButton[0].addEventListener("click", () => {
   modal[0].classList.remove("modal_active");
 })
 
 // 学習日を押すとカレンダーが出てくる
-const learningDayDetail = document.getElementById('learning_day_detail');
-const calender = document.getElementsByClassName("calender");
-learningDayDetail.addEventListener("click", () => {
-  calender[0].classList.toggle("calender_active");
-  modal[0].classList.remove("modal_active");
-})
+// const learningDayDetail = document.getElementById('learning_day_detail');
+// const calender = document.getElementsByClassName("calender");
+// learningDayDetail.addEventListener("click", () => {
+//   calender[0].classList.toggle("calender_active");
+//   modal[0].classList.remove("modal_active");
+// })
 
 //ボタンを押すとカレンダーが閉じる
 const calenderCloseButton = document.getElementById("calender_close");
@@ -39,8 +58,28 @@ calenderCloseButton.addEventListener("click", () => {
   modal[0].classList.toggle("modal_active");
 })
 
+// モーダル内のカレンダー押したら、その値をcheckbox内に返す
+const inputDate = document.querySelector(`input[type="date"][name="learning_day_detail"]`);
+const dateConfirm = document.getElementById('date_confirm');
+inputDate.addEventListener('change', () => {
+  document.getElementsByClassName('date_check')[0].innerHTML = inputDate.value;
+  dateConfirm.setAttribute("value", inputDate.value)
+
+  // date_idの中に入れるデータ
+  console.log(inputDate.value.replace(/-/g, ''));
+});
+
+
+
 // モーダル内の学習コンテンツ,学習言語の項目を押したら青くなる処理
 {
+  // 日にち確定ボタン
+  const dateCheck = document.getElementsByClassName('date_check');
+  const modalDate = document.getElementsByClassName('modal_date');
+  dateCheck[0].addEventListener("click", () => {
+    dateCheck[0].classList.toggle("date_check_active");
+    modalDate[0].classList.toggle("modal_date_active");
+  })
   // N予備校
   const NcramSchool = document.getElementsByClassName('N_cramSchool');
   const modalN = document.getElementsByClassName('modal_N');
@@ -174,7 +213,7 @@ calenderCloseButton.addEventListener("click", () => {
       });
     };
     // console.log(dates)
-    
+
     const chartDate = [];
     chartDate.push({
       date: dates[1].date
@@ -223,9 +262,9 @@ calenderCloseButton.addEventListener("click", () => {
 
     for(let i = 0; i < weekCount; i++){
       weeks.push(dates.splice(0, 7));
-      
+
     }
-    
+
     weeks.forEach(week => {
       const tr = document.createElement('tr');
       week.forEach(date => {
@@ -243,10 +282,10 @@ calenderCloseButton.addEventListener("click", () => {
         tr.appendChild(td);
       });
       const tbody = document.querySelector('tbody').appendChild(tr);
-      console.log(document.querySelector('tbody'));
-      console.log(tbody);
+      // console.log(document.querySelector('tbody'));
+      // console.log(tbody);
     })
-  } 
+  }
   createCalender()
 
 
@@ -297,143 +336,9 @@ calenderCloseButton.addEventListener("click", () => {
   // これで今月分は押したら青くなるようになった
 };
 
-// 記録ボタンを押すとローディング画面に行く
-{
-const modalRecord = document.getElementsByClassName("modal_record")
-const loading = document.getElementsByClassName('loading');
-let timerid
-const finish = document.getElementsByClassName("finish")
-modalRecord[0].addEventListener("click", () => {
-
-  loading[0].classList.add("loading_active");
-  modal[0].classList.remove("modal_active");
-  // https://www.javadrive.jp/javascript/webpage/index4.html#section1
-  // ここから、記録ボタンを押してから3秒後に記録完了のモーダルが出てくるようにする
-  timerid = window.setTimeout(function(){
-    // textareaに書かれた内容をtwitterに反映する
-    let twitterShare = document.getElementById('twitter_share');
-    if(twitterShare.classList.contains('modal_twitter_button_active') === true) {
-      const textarea = document.getElementById("comment_title_detail").value
-      window.open(`https://twitter.com/intent/tweet?text=${textarea}`)
-    };
-    loading[0].classList.remove("loading_active");
-    finish[0].classList.add("finish_active");
-}, 3000);
-  // 記録完了ボタンのばつ印を押すとモーダルが閉じるようにする.
-  // 閉じるボタン
-  const finishClose = document.getElementsByClassName("finish_close");
-  finishClose[0].addEventListener("click", () => {
-    finish[0].classList.remove("finish_active")
-       // ローディング中の3秒の間にばつ印が押されると、記録完了のモーダルが出てこないようにする
-  window.clearTimeout(timerid);
-  console.log('キャンセルされました')
-  })
-})
 
 
-}
 
-
-// 棒グラフの作成
-{
-  const ctx = document.getElementById("hours_chart").getContext('2d');
-  const houtsChart = new Chart(ctx, {
-  type: "bar",
-  data: {
-    labels:  ["", "2", "", "4", "", "6", "", "8", "", "10", "", "12", "","14", "", "16", "","18", "","20", "", "22", "", "24", "","26", "", "28", "", "30"],
-    datasets: [
-        {
-          label: "学習時間",
-          data: [3,4,5,3,0,0,4,2,2,8,8,2,2,1,7,4,4,3,3,3,2,2,6,2,2,1,1,1,7,8],
-          borderColor: "linear-gradient(blue, rgb(75, 129, 210))",
-          backgroundColor: "blue",
-          borderWidth: 2,
-        }
-    ],
-  }, 
-  options: {
-    responsive: false,
-    legend: {
-        display: false
-    },
-    maintainAspectRatio: false,
-    tooltips: {
-      enabled: false
-    },
-    scales: {                          // 軸設定
-        xAxes: [                           // Ｘ軸設定
-            {
-                scaleLabel: {                 // 軸ラベル
-                    display: false,                // 表示設定
-                    labelString: '横軸ラベル',    // ラベル
-                    fontColor: "white",             // 文字の色
-                    fontSize: 16                  // フォントサイズ
-                },
-                gridLines: {                   // 補助線
-                  display: false,
-                  color: "rgba(255, 0, 0, 0.2)", // 補助線の色
-                },
-                ticks: {                      // 目盛り
-                    fontColor: "rgb(75, 129, 210)",             // 目盛りの色
-                    fontSize: 14                  // フォントサイズ
-                }
-            }
-        ],
-        yAxes: [                           // Ｙ軸設定
-            {
-                scaleLabel: {                  // 軸ラベル
-                    display: false,                 // 表示の有無
-                    labelString: '縦軸ラベル',     // ラベル
-                    fontFamily: "sans-serif",
-                    fontColor: "blue",             // 文字の色
-                    fontFamily: "sans-serif",
-                    fontSize: 16                   // フォントサイズ
-                },
-                gridLines: {                   // 補助線
-                    display: true,
-                    color: "white", // 補助線の色
-                    zeroLineColor: "white"         // y=0（Ｘ軸の色）
-                },
-                ticks: {                       // 目盛り
-                    min: 0,                        // 最小値
-                    max: 8,                       // 最大値
-                    stepSize: 2,                   // 軸間隔
-                    fontColor: "blue",             // 目盛りの色
-                    fontSize: 10,                   // フォントサイズ
-                    callback: function(value, index, values){
-                      return  value +  'h'
-                    },                               // y軸に"h"つけた
-                }
-            }
-        ]
-    }
-  }
-})
-}
-
-// 学習言語の円グラフの作成
-// {
-//   const ctx = document.getElementById("learning_character_chart").getContext('2d');
-//   let characterChart = new Chart(ctx, {
-//     type: 'doughnut',
-//     data: {
-//       labels: ["42%", "18%", "10%", "", "", "", "", ""],
-//       datasets: [{
-//         data: [
-//           30, 20, 10, 5, 5, 20, 20, 10
-//         ],
-//         backgroundColor: ["#0445EB", "#347EC2", "#20BDDD", "#3DCDFE", "#B29EF3", "#6D46EC", "	#4A17EF", "	#3205C0"],
-//       }]
-//     },
-//     options: {
-//       responsive: false,
-//       legend: {
-//         display: false,
-//       }
-//     }
-//   });
-//   characterChart.canvas.parentNode.style.height = '500px';
-// }
 
 
 
