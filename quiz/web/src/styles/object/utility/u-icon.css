@@ -1,0 +1,27 @@
+@use '../../foundation/variables' as *;
+.u-icon__link:before {
+  content: "\e901";
+}
+
+.u-icon__note:before {
+  content: "\e902";
+}
+
+.u-icon__arrow:before {
+  content: "\e903";
+}
+
+.u-icon__line:before {
+  content: "\e900";
+  color: #00c300;
+  background: radial-gradient(#fff 60%, transparent 60%);
+}
+
+.u-icon__instagram:before {
+  content: "\ea92";
+}
+
+.u-icon__twitter:before {
+  content: "\ea96";
+}
+/*# sourceMappingURL=u-icon.css.map */
