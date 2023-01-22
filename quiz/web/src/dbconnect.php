@@ -73,7 +73,7 @@ $formatted_study_var_data = array_map(function($study) {
 $chart_var_data = json_encode($formatted_study_var_data);
 // ここに日付と学習時間の配列を持つ2次元配列を作成している.
 // echo "<pre>";
-// print_r($chart_var_data);
+// var_dump($chart_var_data);
 // echo "</pre>";
 
 
